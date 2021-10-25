@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='style.css'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src='./scripts/characterInfo.js' async></script>
+    <script src='./scripts/materialsLinks.js' async></script>
+    <script src='./scripts/weaponsArtifactsLinks.js' async></script>
+    <script src='./scripts/storyLinks.js' async></script>
+    <script src='./scripts/randomQuote.js' defer></script>
+    <script src='./scripts/combatInfo.js' defer></script>
+    <script src='./scripts/videoArtwork.js' async></script>
+    <script src='./scripts/menu.js' defer></script>
+    <title>Raiden Shogun</title>
+</head>
+
+
+
+<body>
+
+    <svg width="0px" height="0px" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="lightToDarkBlackVertical" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(90)">
+                <stop offset="0%" style="stop-color:#ffffff;stop-opacity: .9" />
+                <stop offset="50%" style="stop-color:#d7e1ec;stop-opacity: .9" />
+                <stop offset="100%" style="stop-color:#ffffff;stop-opacity: .9" />
+            </linearGradient>
+            <linearGradient id="lightToDarkGold" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(90)">
+                <stop offset="0%" style="stop-color:#faf4b7;stop-opacity:.9" />
+                <stop offset="100%" style="stop-color:#BF953F;stop-opacity:.9" />
+            </linearGradient>
+            <linearGradient id="darkToLightGold" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(90)">
+                <stop offset="0%" style="stop-color:#BF953F;stop-opacity:.9" />
+                <stop offset="100%" style="stop-color:#FCF6BA;stop-opacity:.9" />
+            </linearGradient>
+            <linearGradient id="whiteGrad" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(90)">
+                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:.8" />
+                <stop offset="74%" style="stop-color:#d7e1ec;stop-opacity:.8" />
+            </linearGradient>
+            <linearGradient id="whiteGradOpp" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(90)">
+                <stop offset="0%" style="stop-color:#d7e1ec;stop-opacity:.8" />
+                <stop offset="74%" style="stop-color:#ffffff;stop-opacity:.8" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <div class="opening-section">
+        <h1 id="character-name" data-aos="zoom-out" data-aos-delay="100"></h1>
+        <p id="randomQuote" data-aos="zoom-out" data-aos-delay="200"></p>
+        <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
+        </svg>
+        <div class="menu">
+            <i id="materialsAnchor"></i>
+            <i id="buildsAnchor"></i>
+            <i id="combatAnchor"></i>
+            <i id="backgroundAnchor"></i>
+            <i id="artworkAnchor"></i>
+            <div class="image-video-container" id="menuImage">
+                <img data-aos="fade-right" data-aos-delay="400" src="RaidenShogun/gifs/raiden-shogun-genshin-impact.gif" alt="Baal Menu Gif">
+            </div>
+        </div>
+    </div>
+
+    <div class="talents-ascension-section" id="talents-ascension">
+        <svg viewBox="0 0 1650 1000" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10 4 L 12 4 L 12 6 L 10 6 L 10 4 L 130 4 L 130 6 L 128 6 L 128 4 L 130 4 L 130 75 L 128 75 L 128 73 L 130 73 L 130 75 L 10 75 L 10 73 L 12 73 L 12 75 L 10 75 L 10 4" class="border" stroke="url(#lightToDarkBlackVertical)" stroke-width=".25" fill="transparent"></path>
+            <path d="M 9 5 L 11 5 L 11 7 L 9 7 L 9 5 L 131 5 L 131 7 L 129 7 L 129 5 L 131 5 L 131 74 L 129 74 L 129 72 L 131 72 L 131 74 L 9 74 L 9 72 L 11 72 L 11 74 L 9 74 L 9 5 " class="border" stroke="url(#lightToDarkBlackVertical)" stroke-width=".25" fill="transparent"></path>
+        </svg>
+        <div id="character-splash" class="ganyu-splash image-video-container">
+            <img data-aos="zoom-in" src="">
+        </div>
+        <div class="talents-ascension">
+            <h2 data-aos="zoom-in">Ascensions</h2>
+            <div class="shivada">
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="850">
+                    <img src="RaidenShogun/ascension/Item_Vajrada_Amethyst_Sliver.png">
+                    <p class="item-name stone"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="650">
+                    <img src="RaidenShogun/ascension/Item_Vajrada_Amethyst_Fragment.png">
+                    <p class="item-name stone" ></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="450">
+                    <img src="RaidenShogun/ascension/Item_Vajrada_Amethyst_Chunk.png">
+                    <p class="item-name stone"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="250">
+                    <img src="RaidenShogun/ascension/Item_Vajrada_Amethyst_Gemstone.png">
+                    <p class="item-name stone" ></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="50">
+                    <img src="RaidenShogun/ascension/Item_Storm_Beads.png">
+                    <p class="item-name stone" ></p>
+                </div>
+            </div>
+            <div class="monster">
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="650">
+                    <img src="RaidenShogun/ascension/Item_Old_Handguard.png">
+                    <p class="item-name collectable"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="450">
+                    <img src="RaidenShogun/ascension/Item_Kageuchi_Handguard.png">
+                    <p class="item-name collectable"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="250">
+                    <img src="RaidenShogun/ascension/Item_Famed_Handguard.png">
+                    <p class="item-name collectable"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="50">
+                    <img src="RaidenShogun/ascension/Item_Amakumo_Fruit.png">
+                    <p class="item-name unique-collectable"></p>
+                </div>
+            </div>
+            <h2 data-aos="zoom-in">Talents</h2>
+            <div class="books">
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="650">
+                    <img src="RaidenShogun/talent/Item_Teachings_of_Light.png">
+                    <p class="item-name book"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="450">
+                    <img src="RaidenShogun/talent/Item_Guide_to_Light.png">
+                    <p class="item-name book"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="250">
+                    <img src="RaidenShogun/talent/Item_Philosophies_of_Light.png">
+                    <p class="item-name book"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="50">
+                    <img src="RaidenShogun/talent/Item_Molten_Moment.png">
+                    <p class="item-name boss"></p>
+                </div>
+            </div>
+            <div class="monster">
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="650">
+                    <img src="RaidenShogun/talent/Item_Old_Handguard.png">
+                    <p class="item-name collectable"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="450">
+                    <img src="RaidenShogun/talent/Item_Kageuchi_Handguard.png">
+                    <p class="item-name collectable"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="250">
+                    <img src="RaidenShogun/talent/Item_Famed_Handguard.png">
+                    <p class="item-name collectable"></p>
+                </div>
+                <div class="item image-video-container" data-aos="fade-right" data-aos-delay="50">
+                    <img src="RaidenShogun/talent/Item_Crown_of_Insight.png">
+                    <p class="item-name crown"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="title-section">
+        <h2 data-aos="zoom-out-down">Weapons & Artifacts</h2>
+        <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
+        </svg>
+    </div>
+
+    <div class="build-section" id="build-section">
+        <svg class="top-border" viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 43 .2 L 49.1 .2 L 49.1 6.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+            <path d="M 43 1 L 46 1 L 46 3.5 L 48.3 3.5 L 48.3 6.5 "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+            <path d="M 46.9 1 L 48.3 1 L 48.3 2.6 L 46.9 2.6 L 46.9 .8  "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+            <path d="M 93.3 .2 L 99.4 .2 L 99.4 6.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+            <path d="M 93.3 1 L 96.3 1 L 96.3 3.5 L 98.6 3.5 L 98.6 6.5 "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+            <path d="M 97.2 1 L 98.6 1 L 98.6 2.6 L 97.2 2.6 L 97.2 .8  "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+        </svg>
+        <div class="build">
+            <h2 id="build-title" data-aos="fade-left" data-aos-delay="700"></h2>
+            <p id="build-description" class="description" data-aos="fade-left" data-aos-delay="700"></p>
+            <div class="weapons-artifacts">
+                <div class="weapons">
+                    <h3 data-aos="fade-left" data-aos-delay="650">Weapon</h3>
+                    <div class="weapon" id="amos" data-aos="fade-down" data-aos-delay="450">
+                        <h4 id="weapon-title"></h4>
+                        <h5 id="weapon-substat"></h5>
+                        <p id="weapon-description"></p>
+                        <div id="weapon-image" class="image-video-container">
+                            <img class="large" src="" alt="">
+                        </div>
+                    </div>
+                    <h3 class="or-text" data-aos="fade-down" data-aos-delay="250">Or</h3>
+                    <div class="weapon" id="prototype" data-aos="fade-down" data-aos-delay="50">
+                        <h4 id="weapon-title"></h4>
+                        <h5 id="weapon-substat"></h5>
+                        <p id="weapon-description"></p>
+                        <div id="weapon-image" class="image-video-container">
+                            <img class="large" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="artifacts">
+                    <h3 data-aos="fade-left" data-aos-delay="650">Artifacts</h3>
+                    <div class="artifact wanderer" data-aos="fade-down" data-aos-delay="650">
+                        <h4 id="artifact-title"></h4>
+                        <h5 id="artifact-substats"></h5>
+                        <p id="artifact-description"></p>
+                        <div id="artifact-image" class="image-video-container">
+                            <img class="large" src="" alt="">
+                        </div>
+                    </div>
+                    <h3 class="or-text" data-aos="fade-down" data-aos-delay="450">Or</h3>
+                    <div class="artifact gladiator" data-aos="fade-down" data-aos-delay="250">
+                        <h4 id="artifact-title"></h4>
+                        <h5 id="artifact-substats"></h5>
+                        <p id="artifact-description"></p>
+                        <div id="artifact-image" class="image-video-container">
+                            <img class="small" src="" alt="">
+                        </div>
+                    </div>
+                    <div class="artifact blizzard" data-aos="fade-down" data-aos-delay="50">
+                        <h4 id="artifact-title"></h4>
+                        <h5 id="artifact-substats"></h5>
+                        <p id="artifact-description"></p>
+                        <div id="artifact-image" class="image-video-container">
+                            <img class="small" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="build">
+            <h2 id="build-title" data-aos="fade-left" data-aos-delay="700" data-aos-duration="750"></h2>
+            <p id="build-description" class="description" data-aos="fade-left" data-aos-delay="700"></p>
+            <div class="weapons-artifacts">
+                <div class="weapons">
+                    <h3 data-aos="fade-left" data-aos-delay="650">Weapon</h3>
+                    <div class="weapon" id="skyward" data-aos="fade-down" data-aos-delay="450">
+                        <h4 id="weapon-title"></h4>
+                        <h5 id="weapon-substat"></h5>
+                        <p id="weapon-description"></p>
+                        <div id="weapon-image" class="image-video-container">
+                            <img class="large" src="" alt="">
+                        </div>
+                    </div>
+                    <h3 class="or-text" data-aos="fade-down" data-aos-delay="250">Or</h3>
+                    <div class="weapon" id="stringless" data-aos="fade-down" data-aos-delay="50">
+                        <h4 id="weapon-title"></h4>
+                        <h5 id="weapon-substat"></h5>
+                        <p id="weapon-description"></p>
+                        <div id="weapon-image" class="image-video-container">
+                            <img class="large" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="artifacts">
+                    <h3 data-aos="fade-left" data-aos-delay="650">Artifacts</h3>
+                    <div class="artifact noblesse" data-aos="fade-down" data-aos-delay="650">
+                        <h4 id="artifact-title"></h4>
+                        <h5 id="artifact-substats"></h5>
+                        <p id="artifact-description"></p>
+                        <div id="artifact-image" class="image-video-container">
+                            <img class="large" src="" alt="">
+                        </div>
+                    </div>
+                    <h3 class="or-text" data-aos="fade-down" data-aos-delay="250">Or</h3>
+                    <div class="artifact blizzard" data-aos="fade-down" data-aos-delay="450">
+                        <h4 id="artifact-title"></h4>
+                        <h5 id="artifact-substats"></h5>
+                        <p id="artifact-description"></p>
+                        <div id="artifact-image" class="image-video-container">
+                            <img class="small" src="" alt="">
+                        </div>
+                    </div>
+                    <div class="artifact noblesse" data-aos="fade-down" data-aos-delay="50">
+                        <h4 id="artifact-title"></h4>
+                        <h5 id="artifact-substats"></h5>
+                        <p id="artifact-description"></p>
+                        <div id="artifact-image" class="image-video-container">
+                            <img class="small" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="bottom-border" viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)">
+            <path d="M 43 .2 L 49.1 .2 L 49.1 6.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent" ></path>
+            <path d="M 43 1 L 46 1 L 46 3.5 L 48.3 3.5 L 48.3 6.5 "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+            <path d="M 46.9 1 L 48.3 1 L 48.3 2.6 L 46.9 2.6 L 46.9 .8  "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+            <path d="M 93.3 .2 L 99.4 .2 L 99.4 6.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+            <path d="M 93.3 1 L 96.3 1 L 96.3 3.5 L 98.6 3.5 L 98.6 6.5 "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+            <path d="M 97.2 1 L 98.6 1 L 98.6 2.6 L 97.2 2.6 L 97.2 .8  "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
+        </svg>
+    </div>
+
+    <div class="title-section">
+        <h2 data-aos="zoom-out-down">Abilities & Constellation</h2>
+        <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
+        </svg>
+    </div>
+
+    <div class="combat-section" id="combat-section">
+        <div id="abilities-constellation" class="container">
+            <div class="abilities-constellation">
+                <svg viewBox="0 20 1400 80"  xmlns="http://www.w3.org/2000/svg" class="border-top">
+                    <path d="M 180 60 L 210 60 L 210 30 L 190 30 L 190 50 L 220 50 
+                            L 220 30 L 250 30 L 250 60 L 230 60 L 230 40 L 280 40 L 280 60 L 260 60 L 260 30 L 290 30 
+                            L 290 50 L 320 50 L 320 30 L 300 30 L 300 60 L 350 60 L 350 30 L 330 30 L 330 50 L 360 50 
+                            L 360 30 L 390 30 L 390 60 L 370 60 L 370 40 L 420 40 L 420 60 L 400 60 L 400 30 L 430 30 
+                            L 430 50 L 460 50 L 460 30 L 440 30 L 440 60 L 490 60 L 490 30 L 470 30 L 470 50 L 500 50
+                            L 500 30 L 530 30 L 530 60 L 510 60 L 510 40 L 560 40 L 560 60 L 540 60 L 540 30 L 570 30 
+                            L 570 50 L 600 50 L 600 30 L 580 30 L 580 60 L 630 60 L 630 30 L 610 30 L 610 50 L 640 50
+                            L 640 30 L 670 30 L 670 60 L 650 60 L 650 40 L 700 40 L 700 60 L 680 60 L 680 30 L 710 30 
+                            L 710 50 L 740 50 L 740 30 L 720 30 L 720 60 L 770 60 L 770 30 L 750 30 L 750 50 L 780 50
+                            L 780 30 L 810 30 L 810 60 L 790 60 L 790 40 L 810 40" class="border-image" stroke="url(#whiteGrad)" stroke-width="4" fill="transparent"></path>
+                </svg>
+                <div id="abilities" class="combat-images">
+                    <div class="item ability-low image-video-container" data-aos="fade-down" data-aos-delay="100">
+                        <img src="">
+                    </div>
+                    <div class="item ability-mid image-video-container" data-aos="fade-down" data-aos-delay="300">
+                        <img src="">
+                    </div>
+                    <div class="item image-video-container" data-aos="fade-down" data-aos-delay="500">
+                        <img src="">
+                    </div>
+                    <div class="item image-video-container" data-aos="fade-down" data-aos-delay="700">
+                        <img src="">
+                    </div>
+                    <div class="item ability-mid image-video-container" data-aos="fade-down" data-aos-delay="900">
+                        <img src="">
+                    </div>
+                    <div class="item ability-low image-video-container" data-aos="fade-down" data-aos-delay="1100">
+                        <img src="">
+                    </div>
+                </div>
+                <h3 id="ability-title"></h3>
+            </div>
+            <div class="abilities-constellation">
+                <svg viewBox="0 20 1400 80"  xmlns="http://www.w3.org/2000/svg" class="border-top">
+                    <path d="M 180 60 L 210 60 L 210 30 L 190 30 L 190 50 L 220 50 
+                            L 220 30 L 250 30 L 250 60 L 230 60 L 230 40 L 280 40 L 280 60 L 260 60 L 260 30 L 290 30 
+                            L 290 50 L 320 50 L 320 30 L 300 30 L 300 60 L 350 60 L 350 30 L 330 30 L 330 50 L 360 50 
+                            L 360 30 L 390 30 L 390 60 L 370 60 L 370 40 L 420 40 L 420 60 L 400 60 L 400 30 L 430 30 
+                            L 430 50 L 460 50 L 460 30 L 440 30 L 440 60 L 490 60 L 490 30 L 470 30 L 470 50 L 500 50
+                            L 500 30 L 530 30 L 530 60 L 510 60 L 510 40 L 560 40 L 560 60 L 540 60 L 540 30 L 570 30 
+                            L 570 50 L 600 50 L 600 30 L 580 30 L 580 60 L 630 60 L 630 30 L 610 30 L 610 50 L 640 50
+                            L 640 30 L 670 30 L 670 60 L 650 60 L 650 40 L 700 40 L 700 60 L 680 60 L 680 30 L 710 30 
+                            L 710 50 L 740 50 L 740 30 L 720 30 L 720 60 L 770 60 L 770 30 L 750 30 L 750 50 L 780 50
+                            L 780 30 L 810 30 L 810 60 L 790 60 L 790 40 L 810 40" class="border-image" stroke="url(#whiteGrad)" stroke-width="4" fill="transparent"></path>
+                </svg>
+                <div id="constellations" class="constellation-images">
+                    <div class="item ability-low image-video-container" data-aos="fade-down" data-aos-delay="100">
+                        <img src="">
+                    </div>
+                    <div class="item ability-mid image-video-container" data-aos="fade-down" data-aos-delay="300">
+                        <img src="">
+                    </div>
+                    <div class="item image-video-container" data-aos="fade-down" data-aos-delay="500">
+                        <img src="">
+                    </div>
+                    <div class="item image-video-container" data-aos="fade-down" data-aos-delay="700">
+                        <img src="">
+                    </div>
+                    <div class="item ability-mid image-video-container" data-aos="fade-down" data-aos-delay="900">
+                        <img src="">
+                    </div>
+                    <div class="item ability-low image-video-container" data-aos="fade-down" data-aos-delay="1100">
+                        <img src="">
+                    </div>
+                </div>
+                <h3 id="constellation-title"></h3>
+            </div>
+        </div>
+        <div id="combat-overlay" class="overlay">
+            <div id="combat-box" class="overlay-box">
+                <i id="combat-exit"><img src="https://img.icons8.com/small/16/000000/delete-sign.png"/></i>
+                <h2 id="combat-title"></h2>
+                <p id="combat-description"></p>
+                <div id="combat-video" class="image-video-container">
+                    <video width="560" controls muted>
+                        <source type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="title-section">
+        <h2 data-aos="zoom-out-down">Ei's Story</h2>
+        <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
+        </svg>
+    </div>
+
+    <div class="lore-section" id="lore-section">
+        <div id="background" class="background">
+            <div class="card">
+                <div class="card-shadow"></div>
+                <h2 id="lore-title"></h2>
+                <p id="lore-story"></p>
+                <button type="button">Read More</button>
+            </div>
+            <div class="card">
+                <div class="card-shadow"></div>
+                <h2 id="lore-title"></h2>
+                <p id="lore-story"></p>
+                <button type="button">Read More</button>
+            </div>
+            <div class="card">
+                <div class="card-shadow"></div>
+                <h2 id="lore-title"></h2>
+                <p id="lore-story"></p>
+                <button type="button">Read More</button>
+            </div>
+        </div>
+        <div id="stories" class="stories">
+            <div class="card">
+                <div class="card-shadow"></div>
+                <h2 id="lore-title"></h2>
+                <p id="lore-story"></p>
+                <button type="button">Read More</button>
+            </div>
+            <div class="card">
+                <div class="card-shadow"></div>
+                <h2 id="lore-title"></h2>
+                <p id="lore-story"></p>
+                <button type="button">Read More</button>
+            </div>
+            <div class="card">
+                <div class="card-shadow"></div>
+                <h2 id="lore-title"></h2>
+                <p id="lore-story"></p>
+                <button type="button">Read More</button>
+            </div>
+            <div class="card">
+                <div class="card-shadow"></div>
+                <h2 id="lore-title"></h2>
+                <p id="lore-story"></p>
+                <button type="button">Read More</button>
+            </div>
+            <div class="card">
+                <div class="card-shadow"></div>
+                <h2 id="lore-title"></h2>
+                <p id="lore-story"></p>
+                <button type="button">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="title-section">
+        <h2 data-aos="zoom-out-down">Artwork</h2>
+        <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
+        </svg>
+    </div>
+
+    <div class="art-section" id="art-section">
+        <div class="lore-container-all">
+            <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="50">
+                <img src="" alt="">
+            </div>
+            <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="250">
+                <img src="" alt="">
+            </div>
+            <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="500">
+                <img src="" alt="">
+            </div>
+            <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="50">
+                <img src="" alt="">
+            </div>
+            <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="250">
+                <img src="" alt="">
+            </div>
+            <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="500">
+                <img src="" alt="">
+            </div>
+            <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="50">
+                <img src="" alt="">
+            </div>
+            <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="250">
+                <img src="" alt="">
+            </div>
+            <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="500">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        disable: 'phone',
+        
+        duration: 800,
+        once: true,
+      });
+    </script>  
+    
+</body>
+</html>
