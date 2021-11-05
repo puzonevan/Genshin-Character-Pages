@@ -2,6 +2,9 @@
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
 const name = "beidou";
 
+///////////////////////////////////////////////////////////////////////
+
+/****** CHARACTER MATERIAL VARIABLES *******/
 const stones = ["vajradaamethystsliver", "vajradaamethystfragment", "vajradaamethystchunk", "vajradaamethystgemstone", "noctilucousjade"];
 const stoneAmounts = [1, 9, 9, 6, 168];
 const collectable = ["treasurehoarderinsignia", "silverraveninsignia", "goldenraveninsignia"];
@@ -15,13 +18,23 @@ const bossAmounts = 18;
 const crown = "crownofinsight";
 const crownAmounts = 3;
 
+///////////////////////////////////////////////////////////////////////
+
+/****** CHARACTER ARTIFACTS & WEAPONS *******/
 const artifacts = ["gladiatorsfinale", "retracingbolide", "thunderingfury"];
 
+///////////////////////////////////////////////////////////////////////
+
+/****** FETCH DATA VARIABLES *******/
 let genshindb = {};
 let genshinimage = {};
 let genshinlink = {};
 
 window.addEventListener("DOMContentLoaded", init);
+
+///////////////////////////////////////////////////////////////////////
+
+/****** ASYNC INIT FUNCTIONS *******/
 
 async function init(){
     let waitData = await fetchData();
@@ -33,9 +46,12 @@ async function init(){
         return;
     }
 
-    initializeData();
+    initializeMaterials();
 }
 
+///////////////////////////////////////////////////////////////////////
+
+/****** FETCH FUNCTIONS *******/
 async function fetchData(){
     return new Promise((resolve, reject) =>{
         fetch("../../../min/data.min.json")
@@ -72,7 +88,10 @@ async function fetchLink(){
     });
 }
 
-function initializeData(){
+///////////////////////////////////////////////////////////////////////
+
+/****** INITIALIZE DATA FUNCTIONS *******/
+function initializeMaterials(){
     
     console.log(genshindb);
     console.log(genshinimage);
@@ -160,6 +179,9 @@ function initializeData(){
     });
 }
 
+///////////////////////////////////////////////////////////////////////
+
+/****** HELPER FUNCTIONS *******/
 const hover = (image) =>{
     image.addEventListener('mouseover', () =>{
         image.style.transform = "scale(1.1)";
