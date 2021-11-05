@@ -19,14 +19,16 @@ const artifacts = ["gladiatorsfinale", "retracingbolide", "thunderingfury"];
 
 let genshindb = {};
 let genshinimage = {};
+let genshinlink = {};
 
 window.addEventListener("DOMContentLoaded", init);
 
 async function init(){
     let waitData = await fetchData();
     let waitImage = await fetchImage();
+    let waitLink = await fetchLink();
 
-    if(!waitData || !waitImage){
+    if(!waitData || !waitImage || !waitLink){
         console.log("Data Fetch Unsuccesful");
         return;
     }
@@ -58,10 +60,23 @@ async function fetchImage(){
     })
 }
 
+async function fetchLink(){
+    return new Promise((resolve, reject) =>{
+        fetch("../../../min/url.min.json")
+        .then(response => response.json())
+        .then(data =>{
+            genshinlink = data;
+            resolve(true);
+        })
+        .catch((error) => reject(false));
+    });
+}
+
 function initializeData(){
     
     console.log(genshindb);
     console.log(genshinimage);
+    console.log(genshinlink);
 
     // Change Character Title 
     document.getElementById("character-name").innerHTML = genshindb["characters"][`${name}`]["name"];
@@ -73,6 +88,12 @@ function initializeData(){
     [...document.getElementsByClassName("stone")].forEach((stone, index) =>{
         stone.innerHTML = `${genshindb["materials"][stones[index]]["name"]} <strong>x${stoneAmounts[index]}</strong>`;
         stone.previousElementSibling.src = `${genshinimage["materials"][stones[index]]["fandom"]}`;
+
+        stone.previousElementSibling.addEventListener('click', () =>{
+            window.open(genshinlink["materials"][stones[index]]["fandom"], "_blank");
+        });
+
+        hover(stone.previousElementSibling);
     });
 
     // Change Collectable Materials
@@ -84,30 +105,43 @@ function initializeData(){
             collect.innerHTML = `${genshindb["materials"][collectable[index - 3]]["name"]} <strong>x${collectableAmounts[index]}</strong>`;
             collect.previousElementSibling.src = `${genshinimage["materials"][collectable[index - 3]]["fandom"]}`;
         }
+        hover(collect.previousElementSibling);
     });
 
     // Change Unique Collectable Materials
     [...document.getElementsByClassName("unique-collectable")].forEach((unique) =>{
         unique.innerHTML = `${genshindb["materials"][uniqueCollectable]["name"]} <strong>x${uniqueCollectableAmounts}</strong>`;
         unique.previousElementSibling.src = `${genshinimage["materials"][uniqueCollectable]["fandom"]}`;
+        hover(unique.previousElementSibling);
     });
 
     // Change Book Materials
     [...document.getElementsByClassName("book")].forEach((book, index) =>{
         book.innerHTML = `${genshindb["materials"][books[index]]["name"]} <strong>x${booksAmounts[index]}</strong>`;
         book.previousElementSibling.src = `${genshinimage["materials"][books[index]]["fandom"]}`;
+        hover(book.previousElementSibling);
     });
     
     // Change Boss Materials
     [...document.getElementsByClassName("boss")].forEach((bossDOM) =>{
         bossDOM.innerHTML = `${genshindb["materials"][boss]["name"]} <strong>x${bossAmounts}</strong>`;
         bossDOM.previousElementSibling.src = `${genshinimage["materials"][boss]["fandom"]}`;
+        hover(bossDOM.previousElementSibling);
     });
     
     // Change Crown Materials
     [...document.getElementsByClassName("crown")].forEach((crownDOM) =>{
         crownDOM.innerHTML = `${genshindb["materials"][crown]["name"]} <strong>x${crownAmounts}</strong>`;
         crownDOM.previousElementSibling.src = `${genshinimage["materials"][crown]["fandom"]}`;
+        hover(crownDOM.previousElementSibling);
     });
 }
 
+const hover = (image) =>{
+    image.addEventListener('mouseover', () =>{
+        image.style.transform = "scale(1.1)";
+    });
+    image.addEventListener('mouseout', () =>{
+        image.style.transform = "scale(1)";
+    })
+}
