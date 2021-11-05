@@ -179,6 +179,14 @@ function initializeMaterials(){
     });
 }
 
+function initializeArtifacts(){
+
+}
+
+function initializeWeapons(){
+    
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 /****** HELPER FUNCTIONS *******/
