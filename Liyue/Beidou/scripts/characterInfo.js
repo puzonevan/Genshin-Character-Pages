@@ -5,6 +5,8 @@
  *      - Initializes the HTML based on the character
  */
 
+
+
 const character = {
 
     name: "Raiden Shogun", 
