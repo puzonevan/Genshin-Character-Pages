@@ -22,13 +22,13 @@ const crownAmounts = 3;
 
 /****** CHARACTER ARTIFACTS & WEAPONS *******/
 const build1 = {
-    title: "", 
+    title: "Electro DPS", 
     description: "",
     weapons: [],
     artifacts: [],
 }
 const build2 = {
-    title: "", 
+    title: "Parry Main", 
     description: "",
     weapons: [],
     artifacts: [],
@@ -37,8 +37,8 @@ const build2 = {
 ///////////////////////////////////////////////////////////////////////
 
 /****** TALENTS & CONSTELLATIONS *******/
-// const abilities;
-// const constellations;
+let talents = {};
+let constellations = {};
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -57,8 +57,9 @@ async function init(){
     let waitData = await fetchData();
     let waitImage = await fetchImage();
     let waitLink = await fetchLink();
+    let waitTalents = await fetchTalents();
 
-    if(!waitData || !waitImage || !waitLink){
+    if(!waitData || !waitImage || !waitLink || !waitTalents){
         console.log("Data Fetch Unsuccesful");
         return;
     }
@@ -107,6 +108,18 @@ async function fetchLink(){
     });
 }
 
+async function fetchTalents(){
+    return new Promise((resolve, reject) =>{
+        fetch("../../../min/data.min.json")
+        .then(response => response.json())
+        .then(data =>{
+            talents = data["English"]["talents"][`${name}`];
+            resolve(true);
+        })
+        .catch((error) => reject(false));
+    });
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 /****** INITIALIZE DATA FUNCTIONS *******/
@@ -115,6 +128,7 @@ function initializeMaterials(){
     console.log(genshindb);
     console.log(genshinimage);
     console.log(genshinlink);
+    console.log(talents);
 
     // Change Character Title 
     document.getElementById("character-name").innerHTML = genshindb["characters"][`${name}`]["name"];
