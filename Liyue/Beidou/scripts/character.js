@@ -34,11 +34,6 @@ const build2 = {
     artifacts: [],
 }
 
-///////////////////////////////////////////////////////////////////////
-
-/****** TALENTS & CONSTELLATIONS *******/
-let talents = {};
-let constellations = {};
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -57,10 +52,8 @@ async function init(){
     let waitData = await fetchData();
     let waitImage = await fetchImage();
     let waitLink = await fetchLink();
-    let waitTalents = await fetchTalents();
-    let waitConstellations = await fetchConstellation();
 
-    if(!waitData || !waitImage || !waitLink || !waitTalents || !waitConstellations){
+    if(!waitData || !waitImage || !waitLink){
         console.log("Data Fetch Unsuccesful");
         return;
     }
@@ -68,6 +61,8 @@ async function init(){
     initializeMaterials();
     initializeArtifacts();
     initializeWeapons();
+    initializeTalents();
+    initializeConstellations();
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -75,10 +70,10 @@ async function init(){
 /****** FETCH FUNCTIONS *******/
 async function fetchData(){
     return new Promise((resolve, reject) =>{
-        fetch("../../../min/data.min.json")
+        fetch("../../../min/data2.min.json")
         .then(response => response.json())
         .then(data =>{
-            genshindb = data["English"];
+            genshindb = data;
             resolve(true);
         })
         .catch((error) => reject(false));
@@ -109,29 +104,6 @@ async function fetchLink(){
     });
 }
 
-async function fetchTalents(){
-    return new Promise((resolve, reject) =>{
-        fetch("../../../min/data.min.json")
-        .then(response => response.json())
-        .then(data =>{
-            talents = data["English"]["talents"][`${name}`];
-            resolve(true);
-        })
-        .catch((error) => reject(false));
-    });
-}
-
-async function fetchConstellation(){
-    return new Promise((resolve, reject) =>{
-        fetch("../../../min/data.min.json")
-        .then(response => response.json())
-        .then(data =>{
-            constellations = data["English"]["constellations"][`${name}`];
-            resolve(true);
-        })
-        .catch((error) => reject(false));
-    })
-}
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -141,8 +113,6 @@ function initializeMaterials(){
     console.log(genshindb);
     console.log(genshinimage);
     console.log(genshinlink);
-    console.log(talents);
-    console.log(constellations);
 
     // Change Character Title 
     document.getElementById("character-name").innerHTML = genshindb["characters"][`${name}`]["name"];
@@ -234,9 +204,43 @@ function initializeWeapons(){
 
 }
 
+function initializeTalents(){
+
+    const talents = genshindb["talents"][`${name}`];
+
+    const talentsImages = genshinimage["talents"][`${name}`];
+    const talentsImagesKeys = Object.keys(genshinimage["talents"][`${name}`]);
+
+    const talentsImagesDOM = [...document.getElementById("abilities").children];
+    
+    talentsImagesDOM.forEach((talent, index) =>{
+        talent.firstElementChild.src = talentsImages[talentsImagesKeys[index]];
+        hover(talent.firstElementChild);
+    });
+}
+
+function initializeConstellations(){
+    const constellations = genshindb["constellations"][`${name}`];
+    
+    const constellationsImages = genshinimage["constellations"][`${name}`];
+    const constellationsImagesKeys = Object.keys(constellationsImages);
+
+    const constellationsImagesDOM = [...document.getElementById("constellations").children];
+
+    constellationsImagesDOM.forEach((constellation, index) =>{
+        constellation.firstElementChild.src = constellationsImages[constellationsImagesKeys[index]];
+        hover(constellation.firstElementChild);
+    });
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 /****** HELPER FUNCTIONS *******/
+
+/**
+ * hover - change scale when hovering an image
+ * @param {DOM} image - image DOM object
+ */
 const hover = (image) =>{
     image.addEventListener('mouseover', () =>{
         image.style.transform = "scale(1.1)";

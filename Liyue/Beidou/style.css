@@ -349,6 +349,9 @@ video {
     height: 12em;
     transition: .5s;
 }
+.item{
+    padding: .5em;
+}
 .combat-images .item img, 
 .constellation-images .item img{
     max-width: 60%;
