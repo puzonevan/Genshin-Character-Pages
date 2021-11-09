@@ -21,7 +21,24 @@ const crownAmounts = 3;
 ///////////////////////////////////////////////////////////////////////
 
 /****** CHARACTER ARTIFACTS & WEAPONS *******/
-const artifacts = ["gladiatorsfinale", "retracingbolide", "thunderingfury"];
+const build1 = {
+    title: "", 
+    description: "",
+    weapons: [],
+    artifacts: [],
+}
+const build2 = {
+    title: "", 
+    description: "",
+    weapons: [],
+    artifacts: [],
+}
+
+///////////////////////////////////////////////////////////////////////
+
+/****** TALENTS & CONSTELLATIONS *******/
+// const abilities;
+// const constellations;
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -47,6 +64,8 @@ async function init(){
     }
 
     initializeMaterials();
+    initializeArtifacts();
+    initializeWeapons();
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -180,11 +199,11 @@ function initializeMaterials(){
 }
 
 function initializeArtifacts(){
-
+    
 }
 
 function initializeWeapons(){
-    
+
 }
 
 ///////////////////////////////////////////////////////////////////////
