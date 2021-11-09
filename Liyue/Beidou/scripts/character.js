@@ -34,6 +34,11 @@ const build2 = {
     artifacts: [""],
 }
 
+///////////////////////////////////////////////////////////////////////
+
+/****** CHARACTER STORIES *******/
+
+
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -109,6 +114,14 @@ async function fetchLink(){
 
 /****** INITIALIZE DATA FUNCTIONS *******/
 function initializeMaterials(){
+
+    fetch("../../../min/index.min.json")
+        .then(response => response.json())
+        .then(data =>{
+            console.log(data["English"]);
+          
+        })
+        
     
     console.log(genshindb);
     console.log(genshinimage);
