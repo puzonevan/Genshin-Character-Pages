@@ -58,8 +58,9 @@ async function init(){
     let waitImage = await fetchImage();
     let waitLink = await fetchLink();
     let waitTalents = await fetchTalents();
+    let waitConstellations = await fetchConstellation();
 
-    if(!waitData || !waitImage || !waitLink || !waitTalents){
+    if(!waitData || !waitImage || !waitLink || !waitTalents || !waitConstellations){
         console.log("Data Fetch Unsuccesful");
         return;
     }
@@ -120,6 +121,18 @@ async function fetchTalents(){
     });
 }
 
+async function fetchConstellation(){
+    return new Promise((resolve, reject) =>{
+        fetch("../../../min/data.min.json")
+        .then(response => response.json())
+        .then(data =>{
+            constellations = data["English"]["constellations"][`${name}`];
+            resolve(true);
+        })
+        .catch((error) => reject(false));
+    })
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 /****** INITIALIZE DATA FUNCTIONS *******/
@@ -129,6 +142,7 @@ function initializeMaterials(){
     console.log(genshinimage);
     console.log(genshinlink);
     console.log(talents);
+    console.log(constellations);
 
     // Change Character Title 
     document.getElementById("character-name").innerHTML = genshindb["characters"][`${name}`]["name"];
