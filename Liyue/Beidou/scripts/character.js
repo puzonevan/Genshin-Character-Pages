@@ -24,14 +24,14 @@ const crownAmounts = 3;
 const build1 = {
     title: "Electro DPS", 
     description: "",
-    weapons: [],
-    artifacts: [],
+    weapons: ["theunforged", "rainslasher"],
+    artifacts: [""],
 }
 const build2 = {
     title: "Parry Main", 
     description: "",
-    weapons: [],
-    artifacts: [],
+    weapons: [""],
+    artifacts: [""],
 }
 
 
@@ -216,7 +216,22 @@ function initializeTalents(){
     talentsImagesDOM.forEach((talent, index) =>{
         talent.firstElementChild.src = talentsImages[talentsImagesKeys[index]];
         hover(talent.firstElementChild);
+
+        talent.addEventListener('click', () =>{
+            
+            // Change Title and Description
+            document.getElementById("combat-title").innerHTML = talents[talentsImagesKeys[index]]["name"];
+            document.getElementById("combat-description").innerHTML = talents[talentsImagesKeys[index]]["info"];
+
+            // Open lightbox
+            document.getElementById("combat-overlay").style.zIndex = "2";
+            document.getElementById("combat-overlay").style.opacity = "1";
+            document.getElementById("abilities-constellation").style.opacity = "0";
+            document.getElementById("combat-video").style.display = "block";
+        });
     });
+
+    
 }
 
 function initializeConstellations(){
@@ -230,6 +245,19 @@ function initializeConstellations(){
     constellationsImagesDOM.forEach((constellation, index) =>{
         constellation.firstElementChild.src = constellationsImages[constellationsImagesKeys[index]];
         hover(constellation.firstElementChild);
+
+        constellation.addEventListener('click', () =>{
+            
+            // Change Title and Description
+            document.getElementById("combat-title").innerHTML = constellations[constellationsImagesKeys[index]]["name"];
+            document.getElementById("combat-description").innerHTML = constellations[constellationsImagesKeys[index]]["effect"];
+
+            // Open lightbox
+            document.getElementById("combat-overlay").style.zIndex = "2";
+            document.getElementById("combat-overlay").style.opacity = "1";
+            document.getElementById("abilities-constellation").style.opacity = "0";
+            document.getElementById("combat-video").style.display = "none";
+        });
     });
 }
 
@@ -249,3 +277,13 @@ const hover = (image) =>{
         image.style.transform = "scale(1)";
     })
 }
+
+/**
+ * DOM event to close talent/constellation lightbox when x clicked
+ */
+document.getElementById("combat-exit").addEventListener('click', () => {
+    document.getElementById("combat-overlay").style.zIndex = "-1";
+    document.getElementById("combat-overlay").style.opacity = "0";
+    document.getElementById("abilities-constellation").style.opacity = "1";
+});
+    
