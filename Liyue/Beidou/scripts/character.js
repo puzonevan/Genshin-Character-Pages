@@ -114,15 +114,7 @@ async function fetchLink(){
 
 /****** INITIALIZE DATA FUNCTIONS *******/
 function initializeMaterials(){
-
-    fetch("../../../min/index.min.json")
-        .then(response => response.json())
-        .then(data =>{
-            console.log(data["English"]);
-          
-        })
         
-    
     console.log(genshindb);
     console.log(genshinimage);
     console.log(genshinlink);
@@ -289,6 +281,17 @@ const hover = (image) =>{
     image.addEventListener('mouseout', () =>{
         image.style.transform = "scale(1)";
     })
+}
+
+const createWeaponDiv = (weapon) => {
+    const container = document.createElement("div");
+    container.setAttribute("class", "weapon");
+    container.setAttribute("data-aos-delay", "650");
+
+}
+
+const createArtifact = (artifact) =>{ 
+
 }
 
 /**

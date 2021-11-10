@@ -10,8 +10,8 @@
     <!-- <script src='./scripts/materialsLinks.js' async></script> -->
     <!-- <script src='./scripts/weaponsArtifactsLinks.js' async></script> -->
     <!-- <script src='./scripts/storyLinks.js' async></script>
-    <script src='./scripts/randomQuote.js' defer></script>
-    <script src='./scripts/videoArtwork.js' async></script> -->
+    <script src='./scripts/randomQuote.js' defer></script> -->
+    <script src='./scripts/videoArtwork.js' async></script>
     <script src='./scripts/menu.js' defer></script>
     <title>Beidou</title>
 </head>
@@ -46,7 +46,7 @@
         </defs>
     </svg>
 
-    <div class="opening-section">
+    <section class="opening-section">
         <h1 id="character-name" data-aos="zoom-out" data-aos-delay="100"></h1>
         <p id="randomQuote" data-aos="zoom-out" data-aos-delay="200"></p>
         <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
@@ -62,9 +62,9 @@
                 <img data-aos="fade-right" data-aos-delay="400" src="RaidenShogun/gifs/raiden-shogun-genshin-impact.gif" alt="Baal Menu Gif">
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="talents-ascension-section" id="talents-ascension">
+    <section class="talents-ascension-section" id="talents-ascension">
         <svg viewBox="0 0 1650 1000" xmlns="http://www.w3.org/2000/svg">
             <path d="M 10 4 L 12 4 L 12 6 L 10 6 L 10 4 L 130 4 L 130 6 L 128 6 L 128 4 L 130 4 L 130 75 L 128 75 L 128 73 L 130 73 L 130 75 L 10 75 L 10 73 L 12 73 L 12 75 L 10 75 L 10 4" class="border" stroke="url(#lightToDarkBlackVertical)" stroke-width=".25" fill="transparent"></path>
             <path d="M 9 5 L 11 5 L 11 7 L 9 7 L 9 5 L 131 5 L 131 7 L 129 7 L 129 5 L 131 5 L 131 74 L 129 74 L 129 72 L 131 72 L 131 74 L 9 74 L 9 72 L 11 72 L 11 74 L 9 74 L 9 5 " class="border" stroke="url(#lightToDarkBlackVertical)" stroke-width=".25" fill="transparent"></path>
@@ -152,16 +152,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="title-section">
+    <section class="title-section">
         <h2 data-aos="zoom-out-down">Weapons & Artifacts</h2>
         <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
             <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
         </svg>
-    </div>
+    </section>
 
-    <div class="build-section" id="build-section">
+    <section class="build-section" id="build-section">
         <svg class="top-border" viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
             <path d="M 43 .2 L 49.1 .2 L 49.1 6.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
             <path d="M 43 1 L 46 1 L 46 3.5 L 48.3 3.5 L 48.3 6.5 "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
@@ -176,10 +176,10 @@
             <div class="weapons-artifacts">
                 <div class="weapons">
                     <h3 data-aos="fade-left" data-aos-delay="650">Weapon</h3>
-                    <div class="weapon" id="amos" data-aos="fade-down" data-aos-delay="450">
-                        <h4 id="weapon-title"></h4>
-                        <h5 id="weapon-substat"></h5>
-                        <p id="weapon-description"></p>
+                    <div class="weapon" data-aos="fade-down" data-aos-delay="450">
+                        <h4 class="weapon-title"></h4>
+                        <h5 class="weapon-substat"></h5>
+                        <p class="weapon-description"></p>
                         <div id="weapon-image" class="image-video-container">
                             <img class="large" src="" alt="">
                         </div>
@@ -230,23 +230,16 @@
             <div class="weapons-artifacts">
                 <div class="weapons">
                     <h3 data-aos="fade-left" data-aos-delay="650">Weapon</h3>
-                    <div class="weapon" id="skyward" data-aos="fade-down" data-aos-delay="450">
-                        <h4 id="weapon-title"></h4>
-                        <h5 id="weapon-substat"></h5>
-                        <p id="weapon-description"></p>
+                    <div class="weapon" data-aos="fade-down" data-aos-delay="450">
+                        <h4 class="weapon-title"></h4>
+                        <h5 class="weapon-substat"></h5>
+                        <p class="weapon-description"></p>
                         <div id="weapon-image" class="image-video-container">
                             <img class="large" src="" alt="">
                         </div>
                     </div>
                     <h3 class="or-text" data-aos="fade-down" data-aos-delay="250">Or</h3>
-                    <div class="weapon" id="stringless" data-aos="fade-down" data-aos-delay="50">
-                        <h4 id="weapon-title"></h4>
-                        <h5 id="weapon-substat"></h5>
-                        <p id="weapon-description"></p>
-                        <div id="weapon-image" class="image-video-container">
-                            <img class="large" src="" alt="">
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="artifacts">
                     <h3 data-aos="fade-left" data-aos-delay="650">Artifacts</h3>
@@ -286,16 +279,16 @@
             <path d="M 93.3 1 L 96.3 1 L 96.3 3.5 L 98.6 3.5 L 98.6 6.5 "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
             <path d="M 97.2 1 L 98.6 1 L 98.6 2.6 L 97.2 2.6 L 97.2 .8  "class="path" stroke="url(#lightToDarkGold)" stroke-width=".4" fill="transparent"></path>
         </svg>
-    </div>
+    </section>
 
-    <div class="title-section">
+    <section class="title-section">
         <h2 data-aos="zoom-out-down">Talents & Constellation</h2>
         <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
             <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
         </svg>
-    </div>
+    </section>
 
-    <div class="combat-section" id="combat-section">
+    <section class="combat-section" id="combat-section">
         <div id="abilities-constellation" class="container">
             <div class="abilities-constellation">
                 <svg viewBox="0 20 1400 80"  xmlns="http://www.w3.org/2000/svg" class="border-top">
@@ -377,17 +370,17 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
-    <div class="title-section">
+    <section class="title-section">
         <h2 data-aos="zoom-out-down">Artwork</h2>
         <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
             <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
         </svg>
-    </div>
+    </section>
 
-    <div class="art-section" id="art-section">
+    <section class="art-section" id="art-section">
         <div class="lore-container-all">
             <div class="lore-container image-video-container" data-aos="zoom-in" data-aos-delay="50">
                 <img src="" alt="">
@@ -417,8 +410,9 @@
                 <img src="" alt="">
             </div>
         </div>
-    </div>
+    </section>
     
+    <!-- AOS Script -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
