@@ -120,7 +120,7 @@ function initializeMaterials(){
     console.log(genshinlink);
 
     // Change Character Title 
-    document.getElementById("character-name").innerHTML = genshindb["characters"][`${name}`]["name"];
+    document.getElementById("title").innerHTML = genshindb["characters"][`${name}`]["name"];
 
     // Change Character Splash in Materials
     document.getElementById("character-splash").firstElementChild.src = genshinimage["characters"][`${name}`]["portrait"];
@@ -286,7 +286,7 @@ const hover = (image) =>{
 const createWeaponDiv = (weapon) => {
     const container = document.createElement("div");
     container.setAttribute("class", "weapon");
-    container.setAttribute("data-aos-delay", "650");
+    container.setAttribute("id", "weapon");
 
 }
 

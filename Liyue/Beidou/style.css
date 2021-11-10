@@ -1,6 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
+:root{
+    --primary-color: white;
+    --primary-2-color: white;
+    --primary-3-color: white;
+
+    --secondary-color: white;
+    --secondary-2-color: white;
+    --secondary-3-color: white;
+
+    --tertiary-color: white;
+    --tertiary-2-color: white;
+    --tertiary-3-color: white;
+
+    --title-color: white;
+    --sub-title-color: white;
+    --paragraph-color: white;
+    --light-title-color: white;
+    --dark-title-color: white;
+
+    --main-background-color: black; 
+    --light-container-color: white;
+    --dark-container-color: white;
+    
+}
+
 /* Universals */
 *{
     margin: 0;
