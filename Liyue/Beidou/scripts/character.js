@@ -85,7 +85,7 @@ async function init(){
 /****** FETCH FUNCTIONS *******/
 async function fetchData(){
     return new Promise((resolve, reject) =>{
-        fetch("../../../min/data2.min.json")
+        fetch("https://puzonevan.github.io/Genshin-Character-Pages/min/data2.min.json")
         .then(response => response.json())
         .then(data =>{
             genshindb = data;
@@ -97,7 +97,7 @@ async function fetchData(){
 
 async function fetchImage(){
     return new Promise((resolve, reject) =>{
-        fetch("../../../min/image.min.json")
+        fetch("https://puzonevan.github.io/Genshin-Character-Pages/min/image.min.json")
         .then(response => response.json())
         .then(data =>{
             genshinimage = data;
@@ -109,7 +109,7 @@ async function fetchImage(){
 
 async function fetchLink(){
     return new Promise((resolve, reject) =>{
-        fetch("../../../min/url.min.json")
+        fetch("https://puzonevan.github.io/Genshin-Character-Pages/min/url.min.json")
         .then(response => response.json())
         .then(data =>{
             genshinlink = data;
