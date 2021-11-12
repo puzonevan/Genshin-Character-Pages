@@ -392,8 +392,43 @@ const createWeaponDiv = (weapon, delay, size) => {
     return container;
 }
 
-const createArtifactDiv = (artifact) =>{ 
+const createArtifactDiv = (artifact, delay, size) =>{ 
 
+    const container = document.createElement("div");
+    container.setAttribute("class", "artifact");
+    container.setAttribute("id", "artifact");
+    container.setAttribute("data-aos", "fade-down");
+    container.setAttribute("data-aos-delay", delay);
+
+    const artifactTitle = document.createElement("h4");
+    artifactTitle.setAttribute("id", "artifact-title");
+    artifactTitle.setAttribute("class", "artifact-title");
+    artifactTitle.innerHTML = genshindb["artifacts"][artifact]["name"]
+    const artifactSubstat = document.createElement("h5");
+    artifactSubstat.setAttribute("class", "artifact-substat");
+    artifactSubstat.setAttribute("id", "artifact-substat");
+    artifactSubstat.innerHTML = builds[0]["substats"];
+    const artifactDescription = document.createElement("p");
+    artifactDescription.setAttribute("class", "artifact-description");
+    artifactDescription.setAttribute("id", "artifact-description");
+    artifactDescription.innerHTML = genshindb["artifacts"][artifact]["2pc"];
+    const artifactImageContainer = document.createElement("div");
+    artifactImageContainer.setAttribute("class", "image-video-container");
+    artifactImageContainer.setAttribute("id", "artifact-image");
+    const artifactImage = document.createElement("img");
+    artifactImage.setAttribute("class", size);
+    artifactImage.setAttribute("src", genshinimage["artifacts"][artifact]["circlet"]);
+    artifactImage.setAttribute("alt", genshindb["artifacts"][artifact]["name"])
+    artifactImageContainer.appendChild(artifactImage);
+
+
+
+    container.appendChild(artifactTitle);
+    container.appendChild(artifactSubstat);
+    container.appendChild(artifactDescription);
+    container.appendChild(artifactImageContainer);
+
+    return container;
 }
 
 /**
