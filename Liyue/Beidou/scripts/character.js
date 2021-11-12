@@ -20,7 +20,7 @@ const crownAmounts = 3;
 
 ///////////////////////////////////////////////////////////////////////
 
-/****** CHARACTER ARTIFACTS & WEAPONS *******/
+/****** CHARACTER BUILDS *******/
 const builds = [
     {
         title: "Electro DPS", 
@@ -47,33 +47,30 @@ const builds = [
 
 ///////////////////////////////////////////////////////////////////////
 
-/****** CHARACTER STORIES *******/
-
-
-
-///////////////////////////////////////////////////////////////////////
-
 /****** FETCH DATA VARIABLES *******/
 let genshindb = {};
 let genshinimage = {};
 let genshinlink = {};
 
-window.addEventListener("DOMContentLoaded", init);
-
 ///////////////////////////////////////////////////////////////////////
 
 /****** ASYNC INIT FUNCTIONS *******/
 
+window.addEventListener("DOMContentLoaded", init);
 async function init(){
+
+    // Json Fetches
     let waitData = await fetchData();
     let waitImage = await fetchImage();
     let waitLink = await fetchLink();
 
+    // Fetch check
     if(!waitData || !waitImage || !waitLink){
         console.log("Data Fetch Unsuccesful");
         return;
     }
 
+    // Populate with information
     initializeMaterials();
     initializeBuilds();
     initializeTalents();
@@ -83,6 +80,11 @@ async function init(){
 ///////////////////////////////////////////////////////////////////////
 
 /****** FETCH FUNCTIONS *******/
+
+/**
+ * fetches genshin general data
+ * @returns json data 
+ */
 async function fetchData(){
     return new Promise((resolve, reject) =>{
         fetch("https://puzonevan.github.io/Genshin-Character-Pages/min/data2.min.json")
@@ -95,6 +97,10 @@ async function fetchData(){
     });
 }
 
+/**
+ * fetches genshin image links
+ * @returns json data
+ */
 async function fetchImage(){
     return new Promise((resolve, reject) =>{
         fetch("https://puzonevan.github.io/Genshin-Character-Pages/min/image.min.json")
@@ -107,6 +113,10 @@ async function fetchImage(){
     })
 }
 
+/**
+ * fetches genshin url links
+ * @returns json data
+ */
 async function fetchLink(){
     return new Promise((resolve, reject) =>{
         fetch("https://puzonevan.github.io/Genshin-Character-Pages/min/url.min.json")
@@ -123,6 +133,11 @@ async function fetchLink(){
 ///////////////////////////////////////////////////////////////////////
 
 /****** INITIALIZE DATA FUNCTIONS *******/
+
+/**
+ * populate first section containing materials needed for the 
+ * talents, ascensions, etc of the character
+ */
 function initializeMaterials(){
         
     console.log(genshindb);
@@ -218,6 +233,11 @@ function initializeMaterials(){
     });
 }
 
+/**
+ * populate second section with two builds containing weapons
+ * and artifacts for the character. 
+ * Own builds or from Genshin.gg or game8.co
+ */
 function initializeBuilds(){
     builds.forEach((build) =>{
         const buildContainer = document.createElement("div");
@@ -285,15 +305,10 @@ function initializeBuilds(){
         
 }
 
-function initializeArtifacts(){
-    
-}
-
-// function initializeWeapons(){
-//     const weapon = createWeaponDiv("theunforged", 250, "large");
-//     document.getElementById("weapons").appendChild(weapon);
-// }
-
+/**
+ * populate third section with talents or abilities that the
+ * character can do including passives. 
+ */
 function initializeTalents(){
 
     const talents = genshindb["talents"][`${name}`];
@@ -325,6 +340,10 @@ function initializeTalents(){
     
 }
 
+/**
+ * populate third section with constellations or effects when
+ * another copy of the character is obtained and upgraded
+ */
 function initializeConstellations(){
     const constellations = genshindb["constellations"][`${name}`];
     
@@ -358,7 +377,7 @@ function initializeConstellations(){
 /****** HELPER FUNCTIONS *******/
 
 /**
- * hover - change scale when hovering an image
+ * change scale when hovering an image
  * @param {DOM} image - image DOM object
  */
 const hover = (image) =>{
@@ -370,6 +389,13 @@ const hover = (image) =>{
     })
 }
 
+/**
+ * create weapon div element with corresponding weapon info
+ * @param {""} weapon - weapon name 
+ * @param {""} delay - delay for data aos
+ * @param {""} size - size for image
+ * @returns div containing specific weapon information
+ */
 const createWeaponDiv = (weapon, delay, size) => {
     const container = document.createElement("div");
     container.setAttribute("class", "weapon");
@@ -408,6 +434,13 @@ const createWeaponDiv = (weapon, delay, size) => {
     return container;
 }
 
+/**
+ * create artifact div element with corresponding artifact info
+ * @param {""} artifact - artifact name
+ * @param {""} delay - delay for data aos
+ * @param {""} size - size for image
+ * @returns div containing specific artifact information
+ */
 const createArtifactDiv = (artifact, delay, size) =>{ 
 
     const container = document.createElement("div");
@@ -448,8 +481,12 @@ const createArtifactDiv = (artifact, delay, size) =>{
     return container;
 }
 
+///////////////////////////////////////////////////////////////////////
+
+/****** ADDITIONAL DOM FUNCTIONS *******/
+
 /**
- * DOM event to close talent/constellation lightbox when x clicked
+ * event to close talent/constellation lightbox when x clicked
  */
 document.getElementById("combat-exit").addEventListener('click', () => {
     document.getElementById("combat-overlay").style.zIndex = "-1";
