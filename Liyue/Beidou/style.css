@@ -253,7 +253,7 @@ video {
     width: 100%;
     bottom: 19.6em;
 }
-.build h2,.build .description, .weapons-artifacts h3, .weapons-artifacts h4, .weapons-artifacts h5{
+.build h2,.build .build-description, .weapons-artifacts h3, .weapons-artifacts h4, .weapons-artifacts h5{
     font-family: "Georama", sans-serif;
     font-size: 1.5em;
     letter-spacing: 0em;
@@ -267,7 +267,7 @@ video {
     color: #1E0039;
     padding: 1em 0em;
 }
-.build .description{
+.build-description{
     font-size: 1em;
     color: #000000;
     padding-bottom: 1em;

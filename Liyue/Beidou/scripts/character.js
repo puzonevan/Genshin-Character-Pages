@@ -21,18 +21,20 @@ const crownAmounts = 3;
 ///////////////////////////////////////////////////////////////////////
 
 /****** CHARACTER ARTIFACTS & WEAPONS *******/
-const build1 = {
-    title: "Electro DPS", 
-    description: "",
-    weapons: ["theunforged", "rainslasher"],
-    artifacts: [""],
-}
-const build2 = {
-    title: "Parry Main", 
-    description: "",
-    weapons: [""],
-    artifacts: [""],
-}
+const builds = [
+    {
+        title: "Electro DPS", 
+        description: "",
+        weapons: ["theunforged", "rainslasher"],
+        artifacts: [""],
+    },
+    {
+        title: "Parry Main", 
+        description: "",
+        weapons: [""],
+        artifacts: [""],
+    }
+]
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -64,8 +66,7 @@ async function init(){
     }
 
     initializeMaterials();
-    initializeArtifacts();
-    initializeWeapons();
+    initializeBuilds();
     initializeTalents();
     initializeConstellations();
 }
@@ -201,13 +202,53 @@ function initializeMaterials(){
     });
 }
 
+function initializeBuilds(){
+    builds.forEach((build) =>{
+        const buildContainer = document.createElement("div");
+        buildContainer.setAttribute("class", "build");
+        buildContainer.setAttribute("id", "build");
+
+        const buildTitle = document.createElement("h2");
+        buildTitle.setAttribute("class", "build-title");
+        buildTitle.setAttribute("data-aos", "fade-left");
+        buildTitle.setAttribute("data-aos-delay", "700");
+        buildTitle.innerHTML = build["title"];
+        const buildDescription = document.createElement("p");
+        buildDescription.setAttribute("class", "build-description");
+        buildDescription.setAttribute("data-aos", "fade-left");
+        buildDescription.setAttribute("data-aos-delay", "700");
+        buildDescription.innerHTML = build["description"];
+        
+        const weaponsArtifactsContainer = document.createElement("div");
+        weaponsArtifactsContainer.setAttribute("class", "weapons-artifacts");
+        const weaponsContainer = document.createElement("div");
+        weaponsContainer.setAttribute("class", "weapons");
+        const weaponsTitle = document.createElement("h3");
+        weaponsTitle.setAttribute("data-aos", "fade-left");
+        weaponsTitle.setAttribute("data-aos-delay", "650");
+        weaponsTitle.innerHTML = "Weapon";
+        const weapon1 = createWeaponDiv("theunforged", 450, "large");
+        weaponsContainer.appendChild(weaponsTitle);
+        weaponsContainer.appendChild(weapon1);
+        weaponsArtifactsContainer.appendChild(weaponsContainer);
+
+        buildContainer.appendChild(buildTitle);
+        buildContainer.appendChild(buildDescription);
+        buildContainer.appendChild(weaponsArtifactsContainer);
+
+        document.getElementById("build-section").insertBefore(buildContainer, document.getElementById("build-section").children[1]);
+    })
+        
+}
+
 function initializeArtifacts(){
     
 }
 
-function initializeWeapons(){
-
-}
+// function initializeWeapons(){
+//     const weapon = createWeaponDiv("theunforged", 250, "large");
+//     document.getElementById("weapons").appendChild(weapon);
+// }
 
 function initializeTalents(){
 
@@ -320,7 +361,7 @@ const createWeaponDiv = (weapon, delay, size) => {
     return container;
 }
 
-const createArtifact = (artifact) =>{ 
+const createArtifactDiv = (artifact) =>{ 
 
 }
 
