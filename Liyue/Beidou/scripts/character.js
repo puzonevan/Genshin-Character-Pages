@@ -24,15 +24,24 @@ const crownAmounts = 3;
 const builds = [
     {
         title: "Electro DPS", 
-        description: "",
-        weapons: ["theunforged", "rainslasher"],
-        artifacts: [""],
+        description: "Beidou is capable of being the front damage dealer \
+                    through utilizing autos, perfect counters, and constantly \
+                    having Stormcaller active with a support electro as a battery.",
+        mainweapon: "theunforged", 
+        replaceweapon: "rainslasher", 
+        artifactset1: ["gladiatorsfinale", "thunderingfury"], 
+        artifactset2: [],
+        substats: "ATK% / Electro DMG / CRIT DMG"
     },
     {
         title: "Parry Main", 
-        description: "",
-        weapons: [""],
-        artifacts: [""],
+        description: "FULL COUNTER. One must perfect the art of countering \
+                    in order to dish out the most damage possible.",
+        mainweapon: "wolfsgravestone", 
+        replaceweapon: "rainslasher", 
+        artifactset1: ["retracingbolide"], 
+        artifactset2: ["emblemofseveredfate"],
+        substats: "ATK% / Electro DMG / CRIT DMG"
     }
 ]
 

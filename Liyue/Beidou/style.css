@@ -267,7 +267,7 @@ video {
     color: #1E0039;
     padding: 1em 0em;
 }
-.build-description{
+.build .build-description{
     font-size: 1em;
     color: #000000;
     padding-bottom: 1em;
