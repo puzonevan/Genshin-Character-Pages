@@ -249,7 +249,7 @@ function initializeBuilds(){
         weaponsOr.setAttribute("data-aos", "fade-down");
         weaponsOr.setAttribute("data-aos-delay", "250");
         weaponsOr.innerHTML = "Or";
-        const weapon1 = createWeaponDiv(build["mainweapon"], 450, "small");
+        const weapon1 = createWeaponDiv(build["mainweapon"], 450, "large");
         const weapon2 = createWeaponDiv(build["replaceweapon"], 450, "small");
         weaponsContainer.appendChild(weaponsTitle);
         weaponsContainer.appendChild(weapon1);
@@ -257,8 +257,24 @@ function initializeBuilds(){
         weaponsContainer.appendChild(weapon2);
 
         const artifactsContainer = document.createElement("div");
+        artifactsContainer.setAttribute("class", "artifacts");
+        const artifactsTitle = document.createElement("h3");
+        artifactsTitle.setAttribute("data-aos", "fade-left");
+        artifactsTitle.setAttribute("data-aos-delay", "650");
+        artifactsContainer.appendChild(artifactsTitle);
+
+        build["artifactset1"].forEach((artifact) =>{
+            artifactsContainer.appendChild(createArtifactDiv(artifact, 200, "large"));
+        });
+        if(build["artifactset2"].length != 0){
+            artifactsContainer.appendChild(weaponsOr);
+        }
+        build["artifactset2"].forEach((artifact) =>{
+            artifactsContainer.appendChild(createArtifactDiv(artifact, 200, "large"));
+        });
 
         weaponsArtifactsContainer.appendChild(weaponsContainer);
+        weaponsArtifactsContainer.appendChild(artifactsContainer);
 
         buildContainer.appendChild(buildTitle);
         buildContainer.appendChild(buildDescription);
@@ -411,7 +427,8 @@ const createArtifactDiv = (artifact, delay, size) =>{
     const artifactDescription = document.createElement("p");
     artifactDescription.setAttribute("class", "artifact-description");
     artifactDescription.setAttribute("id", "artifact-description");
-    artifactDescription.innerHTML = genshindb["artifacts"][artifact]["2pc"];
+    artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]} <br>
+                                    (4) ${genshindb["artifacts"][artifact]["4pc"]}`;
     const artifactImageContainer = document.createElement("div");
     artifactImageContainer.setAttribute("class", "image-video-container");
     artifactImageContainer.setAttribute("id", "artifact-image");
