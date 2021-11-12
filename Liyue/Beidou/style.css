@@ -120,8 +120,8 @@ video {
     background-color: #1E0039;
 }
 
-#menuImage img{
-    max-width: 5%;
+#menu-gif img{
+    max-width: 10%;
 }
 .opening-section img{
     position: fixed;

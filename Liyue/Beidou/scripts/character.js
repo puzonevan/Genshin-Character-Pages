@@ -139,6 +139,7 @@ function initializeMaterials(){
     [...document.getElementsByClassName("stone")].forEach((stone, index) =>{
         stone.innerHTML = `${genshindb["materials"][stones[index]]["name"]} <strong>x${stoneAmounts[index]}</strong>`;
         stone.previousElementSibling.src = `${genshinimage["materials"][stones[index]]["fandom"]}`;
+        stone.previousElementSibling.alt = `${genshindb["materials"][stones[index]]["name"]}`;
 
         stone.previousElementSibling.addEventListener('click', () =>{
             window.open(genshinlink["materials"][stones[index]]["fandom"], "_blank");
@@ -152,12 +153,14 @@ function initializeMaterials(){
         if(index < 3){
             collect.innerHTML = `${genshindb["materials"][collectable[index]]["name"]} <strong>x${collectableAmounts[index]}</strong>`;
             collect.previousElementSibling.src = `${genshinimage["materials"][collectable[index]]["fandom"]}`;
+            collect.previousElementSibling.alt = `${genshindb["materials"][collectable[index]]["name"]}`;
             collect.previousElementSibling.addEventListener('click', () =>{
                 window.open(genshinlink["materials"][collectable[index]]["fandom"], "_blank");
             });
         } else{
             collect.innerHTML = `${genshindb["materials"][collectable[index - 3]]["name"]} <strong>x${collectableAmounts[index]}</strong>`;
             collect.previousElementSibling.src = `${genshinimage["materials"][collectable[index - 3]]["fandom"]}`;
+            collect.previousElementSibling.alt = `${genshindb["materials"][collectable[index - 3]]["name"]}`;
             collect.previousElementSibling.addEventListener('click', () =>{
                 window.open(genshinlink["materials"][collectable[index - 3]]["fandom"], "_blank");
             });
@@ -170,6 +173,7 @@ function initializeMaterials(){
     [...document.getElementsByClassName("unique-collectable")].forEach((unique) =>{
         unique.innerHTML = `${genshindb["materials"][uniqueCollectable]["name"]} <strong>x${uniqueCollectableAmounts}</strong>`;
         unique.previousElementSibling.src = `${genshinimage["materials"][uniqueCollectable]["fandom"]}`;
+        unique.previousElementSibling.alt = `${genshindb["materials"][uniqueCollectable]["name"]}`;
 
         unique.previousElementSibling.addEventListener('click', () =>{
             window.open(genshinlink["materials"][uniqueCollectable]["fandom"], "_blank");
@@ -181,6 +185,7 @@ function initializeMaterials(){
     [...document.getElementsByClassName("book")].forEach((book, index) =>{
         book.innerHTML = `${genshindb["materials"][books[index]]["name"]} <strong>x${booksAmounts[index]}</strong>`;
         book.previousElementSibling.src = `${genshinimage["materials"][books[index]]["fandom"]}`;
+        book.previousElementSibling.alt = `${genshindb["materials"][books[index]]["name"]}`;
 
         book.previousElementSibling.addEventListener('click', () =>{
             window.open(genshinlink["materials"][books[index]]["fandom"], "_blank");
@@ -192,6 +197,7 @@ function initializeMaterials(){
     [...document.getElementsByClassName("boss")].forEach((bossDOM) =>{
         bossDOM.innerHTML = `${genshindb["materials"][boss]["name"]} <strong>x${bossAmounts}</strong>`;
         bossDOM.previousElementSibling.src = `${genshinimage["materials"][boss]["fandom"]}`;
+        bossDOM.previousElementSibling.alt = `${genshindb["materials"][boss]["name"]}`;
 
         bossDOM.previousElementSibling.addEventListener('click', () =>{
             window.open(genshinlink["materials"][boss]["fandom"], "_blank");
@@ -203,6 +209,7 @@ function initializeMaterials(){
     [...document.getElementsByClassName("crown")].forEach((crownDOM) =>{
         crownDOM.innerHTML = `${genshindb["materials"][crown]["name"]} <strong>x${crownAmounts}</strong>`;
         crownDOM.previousElementSibling.src = `${genshinimage["materials"][crown]["fandom"]}`;
+        crownDOM.previousElementSibling.alt = `${genshindb["materials"][crown]["name"]}`;
 
         crownDOM.previousElementSibling.addEventListener('click', () =>{
             window.open(genshinlink["materials"][crown]["fandom"], "_blank");
@@ -230,15 +237,27 @@ function initializeBuilds(){
         
         const weaponsArtifactsContainer = document.createElement("div");
         weaponsArtifactsContainer.setAttribute("class", "weapons-artifacts");
+
         const weaponsContainer = document.createElement("div");
         weaponsContainer.setAttribute("class", "weapons");
         const weaponsTitle = document.createElement("h3");
+        const weaponsOr = document.createElement("h3");
         weaponsTitle.setAttribute("data-aos", "fade-left");
         weaponsTitle.setAttribute("data-aos-delay", "650");
         weaponsTitle.innerHTML = "Weapon";
-        const weapon1 = createWeaponDiv("theunforged", 450, "large");
+        weaponsOr.setAttribute("class", "or-text");
+        weaponsOr.setAttribute("data-aos", "fade-down");
+        weaponsOr.setAttribute("data-aos-delay", "250");
+        weaponsOr.innerHTML = "Or";
+        const weapon1 = createWeaponDiv(build["mainweapon"], 450, "small");
+        const weapon2 = createWeaponDiv(build["replaceweapon"], 450, "small");
         weaponsContainer.appendChild(weaponsTitle);
         weaponsContainer.appendChild(weapon1);
+        weaponsContainer.appendChild(weaponsOr);
+        weaponsContainer.appendChild(weapon2);
+
+        const artifactsContainer = document.createElement("div");
+
         weaponsArtifactsContainer.appendChild(weaponsContainer);
 
         buildContainer.appendChild(buildTitle);
@@ -270,6 +289,7 @@ function initializeTalents(){
     
     talentsImagesDOM.forEach((talent, index) =>{
         talent.firstElementChild.src = talentsImages[talentsImagesKeys[index]];
+        talent.firstElementChild.alt = talentsImages[talentsImagesKeys[index]];
         hover(talent.firstElementChild);
 
         talent.addEventListener('click', () =>{
@@ -299,6 +319,7 @@ function initializeConstellations(){
 
     constellationsImagesDOM.forEach((constellation, index) =>{
         constellation.firstElementChild.src = constellationsImages[constellationsImagesKeys[index]];
+        constellation.firstElementChild.alt = constellationsImages[constellationsImagesKeys[index]];
         hover(constellation.firstElementChild);
 
         constellation.addEventListener('click', () =>{
@@ -356,6 +377,7 @@ const createWeaponDiv = (weapon, delay, size) => {
     weaponImageContainer.setAttribute("class", "image-video-container");
     weaponImageContainer.setAttribute("id", "weapon-image");
     const weaponImage = document.createElement("img");
+    weaponImage.setAttribute("class", size);
     weaponImage.setAttribute("src", genshinimage["weapons"][weapon]["icon"]);
     weaponImage.setAttribute("alt", genshindb["weapons"][weapon]["name"])
     weaponImageContainer.appendChild(weaponImage);
