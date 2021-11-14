@@ -28,7 +28,7 @@ h3{
     display: flex; 
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 40px;
 
     width: 80%;
     margin: 0 auto;
