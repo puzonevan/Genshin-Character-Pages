@@ -5,15 +5,9 @@
  */
 
 const links = [
-    './RaidenShogun/images/raiden6.jpg',
-    './RaidenShogun/images/raiden1.jpg',
-    './RaidenShogun/images/raiden2.jpg',
-    './RaidenShogun/images/raiden4.jpg',
-    './RaidenShogun/images/raiden5.jpg',
-    './RaidenShogun/images/raiden8.jpg',
-    './RaidenShogun/images/1165476.png',
-    './RaidenShogun/images/1165491.jpg',
-    './RaidenShogun/images/raiden3.jpg',
+    './Beidou/images/beidou1.jpg',
+    './Beidou/images/beidou2.jpg',
+    './Beidou/images/beidou3.png',
 ]
 
 // Get the container for the art from DOM 

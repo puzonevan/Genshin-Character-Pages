@@ -1,6 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
+:root{
+    --primary-color: white;
+    --primary-2-color: white;
+    --primary-3-color: white;
+
+    --secondary-color: white;
+    --secondary-2-color: white;
+    --secondary-3-color: white;
+
+    --tertiary-color: white;
+    --tertiary-2-color: white;
+    --tertiary-3-color: white;
+
+    --title-color: white;
+    --sub-title-color: white;
+    --paragraph-color: white;
+    --light-title-color: white;
+    --dark-title-color: white;
+
+    --main-background-color: black; 
+    --light-container-color: white;
+    --dark-container-color: white;
+    
+}
+
 /* Universals */
 *{
     margin: 0;
@@ -95,8 +120,8 @@ video {
     background-color: #1E0039;
 }
 
-#menuImage img{
-    max-width: 5%;
+#menu-gif img{
+    max-width: 10%;
 }
 .opening-section img{
     position: fixed;
@@ -228,7 +253,7 @@ video {
     width: 100%;
     bottom: 19.6em;
 }
-.build h2,.build .description, .weapons-artifacts h3, .weapons-artifacts h4, .weapons-artifacts h5{
+.build h2,.build .build-description, .weapons-artifacts h3, .weapons-artifacts h4, .weapons-artifacts h5{
     font-family: "Georama", sans-serif;
     font-size: 1.5em;
     letter-spacing: 0em;
@@ -242,7 +267,7 @@ video {
     color: #1E0039;
     padding: 1em 0em;
 }
-.build .description{
+.build .build-description{
     font-size: 1em;
     color: #000000;
     padding-bottom: 1em;
@@ -261,7 +286,7 @@ video {
     font-weight: 400;
 }
 .weapons-artifacts h5{
-    font-size: 1em;
+    font-size: .85em;
     color: #D5D5D5;
     font-weight: 400;
     padding-top: .1em;
@@ -348,6 +373,9 @@ video {
     padding-top: 1em;
     height: 12em;
     transition: .5s;
+}
+.item{
+    padding: .5em;
 }
 .combat-images .item img, 
 .constellation-images .item img{
@@ -575,6 +603,9 @@ video {
         width: 60%;
         margin: 0 auto;
     }
+    #menu-gif img{
+        max-width: 30%;
+    }
     .title-section h2{
         font-size: 1.75em;
     }
@@ -591,7 +622,7 @@ video {
         height: 700px;
         padding: 2em 0;
     }
-    .talents-ascension-section svg, .ganyu-splash{
+    .talents-ascension-section svg, .character-splash{
         display: none;
     }
     .talents-ascension{
