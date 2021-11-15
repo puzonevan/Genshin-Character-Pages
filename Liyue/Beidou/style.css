@@ -616,19 +616,6 @@ video {
         width: 90%;
     }
 
-    /* Background and Story Section */
-    .lore-section{
-        margin: 0em;
-        height: auto;
-    }
-    .background, .stories{
-        flex-direction: column;
-        align-items: center;
-    }
-    .card{
-        width: 65%;
-    }
-
     /* Art Section */
     .lore-container{
         width: 100%;
@@ -740,20 +727,6 @@ video {
     }
     .abilities-constellation h3{
         display: none;
-    }
-
-    /* Background and Story Section */
-    .lore-section{
-        margin: 0em;
-        height: auto;
-    }
-    .background, .stories{
-        flex-direction: column;
-        align-items: center;
-    }
-    .card{
-        height: 13em;
-        width: 80%;
     }
 
     /* Art Section */
