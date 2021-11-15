@@ -155,7 +155,6 @@ video {
 .character-splash{
     padding: 0;
     width: 65%;
-    /* margin: 3em 0em; */
 }
 .character-splash img{
     max-height: 95%;
@@ -212,7 +211,7 @@ video {
 .build{
     width: 100%;
     height: 70%;
-    background-color: #F3F3FB;
+    background-color: var(--light-container-color);
     border-radius: .3em;
     padding: 1em 2em 2em 2em;
     margin: 0em 2em;
@@ -231,7 +230,7 @@ video {
 .build h2,.build .build-description, .weapons-artifacts h3, .weapons-artifacts h4, .weapons-artifacts h5{
     font-family: "Georama", sans-serif;
     font-size: 1.5em;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     text-shadow: none;
     text-transform: none;
     font-weight: 500;
@@ -239,38 +238,37 @@ video {
     transition: .5s;
 }
 .build h2{
-    color: #1E0039;
+    color: var(--dark-title-color);
     padding: 1em 0em;
 }
 .build .build-description{
     font-size: 1em;
-    color: #000000;
+    color: var(--main-background-color);
     padding-bottom: 1em;
     font-weight: 400; 
 }
 
 .weapons-artifacts h3{
     font-size: 1.3em;
-    color: #000000;
+    color: var(--main-background-color);
     font-weight: 500;
     padding: 0 1em;
 }
 .weapons-artifacts h4{
     font-size: 1em;
-    color: #B9BFFF;
+    color: var(--primary-color);
     font-weight: 400;
 }
 .weapons-artifacts h5{
     font-size: .85em;
-    color: #D5D5D5;
+    color: var(--sub-title-color);
     font-weight: 400;
     padding-top: .1em;
 }
 .weapons-artifacts p{
-    color: #FFFFFF;
     font-size: .9em;
     width: 80%;
-    padding-top: .5em;
+    padding: .5em 0;
 }
 .weapons-artifacts{
     display: flex;
@@ -285,28 +283,28 @@ video {
 .weapons-artifacts .or-text{
     font-size: 1.1em;
     text-align: center;
-    color: #1E0039;
-    border-bottom: 1px solid #1E0039;
+    color: var(--dark-container-color);
+    border-bottom: 1px solid var(--dark-container-color);
     padding: .3em;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 2em auto;
 }
 
 .weapon, .artifact{
     position: relative;
     padding: 1em;
     margin: 1.5em 1em;
-    background-color: #170F1A;
-    border-radius: .3em;
+    background-color: var(--dark-container-color);
+    border-radius: .5em;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .weapon img, .artifact img{
     position: absolute; 
     right: 1em;
-    top: -1em;
+    top: -1.5em;
     border-radius: 50%;
-    background-color: #F3F3FB;
-    border: 4px solid #FFFFFF;
+    background-color: #E1E1E1;
+    border: 2px solid #FFFFFF;
     max-height: 40%;
     transition: .3s;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
