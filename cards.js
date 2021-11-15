@@ -4,8 +4,52 @@ const characters = [
         subtitle: "Uncrowned Lord of the Ocean"
     },
     {
-        name: "beidou", 
-        subtitle: "Uncrowned Lord of the Ocean"
+        name: "childe", 
+        subtitle: "Tartaglia"
+    },
+    {
+        name: "chongyun", 
+        subtitle: "Frozen Ardor"
+    },
+    {
+        name: "hutao", 
+        subtitle: "Fragrance in Thaw"
+    },
+    {
+        name: "keqing", 
+        subtitle: "Driving Thunder"
+    },
+    {
+        name: "ningguang", 
+        subtitle: "Eclipsing Star"
+    },
+    {
+        name: "qiqi", 
+        subtitle: "Eclipsing Star"
+    },
+    {
+        name: "xiangling", 
+        subtitle: "Eclipsing Star"
+    },
+    {
+        name: "xingqiu", 
+        subtitle: "Eclipsing Star"
+    },
+    {
+        name: "xiao", 
+        subtitle: "Eclipsing Star"
+    },
+    {
+        name: "xinyan", 
+        subtitle: "Eclipsing Star"
+    },
+    {
+        name: "yanfei", 
+        subtitle: "Eclipsing Star"
+    },
+    {
+        name: "zhongli", 
+        subtitle: "Eclipsing Star"
     },
 ]
 
