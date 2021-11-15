@@ -338,6 +338,10 @@ function initializeTalents(){
             document.getElementById("abilities-constellation").style.opacity = "0";
             document.getElementById("combat-video").style.display = "block";
         });
+        
+        talent.addEventListener('mouseover', () =>{
+            document.getElementById("ability-title").textContent = talents[talentsImagesKeys[index]]["name"]
+        })
     });
 
     
@@ -372,7 +376,11 @@ function initializeConstellations(){
             document.getElementById("abilities-constellation").style.opacity = "0";
             document.getElementById("combat-video").style.display = "none";
         });
+        constellation.addEventListener('mouseover', () =>{
+            document.getElementById("constellation-title").innerHTML = constellations[constellationsImagesKeys[index]]["name"];
+        })
     });
+    
 }
 
 ///////////////////////////////////////////////////////////////////////
