@@ -1,6 +1,7 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
 const name = "beidou";
+const image = "./Beidou/images/beidou-main.png"
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -150,7 +151,7 @@ function initializeMaterials(){
     document.getElementById("sub-title").innerHTML = genshindb["characters"][`${name}`]["title"];
 
     // Change Character Splash in Materials
-    document.getElementById("character-splash").firstElementChild.src = genshinimage["characters"][`${name}`]["portrait"];
+    document.getElementById("character-splash").firstElementChild.src = image;
 
     // Change Stone Materials 
     [...document.getElementsByClassName("stone")].forEach((stone, index) =>{

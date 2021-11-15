@@ -153,10 +153,12 @@ video {
 }
 
 .character-splash{
-    height: auto;
     padding: 0;
-    width: 70%;
+    width: 65%;
     /* margin: 3em 0em; */
+}
+.character-splash img{
+    max-height: 95%;
 }
 
 .talents-ascension{
