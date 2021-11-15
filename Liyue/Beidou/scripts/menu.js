@@ -72,12 +72,6 @@ combatAnchor.addEventListener("click", () =>{
     });
 });
 
-backgroundAnchor.addEventListener("click", () =>{
-    document.getElementById("lore-section").scrollIntoView({
-        behavior: "smooth"
-    });
-});
-
 artworkAnchor.addEventListener("click", () =>{
     document.getElementById("art-section").scrollIntoView({
         behavior: "smooth"

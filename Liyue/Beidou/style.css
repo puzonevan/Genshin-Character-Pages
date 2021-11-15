@@ -7,7 +7,7 @@
     --primary-3-color: #FFFFFF;
 
     --secondary-color: #7D53DE;
-    --secondary-2-color: ;
+    --secondary-2-color: #7776BC;
     --secondary-3-color: #FFFFFF;
 
     --tertiary-color: #279AF1;
@@ -76,66 +76,6 @@ video {
     scroll-snap-align: start;
 }
 
-.art-section{
-    height: 120vh;
-    scroll-snap-align: start;
-}
-
-
-/* Opening/Titles Section */
-.opening-section, .title-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.opening-section h1{
-    font-size: 4em;
-}
-
-.opening-section p{
-    font-size: 1.5em;
-    color: var(--sub-title-color);
-    padding: .5em;
-}
-
-.menu i{
-    z-index: 4;
-
-    position: fixed;
-    right: 3em;
-    bottom: 3em;
-
-    width: 1.8em;
-    height: 1.8em;
-    background-color: #FFE1EC;
-    opacity: 0;
-    border: 1.5px solid #FFD7E2;
-
-    border-radius: 50%;
-    transition: .5s;
-}
-.menu i:hover{
-    background-color: #1E0039;
-}
-
-#menu-gif img{
-    max-width: 10%;
-}
-.opening-section img{
-    position: fixed;
-    right: 1.5em;
-    bottom: 1.5em;
-    border-radius: 50%;
-    z-index: 5;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.title-section h2{
-    font-size: 3em;
-}
-
-
 /* Image Video & Containers */
 .image-video-container{
     width: 100%;
@@ -154,24 +94,70 @@ video {
     margin: 0 auto;
 }
 
+/* Opening/Titles Section */
+.opening-section, .title-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.opening-section .title{
+    font-size: 4em;
+}
+.title-section h2{
+    font-size: 3em;
+}
+.opening-section .random-quote, .opening-section .sub-title{
+    font-size: 1.5em;
+    color: var(--sub-title-color);
+    padding: .5em;
+}
+
+.menu i{
+    z-index: 4;
+    position: fixed;
+    right: 3em;
+    bottom: 3em;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: var(--secondary-2-color);
+    border: 1.5px solid var(--secondary-3-color);
+    border-radius: 50%;
+    transition: .5s;
+}
+.menu i:hover{
+    background-color: var(--secondary-color);
+}
+.opening-section img{
+    position: fixed;
+    right: 1.5em;
+    bottom: 1.5em;
+    border-radius: 50%;
+    max-width: 5%;
+    z-index: 5;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 
 /* Talents/Ascension Materials */
 .talents-ascension-section {
     display: flex;
+    position: relative;
 }
-
 .talents-ascension-section svg{
     position: absolute;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
-    transform: scale(.95);
+    height: 100vh;
+    padding-top: 3em;
 }
 
-.ganyu-splash{
+.character-splash{
     width: 70%;
     margin: 3em 0em;
 }
-.ganyu-splash img{
+.character-splash img{
     max-height: 90%;
     display: block;
     position: absolute;
@@ -180,20 +166,16 @@ video {
 }
 
 .talents-ascension{
-    display: block;
-    width: 80%;
-    float: right;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 6em;
-    padding: 0 3em;
+    padding: 0 0em;
 }
 
 .talents-ascension h2{
     font-size: 2em;
-    border-bottom: 1.5px solid #FFFFFF;
+    border-bottom: 1.5px solid var(--primary-color);
 }
 
 .monster, .shivada, .books{
@@ -207,10 +189,10 @@ video {
     justify-content: center;
 }
 .item-name{
-    color: #FFFFFF;
+    color: var(--title-color);
 }
 .item-name strong{
-    color: #B9BFFF;
+    color: var(--secondary-color);
     font-size: .95em;
 }
 .talents-ascension .item img{
@@ -222,7 +204,7 @@ video {
 }
 .talents-ascension .item p{
     font-size: .95em;
-    color: #FFFFFF;
+    color: var(--title-color);
     text-align: center;
 }
 

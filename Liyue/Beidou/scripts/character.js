@@ -146,6 +146,8 @@ function initializeMaterials(){
 
     // Change Character Title 
     document.getElementById("title").innerHTML = genshindb["characters"][`${name}`]["name"];
+    // Change Character Sub Title 
+    document.getElementById("sub-title").innerHTML = genshindb["characters"][`${name}`]["title"];
 
     // Change Character Splash in Materials
     document.getElementById("character-splash").firstElementChild.src = genshinimage["characters"][`${name}`]["portrait"];
