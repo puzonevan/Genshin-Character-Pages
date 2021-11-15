@@ -140,10 +140,9 @@ video {
 
 /* Talents/Ascension Materials */
 .talents-ascension-section {
-    display: flex;
     position: relative;
 }
-.talents-ascension-section svg{
+.talents-ascension-section svg, .character-splash{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -154,56 +153,48 @@ video {
 }
 
 .character-splash{
+    height: auto;
+    padding: 0;
     width: 70%;
-    margin: 3em 0em;
-}
-.character-splash img{
-    max-height: 90%;
-    display: block;
-    position: absolute;
-    left: 0;
-    z-index: -1;
+    /* margin: 3em 0em; */
 }
 
 .talents-ascension{
+    height: 100vh;
+    width: 70%;
+    position: relative;
+    float: right;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 0em;
+    gap: .5em;
 }
-
 .talents-ascension h2{
     font-size: 2em;
     border-bottom: 1.5px solid var(--primary-color);
 }
-
 .monster, .shivada, .books{
     display: flex;
     justify-items: center;
-    height: 8em;
+    width: 60%;
+    height: 15%;
 }
-.item{
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-}
+
 .item-name{
     color: var(--title-color);
 }
 .item-name strong{
     color: var(--secondary-color);
-    font-size: .95em;
+    font-size: 1.1em;
 }
 .talents-ascension .item img{
-    max-width: 90%;
-    max-height: 60%;
-    display: block;
+    max-height: 70%;
     margin: 0 auto;
     transition: .3s;
 }
 .talents-ascension .item p{
-    font-size: .95em;
+    font-size: 1em;
     color: var(--title-color);
     text-align: center;
 }
