@@ -447,17 +447,13 @@ video {
 
 /* Art Section  */
 .art-section{
-    margin: 0 auto;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
 }
-
-.lore-container{
-    width: 33.333333%;
-    overflow: hidden;
-    height: fit-content;
-    position: relative;
-    float: left;
+.art-section > div{
+    height: 33%;
 }
-
 
 .path{
     transform: scale(1.5);
@@ -499,9 +495,7 @@ video {
         width: 60%;
         margin: 0 auto;
     }
-    #menu-gif img{
-        max-width: 30%;
-    }
+    
     .title-section h2{
         font-size: 1.75em;
     }
@@ -646,7 +640,7 @@ video {
         top: 5em;
         left: -2em;
     }
-    .ganyu-splash{
+    .character-splash{
         display: none;
     }
     .talents-ascension{
