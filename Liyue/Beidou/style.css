@@ -609,48 +609,35 @@ svg{
     body{
         overflow-x: hidden;
     }
-    video {
-        margin: 0 auto;
+
+    /* Opening/Title Section */
+    .opening-section img{
+        max-width: 15%;
     }
 
     /* Talents Ascension Materials */
-    .talents-ascension-section {
-        height: 700px;
-        padding: 2em 0;
-        position: relative;
-    }
-    .talents-ascension-section svg{
-        transform: rotate(90deg);
-        position: absolute;
-        top: 5em;
-        left: -2em;
-    }
-    .character-splash{
+    .talents-ascension-section svg, .character-splash{
         display: none;
     }
     .talents-ascension{
-        width: 70%;
-        margin: 0 auto;
+        width: 100%;
+        margin: 0;
     }
     .monster, .shivada, .books{
         flex-wrap: wrap;
         height: auto;
+        width: auto;
         justify-content: center;
-        margin: 1em 0em;
     }
     .monster .item, .shivada .item, .books .item{
         max-width: 15%;
     }
     .talents-ascension .item img{
-        max-height: 50%;
-        display: block;
+        max-height: 60%;
     }
     .talents-ascension .item p{
-        font-size: 1em;
+        font-size: .8em;
     }
-    .talents-ascension h2{
-        margin: .5em 0em;
-    }   
 
     /* Weapons and Artifacts Section */
     .build-section{
@@ -679,38 +666,50 @@ svg{
     }
 
     /* Combat Section */
-    .combat-section{
-        padding: 2em 0em;
-    }
     .combat-section #abilities-constellation{
         display: flex;
         justify-content: space-around;
     }
     .abilities-constellation{
-        padding: 2em 0em;
+        padding: 0;
         width: 45%;
     }
     .abilities-constellation .border-top{
+        display: none;
+    }
+    .abilities-constellation h3{
         display: none;
     }
     .combat-images, 
     .constellation-images{
         flex-direction: column;
         justify-content: center;
-        height: 35em;
+        height: auto;
+        margin-bottom: 1em;
+    }
+    .item{
+        padding: 0;
     }
     .combat-images .item img, 
     .constellation-images .item img{
         max-width: 25%;
-        margin: 1em auto;
+        margin: .5em auto;
     }
-    .abilities-constellation h3{
-        display: none;
+    .combat-images .ability-low, 
+    .constellation-images .ability-low{
+        align-self: start;
+    }
+    .combat-images .ability-mid, 
+    .constellation-images .ability-mid{
+        align-self: start;
     }
 
     /* Art Section */
-    .lore-container{
-        width: 100%;
-        height: fit-content;
+    .art-section{
+        grid-gap: 0px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .art-section > div{
+        height: 100%;
     }
 }
