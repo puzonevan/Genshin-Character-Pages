@@ -25,31 +25,31 @@ const characters = [
     },
     {
         name: "qiqi", 
-        subtitle: "Eclipsing Star"
+        subtitle: "Icy Resurrection"
     },
     {
         name: "xiangling", 
-        subtitle: "Eclipsing Star"
+        subtitle: "Exquisite Delicacy"
     },
     {
         name: "xingqiu", 
-        subtitle: "Eclipsing Star"
+        subtitle: "Juvenile Galant"
     },
     {
         name: "xiao", 
-        subtitle: "Eclipsing Star"
+        subtitle: "Vigilant Yaksha"
     },
     {
         name: "xinyan", 
-        subtitle: "Eclipsing Star"
+        subtitle: "Blazing Riff"
     },
     {
         name: "yanfei", 
-        subtitle: "Eclipsing Star"
+        subtitle: "Wise Innocence"
     },
     {
         name: "zhongli", 
-        subtitle: "Eclipsing Star"
+        subtitle: "Vago Mundo"
     },
 ]
 
