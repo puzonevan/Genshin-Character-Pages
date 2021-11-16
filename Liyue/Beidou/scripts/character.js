@@ -1,6 +1,7 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
 const name = "beidou";
+const image = "./Beidou/images/beidou-main.png"
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -146,9 +147,11 @@ function initializeMaterials(){
 
     // Change Character Title 
     document.getElementById("title").innerHTML = genshindb["characters"][`${name}`]["name"];
+    // Change Character Sub Title 
+    document.getElementById("sub-title").innerHTML = genshindb["characters"][`${name}`]["title"];
 
     // Change Character Splash in Materials
-    document.getElementById("character-splash").firstElementChild.src = genshinimage["characters"][`${name}`]["portrait"];
+    document.getElementById("character-splash").firstElementChild.src = image;
 
     // Change Stone Materials 
     [...document.getElementsByClassName("stone")].forEach((stone, index) =>{
@@ -335,6 +338,10 @@ function initializeTalents(){
             document.getElementById("abilities-constellation").style.opacity = "0";
             document.getElementById("combat-video").style.display = "block";
         });
+        
+        talent.addEventListener('mouseover', () =>{
+            document.getElementById("ability-title").textContent = talents[talentsImagesKeys[index]]["name"]
+        })
     });
 
     
@@ -369,7 +376,11 @@ function initializeConstellations(){
             document.getElementById("abilities-constellation").style.opacity = "0";
             document.getElementById("combat-video").style.display = "none";
         });
+        constellation.addEventListener('mouseover', () =>{
+            document.getElementById("constellation-title").innerHTML = constellations[constellationsImagesKeys[index]]["name"];
+        })
     });
+    
 }
 
 ///////////////////////////////////////////////////////////////////////

@@ -4,21 +4,23 @@
 :root{
     --primary-color: #E71D36;
     --primary-2-color: #DE3C4B;
-    --primary-3-color: #FFFFFF;
+    --primary-3-color: #C02130;
 
     --secondary-color: #7D53DE;
     --secondary-2-color: #7776BC;
-    --secondary-3-color: #FFFFFF;
+
+    --secondary-3-color: #4B4A96;
+
 
     --tertiary-color: #279AF1;
     --tertiary-2-color: #4059AD;
-    --tertiary-3-color: #FFFFFF;
+    --tertiary-3-color: #324586;
 
     --title-color: #FFFFFF;
     --sub-title-color: #C2C2C2;
     --paragraph-color: #FFFFFF;
     --light-title-color: #E71D36;
-    --dark-title-color: #7776BC;
+    --dark-title-color: #4B4A96;
 
     --main-background-color: #151514; 
     --light-container-color:#F5F5F5;
@@ -63,10 +65,6 @@ svg{
     transition: .5s;
 }
 
-video {
-    margin: 0em auto 1.5em auto;
-}
-
 .opening-section, .talents-ascension-section, 
 .image-video-section, .combat-section, 
 .title-section, .constellation-section, 
@@ -76,66 +74,6 @@ video {
     scroll-snap-align: start;
 }
 
-.art-section{
-    height: 120vh;
-    scroll-snap-align: start;
-}
-
-
-/* Opening/Titles Section */
-.opening-section, .title-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.opening-section h1{
-    font-size: 4em;
-}
-
-.opening-section p{
-    font-size: 1.5em;
-    color: var(--sub-title-color);
-    padding: .5em;
-}
-
-.menu i{
-    z-index: 4;
-
-    position: fixed;
-    right: 3em;
-    bottom: 3em;
-
-    width: 1.8em;
-    height: 1.8em;
-    background-color: #FFE1EC;
-    opacity: 0;
-    border: 1.5px solid #FFD7E2;
-
-    border-radius: 50%;
-    transition: .5s;
-}
-.menu i:hover{
-    background-color: #1E0039;
-}
-
-#menu-gif img{
-    max-width: 10%;
-}
-.opening-section img{
-    position: fixed;
-    right: 1.5em;
-    bottom: 1.5em;
-    border-radius: 50%;
-    z-index: 5;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.title-section h2{
-    font-size: 3em;
-}
-
-
 /* Image Video & Containers */
 .image-video-container{
     width: 100%;
@@ -143,7 +81,7 @@ video {
     overflow: hidden;
 }
 
-.image-video-container video, .image-video-container img{
+.image-video-container img{
     max-width: 100%;
     height: auto;
     display: block;
@@ -154,75 +92,109 @@ video {
     margin: 0 auto;
 }
 
+/* Opening/Titles Section */
+.opening-section, .title-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.opening-section .title{
+    font-size: 4em;
+}
+.title-section h2{
+    font-size: 3em;
+}
+.opening-section .random-quote, .opening-section .sub-title{
+    font-size: 1.5em;
+    color: var(--sub-title-color);
+    padding: .5em;
+}
+
+.menu i{
+    z-index: 4;
+    position: fixed;
+    right: 3em;
+    bottom: 3em;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: var(--primary-color);
+    border: 1.5px solid var(--primary-3-color);
+    border-radius: 50%;
+    transition: .5s;
+}
+.menu i:hover{
+    background-color: var(--secondary-color);
+}
+.opening-section img{
+    position: fixed;
+    right: 1.5em;
+    bottom: 1.5em;
+    border-radius: 50%;
+    max-width: 5%;
+    z-index: 5;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 
 /* Talents/Ascension Materials */
 .talents-ascension-section {
-    display: flex;
+    position: relative;
+}
+.talents-ascension-section svg, .character-splash{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    height: 100vh;
+    padding-top: 3em;
 }
 
-.talents-ascension-section svg{
-    position: absolute;
-    left: 0;
-    z-index: -1;
-    transform: scale(.95);
+.character-splash{
+    padding: 0;
+    width: 65%;
 }
-
-.ganyu-splash{
-    width: 70%;
-    margin: 3em 0em;
-}
-.ganyu-splash img{
-    max-height: 90%;
-    display: block;
-    position: absolute;
-    left: 0;
-    z-index: -1;
+.character-splash img{
+    max-height: 95%;
 }
 
 .talents-ascension{
-    display: block;
-    width: 80%;
+    height: 100vh;
+    width: 70%;
+    position: relative;
     float: right;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 6em;
-    padding: 0 3em;
+    gap: .5em;
 }
-
 .talents-ascension h2{
     font-size: 2em;
-    border-bottom: 1.5px solid #FFFFFF;
+    border-bottom: 1.5px solid var(--primary-3-color);
 }
-
 .monster, .shivada, .books{
     display: flex;
     justify-items: center;
-    height: 8em;
+    width: 60%;
+    height: 15%;
 }
-.item{
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-}
+
 .item-name{
-    color: #FFFFFF;
+    color: var(--title-color);
 }
 .item-name strong{
-    color: #B9BFFF;
-    font-size: .95em;
+    color: var(--secondary-color);
+    font-size: 1.1em;
 }
 .talents-ascension .item img{
-    max-width: 90%;
-    max-height: 60%;
-    display: block;
+    max-height: 70%;
     margin: 0 auto;
     transition: .3s;
 }
 .talents-ascension .item p{
-    font-size: .95em;
-    color: #FFFFFF;
+    font-size: 1em;
+    color: var(--title-color);
     text-align: center;
 }
 
@@ -237,7 +209,7 @@ video {
 .build{
     width: 100%;
     height: 70%;
-    background-color: #F3F3FB;
+    background-color: var(--light-container-color);
     border-radius: .3em;
     padding: 1em 2em 2em 2em;
     margin: 0em 2em;
@@ -256,7 +228,7 @@ video {
 .build h2,.build .build-description, .weapons-artifacts h3, .weapons-artifacts h4, .weapons-artifacts h5{
     font-family: "Georama", sans-serif;
     font-size: 1.5em;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     text-shadow: none;
     text-transform: none;
     font-weight: 500;
@@ -264,38 +236,37 @@ video {
     transition: .5s;
 }
 .build h2{
-    color: #1E0039;
+    color: var(--dark-title-color);
     padding: 1em 0em;
 }
 .build .build-description{
     font-size: 1em;
-    color: #000000;
+    color: var(--main-background-color);
     padding-bottom: 1em;
     font-weight: 400; 
 }
 
 .weapons-artifacts h3{
     font-size: 1.3em;
-    color: #000000;
+    color: var(--main-background-color);
     font-weight: 500;
     padding: 0 1em;
 }
 .weapons-artifacts h4{
     font-size: 1em;
-    color: #B9BFFF;
+    color: var(--primary-color);
     font-weight: 400;
 }
 .weapons-artifacts h5{
     font-size: .85em;
-    color: #D5D5D5;
+    color: var(--sub-title-color);
     font-weight: 400;
     padding-top: .1em;
 }
 .weapons-artifacts p{
-    color: #FFFFFF;
     font-size: .9em;
     width: 80%;
-    padding-top: .5em;
+    padding: .5em 0;
 }
 .weapons-artifacts{
     display: flex;
@@ -310,28 +281,28 @@ video {
 .weapons-artifacts .or-text{
     font-size: 1.1em;
     text-align: center;
-    color: #1E0039;
-    border-bottom: 1px solid #1E0039;
+    color: var(--dark-container-color);
+    border-bottom: 1px solid var(--dark-container-color);
     padding: .3em;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 2em auto;
 }
 
 .weapon, .artifact{
     position: relative;
     padding: 1em;
     margin: 1.5em 1em;
-    background-color: #170F1A;
-    border-radius: .3em;
+    background-color: var(--dark-container-color);
+    border-radius: .5em;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .weapon img, .artifact img{
     position: absolute; 
     right: 1em;
-    top: -1em;
+    top: -1.5em;
     border-radius: 50%;
-    background-color: #F3F3FB;
-    border: 4px solid #FFFFFF;
+    background-color: #E1E1E1;
+    border: 2px solid #FFFFFF;
     max-height: 40%;
     transition: .3s;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
@@ -354,7 +325,7 @@ video {
 
 .abilities-constellation{
     padding: 3em 3em;
-    background-color: #1E0039;
+    background-color: var(--secondary-3-color);
     margin: 3em 0em;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.6) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset
@@ -383,7 +354,7 @@ video {
     max-height: 100%;
     margin: 0 auto;
     border-radius: 50%;
-    border: 2px solid #F3F3FB;
+    border: 2px solid var(--title-color);
     box-shadow: rgba(0, 0, 0, 0.7) 0px 25px 20px -20px;
 }
 
@@ -420,12 +391,12 @@ video {
     width: 100%;
     opacity: 0;
     transition: .5s;
-    background: #1E0039;
+    background: var(--tertiary-3-color);
     z-index: -1;
 }
 
 .overlay-box{
-    background: #F3F3FB;
+    background: var(--light-container-color);
     width: 80%;
     height: auto;
     position: relative;
@@ -445,12 +416,12 @@ video {
 
 .overlay-box h2{
     font-family: 'STIX Two Text', serif;
-    color: #1E0039;
+    color: var(--dark-title-color);
     padding: 1.5em 0em;
 }
 
 .overlay-box p{
-    color: #170F1A;
+    color: #000000;
     font-weight: 400;
     font-size: 1em;
     width: 80%;
@@ -466,102 +437,21 @@ video {
     padding: .3em;
 }
 .overlay-box i:hover{
-    background-color: #B9BFFF;
+    background-color: var(--primary-color);
     border: 1px solid black;
     border-radius: 3px;
     transition: .2s;
 }
 
-/* Background and Story */
-.lore-section{
-    padding: 2em 0em;
-    margin: 0em 3.5em;
-}
-.background, .stories{
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-}
-
-.card{
-    width: 15%;
-    height: 23em;
-    background-color: #F3F3FB;
-    border-radius: 2%;
-    margin: 1.5em 0;
-    padding: 1em;
-    position: relative;
-}
-.card-shadow{
-    position: absolute;
-    left: -.8em;
-    top: -.5em;
-    width: 100%;
-    height: 100%;
-    background-color: #B9BFFF;
-    border-radius: 2%;
-    z-index: -1;
-}
-
-.card h2, .card p, .card button{
-    font-family: "Georama", sans-serif;
-    font-size: 1.5em;
-    letter-spacing: 0em;
-    text-shadow: none;
-    text-transform: none;
-    font-weight: 500;
-    text-align: left;
-}
-
-.card h2{
-    color: #1E0039;
-    border-bottom: 2px solid #1E0039;
-    padding-bottom: .5em;
-}
-.card p{
-    color: #000000;
-    font-weight: 400;
-    text-align: justify;
-    font-size: 1em;
-    line-height: 1.2em;
-    padding-top: 1em;
-}
-
-.card button{
-    margin: 0;
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    
-    transform: translate(-50%, -5%);
-
-    background-color: #170F1A;
-    border: none;
-    color: #F3F3FB;
-    font-size: 1em;
-    font-weight: 400;
-    
-    padding: .7em 1.8em;
-}
-
-.card button:hover{
-    background-color: #1E0039;
-    transition: .2s;
-}
-
 /* Art Section  */
 .art-section{
-    margin: 0 auto;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
 }
-
-.lore-container{
-    width: 33.333333%;
-    overflow: hidden;
-    height: fit-content;
-    position: relative;
-    float: left;
+.art-section > div{
+    height: 33%;
 }
-
 
 .path{
     transform: scale(1.5);
@@ -590,22 +480,18 @@ video {
     body{
         overflow-x: hidden;
     }
-    video {
-        margin: 0 auto;
-    }
 
     .opening-section h1, .title-section h1{
         font-size: 2.5em;
     }
+    
     .opening-section p{
         font-size: .75em;
         text-align: center;
         width: 60%;
         margin: 0 auto;
     }
-    #menu-gif img{
-        max-width: 30%;
-    }
+    
     .title-section h2{
         font-size: 1.75em;
     }
@@ -720,19 +606,6 @@ video {
         width: 90%;
     }
 
-    /* Background and Story Section */
-    .lore-section{
-        margin: 0em;
-        height: auto;
-    }
-    .background, .stories{
-        flex-direction: column;
-        align-items: center;
-    }
-    .card{
-        width: 65%;
-    }
-
     /* Art Section */
     .lore-container{
         width: 100%;
@@ -763,7 +636,7 @@ video {
         top: 5em;
         left: -2em;
     }
-    .ganyu-splash{
+    .character-splash{
         display: none;
     }
     .talents-ascension{
@@ -844,20 +717,6 @@ video {
     }
     .abilities-constellation h3{
         display: none;
-    }
-
-    /* Background and Story Section */
-    .lore-section{
-        margin: 0em;
-        height: auto;
-    }
-    .background, .stories{
-        flex-direction: column;
-        align-items: center;
-    }
-    .card{
-        height: 13em;
-        width: 80%;
     }
 
     /* Art Section */
