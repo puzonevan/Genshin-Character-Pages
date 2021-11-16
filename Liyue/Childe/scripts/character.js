@@ -1,20 +1,20 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
-const name = "beidou";
-const image = "./Beidou/images/beidou-main.png"
+const name = "tartaglia";
+const image = ""
 
 ///////////////////////////////////////////////////////////////////////
 
 /****** CHARACTER MATERIAL VARIABLES *******/
-const stones = ["vajradaamethystsliver", "vajradaamethystfragment", "vajradaamethystchunk", "vajradaamethystgemstone", "noctilucousjade"];
+const stones = ["varunadalazuritesliver", "varunadalazuritefragment", "varunadalazuritechunk", "varunadalazuritegemstone", "starconch"];
 const stoneAmounts = [1, 9, 9, 6, 168];
-const collectable = ["treasurehoarderinsignia", "silverraveninsignia", "goldenraveninsignia"];
+const collectable = ["recruitsinsignia", "sergeantsinsignia", "lieutenantsinsignia"];
 const collectableAmounts = [18, 30, 36, 18, 66, 93];
-const uniqueCollectable = "lightningprism";
+const uniqueCollectable = "cleansingheart";
 const uniqueCollectableAmounts = 46;
-const books = ["teachingsofgold", "guidetogold", "philosophiesofgold"];
+const books = ["teachingsoffreedom", "guidetofreedom", "philosophiesoffreedom"];
 const booksAmounts = [9, 65, 114];
-const boss = "dvalinssigh";
+const boss = "shardofafoullegacy";
 const bossAmounts = 18;
 const crown = "crownofinsight";
 const crownAmounts = 3;
@@ -24,26 +24,23 @@ const crownAmounts = 3;
 /****** CHARACTER BUILDS *******/
 const builds = [
     {
-        title: "Electro DPS", 
-        description: "Beidou is capable of being the front damage dealer \
-                    through utilizing autos, perfect counters, and constantly \
-                    having Stormcaller active with a support electro as a battery.",
-        mainweapon: "theunforged", 
-        replaceweapon: "rainslasher", 
-        artifactset1: ["gladiatorsfinale", "thunderingfury"], 
+        title: "Burst Sub DPS", 
+        description: "",
+        mainweapon: "thestringless", 
+        replaceweapon: "favoniuswarbow", 
+        artifactset1: ["noblesseoblige", "heartofdepth"], 
         artifactset2: [],
-        substats: "ATK% / Electro DMG / CRIT DMG"
+        substats: "ATK% / Hydro DMG / CRIT RATE"
     },
     {
-        title: "Parry Main", 
-        description: "FULL COUNTER. One must perfect the art of countering \
-                    in order to dish out the most damage possible.",
-        mainweapon: "wolfsgravestone", 
-        replaceweapon: "rainslasher", 
-        artifactset1: ["retracingbolide"], 
-        artifactset2: ["emblemofseveredfate"],
-        substats: "ATK% / Electro DMG / CRIT DMG"
-    }
+        title: "Hydro DPS", 
+        description: "With the highest scaling Elemental Burst skill multiplier in the game, Tartaglia is an incredible Hydro damage dealer. Like Diluc, he becomes unstoppable with high constellations but does not need them to be extremely powerful. If you're playing with Noelle or a Geo character on your team, consider running the Retracing Bolide set instead.",
+        mainweapon: "polarstar", 
+        replaceweapon: "theviridescenthunt", 
+        artifactset1: ["noblesseoblige", "heartofdepth"], 
+        artifactset2: [],
+        substats: "ATK% / Hydro DMG / CRIT RATE"
+    },
 ]
 
 ///////////////////////////////////////////////////////////////////////
@@ -273,7 +270,7 @@ function initializeBuilds(){
         weaponsOr.setAttribute("data-aos-delay", "250");
         weaponsOr.innerHTML = "Or";
         const weapon1 = createWeaponDiv(build["mainweapon"], 450, "large");
-        const weapon2 = createWeaponDiv(build["replaceweapon"], 450, "small");
+        const weapon2 = createWeaponDiv(build["replaceweapon"], 450, "large");
         weaponsContainer.appendChild(weaponsTitle);
         weaponsContainer.appendChild(weapon1);
         weaponsContainer.appendChild(weaponsOr);
@@ -426,7 +423,9 @@ const createWeaponDiv = (weapon, delay, size) => {
     const weaponDescription = document.createElement("p");
     weaponDescription.setAttribute("class", "weapon-description");
     weaponDescription.setAttribute("id", "weapon-description");
-    weaponDescription.innerHTML = genshindb["weapons"][weapon]["effect"];
+    let weaponEffect = genshindb["weapons"][weapon]["effect"];
+    weaponEffect.length > 180 ? weaponEffect = weaponEffect.slice(0, 180) + "..." : weaponEffect = weaponEffect;
+    weaponDescription.innerHTML = weaponEffect;
     const weaponImageContainer = document.createElement("div");
     weaponImageContainer.setAttribute("class", "image-video-container");
     weaponImageContainer.setAttribute("id", "weapon-image");
