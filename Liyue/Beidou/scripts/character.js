@@ -284,6 +284,7 @@ function initializeBuilds(){
         const artifactsTitle = document.createElement("h3");
         artifactsTitle.setAttribute("data-aos", "fade-left");
         artifactsTitle.setAttribute("data-aos-delay", "650");
+        artifactsTitle.textContent = "Artifacts";
         artifactsContainer.appendChild(artifactsTitle);
 
         build["artifactset1"].forEach((artifact) =>{

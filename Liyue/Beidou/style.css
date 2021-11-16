@@ -481,33 +481,21 @@ svg{
         overflow-x: hidden;
     }
 
-    .opening-section h1, .title-section h1{
-        font-size: 2.5em;
+    /* Opening/Title Section */
+    .opening-section .title{
+        font-size: 2em;
     }
-    
-    .opening-section p{
-        font-size: .75em;
-        text-align: center;
-        width: 60%;
-        margin: 0 auto;
+    .opening-section .sub-title{
+        font-size: .6em;
     }
-    
     .title-section h2{
-        font-size: 1.75em;
+        font-size: 1.5em;
     }
     .opening-section img{
-        max-width: 25%;
+        max-width: 20%;
     }
 
-    .container{
-        width: 100%;
-    }
-    
-    /* Talents Ascension Materials */
-    .talents-ascension-section {
-        height: 700px;
-        padding: 2em 0;
-    }
+    /* Talents/Ascension Materials */
     .talents-ascension-section svg, .character-splash{
         display: none;
     }
@@ -518,34 +506,30 @@ svg{
     .monster, .shivada, .books{
         flex-wrap: wrap;
         height: auto;
+        width: auto;
         justify-content: center;
-        margin: 1em 0em;
+        margin: .5em 1em;
     }
     .monster .item, .shivada .item, .books .item{
-        max-width: 20%;
+        max-width: 15%;
     }
     .talents-ascension .item img{
         max-height: 100%;
-        display: block;
     }
     .talents-ascension .item p{
-        font-size: .7em;
+        font-size: .6em;
     }
-    .talents-ascension h2{
-        margin: .5em 0em;
-    }    
+    
 
     /* Weapons and Artifacts Section */
     .build-section{
         flex-direction: column;
-        padding: 3em 0em; 
         height: auto;
         align-items: center;
     }
     .build{
         margin: 1em 0em;
-        width: 75%;
-        height: auto;
+        width: 70%;
     }
     .build h4, .build h5{
         width: 60%;
@@ -560,51 +544,36 @@ svg{
     .weapons-artifacts .or-text{
         margin: 1em auto 2em auto;
     }
-    .weapon img, .artifact img{
-        max-height: 30%;
-        top: -1.5em;
-    }
     .weapon .large, .artifact .large{
-        max-height: 30%;
+        max-height: 25%;
     }
     .weapon .small, .artifact .small{
-        max-height: 45%;
+        max-height: 40%;
+    }
+    .weapon, .artifact{
+        margin: 2em 0;
     }
     
     /* Combat Section */
-    .combat-section{
-        padding: 2em 0em;
-    }
-    .combat-section #abilities-constellation{
+    #abilities-constellation{
         display: flex;
-        justify-content: space-around;
+        width: 90%;
+        margin: 2em auto;
     }
     .abilities-constellation{
-        padding: 2em 0em;
-        width: 45%;
+        padding: 1em;
+        margin: 0em;
     }
     .abilities-constellation .border-top{
         display: none;
     }
+
     .combat-images, 
     .constellation-images{
         flex-direction: column;
-        justify-content: center;
-        height: 30em;
-        padding-top: 0em;
+        height: auto;
     }
-    .combat-images .item img, 
-    .constellation-images .item img{
-        max-width: 40%;
-        margin: 1em auto;
-    }
-
-    .abilities-constellation h3{
-        display: none;
-    }
-    .overlay-box{
-        width: 90%;
-    }
+    
 
     /* Art Section */
     .lore-container{
