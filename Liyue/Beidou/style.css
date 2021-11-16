@@ -557,12 +557,14 @@ svg{
     /* Combat Section */
     #abilities-constellation{
         display: flex;
+        align-items: center;
         width: 90%;
         margin: 2em auto;
     }
     .abilities-constellation{
-        padding: 1em;
+        padding: 0;
         margin: 0em;
+        height: auto;
     }
     .abilities-constellation .border-top{
         display: none;
@@ -571,10 +573,28 @@ svg{
     .combat-images, 
     .constellation-images{
         flex-direction: column;
-        height: auto;
+        
+        height: 50%;
+    }
+    .combat-images .item img{
+        max-width: 20%;
+    }
+    .constellation-images .item img{
+        /* max-width: 20%; */
+        width: 40%;
+    }
+    .abilities-constellation h3{
+        display: none;
     }
     
-
+    .combat-images .ability-low, 
+    .constellation-images .ability-low{
+        align-self: start;
+    }
+    .combat-images .ability-mid, 
+    .constellation-images .ability-mid{
+        align-self: start;
+    }
     /* Art Section */
     .lore-container{
         width: 100%;
