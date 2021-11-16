@@ -555,38 +555,34 @@ svg{
     }
     
     /* Combat Section */
-    #abilities-constellation{
+    .combat-section #abilities-constellation{
         display: flex;
-        align-items: center;
-        width: 90%;
-        margin: 2em auto;
+        justify-content: space-around;
     }
     .abilities-constellation{
-        padding: 0;
-        margin: 0em;
-        height: auto;
+        padding: 1em 0em;
+        width: 47%;
     }
     .abilities-constellation .border-top{
         display: none;
     }
-
-    .combat-images, 
-    .constellation-images{
-        flex-direction: column;
-        
-        height: 50%;
-    }
-    .combat-images .item img{
-        max-width: 20%;
-    }
-    .constellation-images .item img{
-        /* max-width: 20%; */
-        width: 40%;
-    }
     .abilities-constellation h3{
         display: none;
     }
-    
+    .combat-images, 
+    .constellation-images{
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+    }
+    .item{
+        padding: 0;
+    }
+    .combat-images .item img, 
+    .constellation-images .item img{
+        max-width: 50%;
+        margin: 1em auto;
+    }
     .combat-images .ability-low, 
     .constellation-images .ability-low{
         align-self: start;
@@ -595,10 +591,14 @@ svg{
     .constellation-images .ability-mid{
         align-self: start;
     }
+
     /* Art Section */
-    .lore-container{
-        width: 100%;
-        height: fit-content;
+    .art-section{
+        grid-gap: 0px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .art-section > div{
+        height: 100%;
     }
 
 }
