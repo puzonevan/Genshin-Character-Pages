@@ -63,10 +63,6 @@ svg{
     transition: .5s;
 }
 
-video {
-    margin: 0em auto 1.5em auto;
-}
-
 .opening-section, .talents-ascension-section, 
 .image-video-section, .combat-section, 
 .title-section, .constellation-section, 
@@ -83,7 +79,7 @@ video {
     overflow: hidden;
 }
 
-.image-video-container video, .image-video-container img{
+.image-video-container img{
     max-width: 100%;
     height: auto;
     display: block;
@@ -482,13 +478,11 @@ video {
     body{
         overflow-x: hidden;
     }
-    video {
-        margin: 0 auto;
-    }
 
     .opening-section h1, .title-section h1{
         font-size: 2.5em;
     }
+    
     .opening-section p{
         font-size: .75em;
         text-align: center;
