@@ -448,9 +448,10 @@ svg{
     display: grid;
     grid-gap: 1px;
     grid-template-columns: repeat(3, 1fr);
+    height: auto;
 }
 .art-section > div{
-    height: 33%;
+    height: 100%;
 }
 
 .path{
