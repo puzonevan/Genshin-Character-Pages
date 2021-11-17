@@ -1,65 +1,68 @@
-# Genshin-Character-Pages
+# Genshin Character Pages
  
-[Github Pages](https://puzonevan.github.io/Genshin-Character-Pages/)
+## Insert Banner Here 
 
-## Overview 
-There are plenty of information sites about Genshin Impact, the characters, game statistics, etc. However, my information site about the characters in the game focuses on **only the characters** and showcases only what most players need which are **materials**, **builds**, and **ability descriptions**. 
+<p align="center">
+    <a href="https://puzonevan.github.io/Genshin-Character-Pages/">Live Demo</a>
+</p>
 
-## Goal 
-My goal is to create a site for every character in Genshin Impact and for each character's site to be similar, yet unique to their region or personality.
 
-## Problems
-This project started out as only one character: [Ganyu](https://puzonevan.github.io/Ganyu/). After a 2-3 months finishing the Ganyu site, I attempted to create another character site for the [Raiden Shogun](https://puzonevan.github.io/RaidenShogun/) and this took around half a month since most of the template was created from the Ganyu site. However, in order to create a site for every character, I needed a different approach 
+# Overview 
+There are plenty of information sites about Genshin Impact, the characters, game statistics, etc. However, my information sites about the characters in the game focuses on **only the characters** and showcases only what most players need which are **materials**, **builds**, and **ability descriptions**. 
 
-## Solutions
-I implemented the fetch api in order to acquire all of the data I needed from [Genshin DB](https://github.com/theBowja/genshin-db). Additionally, I needed to reformat the html and styling so that they could be universal in every page. 
+The link above sends you to a hub containing to the current characters with dedicated pages. Clicking on a character sends you to their dedicated page. 
 
-Then, all I would have to manually do was gather the fan art for images, acquire the gif for the main menu, create a color palette for each character, and change the details in the corresponding character.js file. 
+# Design 
+## Title
+The title section includes the ***name*** of the character as the main title, a ***sub title***, and sometimes a ***randomized quote*** by the character
 
----
+[INSERT IMAGE HERE]
 
-## Design 
-Each character is divided into 5 sections: 
-1. **Title**    
-    The title section includes the ***name*** of the character as the main title, a ***sub title***, and sometimes a ***randomized quote*** by the character
+## Materials
+This section includes the necessary ***materials*** and ***amounts*** in order to ***level up*** the character and their ablities to the max 
 
-2. **Materials**   
-    This section includes the necessary ***materials*** and ***amounts*** in order to ***level up*** the character and their ablities to the max 
+[INSERT IMAGE HERE]
 
-3. **Builds**   
-    There are two builds containing ***weapons*** and ***artifacts*** that the character should use in the game
+## Builds
+There are two builds containing ***weapons*** and ***artifacts*** that the character should use in the game
 
-4. **Abilities**    
-    This section includes ***abilities***(including ***passives***) and ***constellations*** of the character
+[INSERT IMAGE HERE]
 
-5. **Images**   
-    Lastly, why not include some ***fan art*** of the character. 
+## Abilities
+This section includes ***abilities***(including ***passives***) and ***constellations*** of the character
 
----
+[INSERT IMAGE HERE]
 
-## Features
+## Artwork
+Lastly, why not include some ***fan art*** of the character. 
+
+[INSERT IMAGE HERE]
+
+
+# Features
 - Randomized quotes on refresh 
 - Custom made svg images
 - Links to all materials, weapons, artifacts, etc.
 - Change material amounts based on level(TBA)
 
---- 
-
-## What have I learned? 
+# What have I learned? 
 - Fetch API 
 - Creating custom svg's 
 - Lighthouse performance, accessibility, and best practices
 - Color palettes 
 
---- 
+# Background
+This project started out with only one character: [Ganyu](https://puzonevan.github.io/Ganyu/). After **2-3 months** finishing this site, I attempted to create another character site for a different character: [Raiden Shogun](https://puzonevan.github.io/RaidenShogun/). This took around **half a month** compared to the previous site since most of the previous code was used. However, in order to create a site for every character, I needed a different approach.
 
-### Inspiration Sites
-- [Genshin Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki)
-- [Genshin gg](https://genshin.gg/)
+I implemented the ***fetch api*** in order to acquire all of the data I needed. The data I utilized came from [Genshin DB](https://github.com/theBowja/genshin-db). Additionally, I ***reformated*** the HTML, CSS, and JS to be more universal due to **bad** and **lazy** practices on the [Ganyu](https://puzonevan.github.io/Ganyu/) site. 
 
-### Credits
-[Genshin gg](https://genshin.gg/) | [Game8](https://game8.co/games/Genshin-Impact)
-- Build descriptions, weapons, and artifacts
+Now, the only manual things needed to be done are **gathering fan art** which is often enjoyable, **choosing a funny gif** for the menu icon, **customizing the color palette**, and **changing the js data** to the approriate character, materials, and such.
+
+There are plenty of other and faster solutions such as a React site and split everything into small components, but I wanted to stick to a small web stack of pure HTML, CSS, and JS in order to gain more mastery and explore new things. 
+
+# Credits
+[Genshin gg](https://genshin.gg/) | [Game8](https://game8.co/games/Genshin-Impact) | [Genshin Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki)
+- General information, builds, descriptions, etc.
 
 [Genshin DB](https://github.com/theBowja/genshin-db) 
-- Data for fetch api
+- Genshin data and image links for Fetch API 
