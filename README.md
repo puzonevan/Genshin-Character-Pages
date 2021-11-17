@@ -1,6 +1,6 @@
 # Genshin Character Pages
  
-![Genshin Character Page Image](./assets/readmeimages/genshincharacterpage.PNG)
+![Genshin Character Page Image](./assets/readmeassets/genshincharacterpage.PNG)
 
 <p align="center">
     <a href="https://puzonevan.github.io/Genshin-Character-Pages/">Live Demo</a>
@@ -16,27 +16,27 @@ The link above sends you to a hub containing to the current characters with dedi
 ## Title
 The title section includes the ***name*** of the character as the main title, a ***sub title***, and sometimes a ***randomized quote*** by the character
 
-[INSERT IMAGE HERE]
+![Character Title](./assets/readmeassets/charactertitle.PNG)
 
 ## Materials
 This section includes the necessary ***materials*** and ***amounts*** in order to ***level up*** the character and their ablities to the max 
 
-[INSERT IMAGE HERE]
+![Character Materials](./assets/readmeassets/charactermaterials.PNG)
 
 ## Builds
 There are two builds containing ***weapons*** and ***artifacts*** that the character should use in the game
 
-[INSERT IMAGE HERE]
+![Character Builds](./assets/readmeassets/characterbuilds.PNG)
 
 ## Abilities
 This section includes ***abilities***(including ***passives***) and ***constellations*** of the character
 
-[INSERT IMAGE HERE]
+![Character Abilities](./assets/readmeassets/characterabilities.PNG)
 
 ## Artwork
 Lastly, why not include some ***fan art*** of the character. 
 
-[INSERT IMAGE HERE]
+![Character Artwork](./assets/readmeassets/characterart.PNG)
 
 
 # Features
