@@ -5,26 +5,16 @@
 ## Overview 
 There are plenty of information sites about Genshin Impact, the characters, game statistics, etc. However, my information site about the characters in the game focuses on **only the characters** and showcases only what most players need which are **materials**, **builds**, and **ability descriptions**. 
 
-This project started out as only one character: [Ganyu](https://puzonevan.github.io/Ganyu/). After a 2-3 months finishing the Ganyu site, I attempted to create another character site for the [Raiden Shogun](https://puzonevan.github.io/RaidenShogun/) and this took around half a month since most of the template was created from the Ganyu site. 
-
 ## Goal 
-My goal was to create a site for every character, but after realizing how long each individual character site took, I needed a different approach. 
+My goal is to create a site for every character in Genshin Impact and for each character's site to be similar, yet unique to their region or personality.
+
+## Problems
+This project started out as only one character: [Ganyu](https://puzonevan.github.io/Ganyu/). After a 2-3 months finishing the Ganyu site, I attempted to create another character site for the [Raiden Shogun](https://puzonevan.github.io/RaidenShogun/) and this took around half a month since most of the template was created from the Ganyu site. However, in order to create a site for every character, I needed a different approach 
 
 ## Solutions
 I implemented the fetch api in order to acquire all of the data I needed from [Genshin DB](https://github.com/theBowja/genshin-db). Additionally, I needed to reformat the html and styling so that they could be universal in every page. 
 
 Then, all I would have to manually do was gather the fan art for images, acquire the gif for the main menu, create a color palette for each character, and change the details in the corresponding character.js file. 
-
-### Inspiration Sites
-- [Genshin Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki)
-- [Genshin gg](https://genshin.gg/)
-
-### Credits
-[Genshin gg](https://genshin.gg/) | [Game8](https://game8.co/games/Genshin-Impact)
-- Build descriptions, weapons, and artifacts
-
-[Genshin DB](https://github.com/theBowja/genshin-db) 
-- Data for fetch api
 
 ---
 
@@ -51,6 +41,7 @@ Each character is divided into 5 sections:
 - Randomized quotes on refresh 
 - Custom made svg images
 - Links to all materials, weapons, artifacts, etc.
+- Change material amounts based on level(TBA)
 
 --- 
 
@@ -62,5 +53,13 @@ Each character is divided into 5 sections:
 
 --- 
 
-## To Be Added Features
-- Change material amounts based on level 
+### Inspiration Sites
+- [Genshin Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki)
+- [Genshin gg](https://genshin.gg/)
+
+### Credits
+[Genshin gg](https://genshin.gg/) | [Game8](https://game8.co/games/Genshin-Impact)
+- Build descriptions, weapons, and artifacts
+
+[Genshin DB](https://github.com/theBowja/genshin-db) 
+- Data for fetch api
