@@ -1,6 +1,6 @@
 # Genshin Character Pages
  
-## Insert Banner Here 
+![Genshin Character Page Image](./assets/readmeimages/genshincharacterpage.PNG)
 
 <p align="center">
     <a href="https://puzonevan.github.io/Genshin-Character-Pages/">Live Demo</a>
