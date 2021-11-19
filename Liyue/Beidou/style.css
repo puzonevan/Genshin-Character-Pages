@@ -180,12 +180,11 @@ svg{
     height: 15%;
 }
 
-.item-name{
+.item-name p{
     color: var(--title-color);
 }
 .item-name strong{
     color: var(--secondary-color);
-    font-size: 1.1em;
 }
 .talents-ascension .item img{
     max-height: 70%;
@@ -193,7 +192,7 @@ svg{
     transition: .3s;
 }
 .talents-ascension .item p{
-    font-size: 1em;
+    font-size: .9em;
     color: var(--title-color);
     text-align: center;
 }

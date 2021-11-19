@@ -25,7 +25,7 @@ const crownAmounts = 3;
 const builds = [
     {
         title: "Burst Sub DPS", 
-        description: "",
+        description: "This build focuses on the sword version of the burst skill. After finishing dealing damage with the main DPS, switch to Childe, use elemental skill and then burst for massive damage.",
         mainweapon: "thestringless", 
         replaceweapon: "favoniuswarbow", 
         artifactset1: ["noblesseoblige", "heartofdepth"], 
