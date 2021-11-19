@@ -1,6 +1,6 @@
 @font-face{
     font-family: genshin;
-    src: url(./zh-cn.ttf);
+    src: url(../fonts/zh-cn.ttf);
 }
 
 body{
@@ -24,11 +24,17 @@ h3{
     color: 	rgb(139,69,19);
 }
 
+a{
+    text-decoration: none;
+    color: #28282B;
+}
+
 /* Liyue Title */
 .liyue-title{
     color: white;
     font-size: 2.5em;
     padding: 1em;
+    font-weight: 200;
     text-transform: uppercase;
 }
 

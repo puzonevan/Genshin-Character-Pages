@@ -1,6 +1,7 @@
 
 // Get Gif from Dom 
 const gif = document.getElementById("menu-gif");
+const gifImage = "./Childe/gifs/childegif.gif";
 
 // Get Anchors from Dom 
 const materialsAnchor = document.getElementById("materials-anchor");
@@ -10,6 +11,10 @@ const artworkAnchor = document.getElementById("artwork-anchor");
 
 // Open variable for state 
 let open = false;
+
+// Change the gif 
+gif.firstElementChild.setAttribute("src", gifImage);
+gif.firstElementChild.setAttribute("alt", "character gif");
 
 // Open or close menu on image click; 
 gif.addEventListener("click", () =>{
