@@ -284,9 +284,14 @@ function initializeBuilds(){
         artifactsTitle.textContent = "Artifacts";
         artifactsContainer.appendChild(artifactsTitle);
 
-        build["artifactset1"].forEach((artifact) =>{
-            artifactsContainer.appendChild(createArtifactDiv(artifact, 200, "large"));
-        });
+        if(build["artifactset1"].length == 1){
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][0], 200, "large", 4));
+        }
+        else if(build["artifactset1"].length == 2){
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][0], 200, "large", 2));
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][1], 200, "large", 2));
+        }
+
         if(build["artifactset2"].length != 0){
             artifactsContainer.appendChild(weaponsOr);
         }
@@ -452,7 +457,7 @@ const createWeaponDiv = (weapon, delay, size) => {
  * @param {""} size - size for image
  * @returns div containing specific artifact information
  */
-const createArtifactDiv = (artifact, delay, size) =>{ 
+const createArtifactDiv = (artifact, delay, size, effect) =>{ 
 
     const container = document.createElement("div");
     container.setAttribute("class", "artifact");
@@ -471,8 +476,15 @@ const createArtifactDiv = (artifact, delay, size) =>{
     const artifactDescription = document.createElement("p");
     artifactDescription.setAttribute("class", "artifact-description");
     artifactDescription.setAttribute("id", "artifact-description");
-    artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]} <br>
+    
+    if(effect == 2){
+        artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]}<br>`;
+    }
+    else if(effect == 4){
+        artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]} <br>
                                     (4) ${genshindb["artifacts"][artifact]["4pc"]}`;
+    }
+    
     const artifactImageContainer = document.createElement("div");
     artifactImageContainer.setAttribute("class", "image-video-container");
     artifactImageContainer.setAttribute("id", "artifact-image");
