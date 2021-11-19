@@ -13,6 +13,7 @@ const artworkAnchor = document.getElementById("artwork-anchor");
 let open = false;
 
 // Change the gif 
+
 gif.firstElementChild.setAttribute("src", gifImage);
 gif.firstElementChild.setAttribute("alt", "character gif");
 
