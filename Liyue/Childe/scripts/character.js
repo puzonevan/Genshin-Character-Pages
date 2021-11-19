@@ -1,7 +1,7 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
 const name = "tartaglia";
-const image = ""
+const image = "./Childe/images/childe-main.png";
 
 ///////////////////////////////////////////////////////////////////////
 
