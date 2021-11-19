@@ -68,7 +68,7 @@ svg{
 .image-video-section, .combat-section, 
 .title-section, .constellation-section, 
 .build-section, .lore-section, 
-.art-section{
+.art-section, .quote-section{
     height: 100vh;
     scroll-snap-align: start;
 }
@@ -104,7 +104,7 @@ svg{
 .title-section h2{
     font-size: 3em;
 }
-.opening-section .random-quote, .opening-section .sub-title{
+.quote-section .random-quote, .opening-section .sub-title{
     font-size: 1.5em;
     color: var(--sub-title-color);
     padding: .5em;
