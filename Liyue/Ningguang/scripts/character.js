@@ -1,18 +1,18 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
-const name = "beidou";
-const image = "./Beidou/images/beidou-main.png"
+const name = "chongyun";
+const image = "";
 
 ///////////////////////////////////////////////////////////////////////
 
 /****** CHARACTER MATERIAL VARIABLES *******/
-const stones = ["vajradaamethystsliver", "vajradaamethystfragment", "vajradaamethystchunk", "vajradaamethystgemstone", "noctilucousjade"];
+const stones = ["shivadajadesliver", "shivadajadefragment", "shivadajadechunk", "shivadajadegemstone", "corlapis"];
 const stoneAmounts = [1, 9, 9, 6, 168];
-const collectable = ["treasurehoarderinsignia", "silverraveninsignia", "goldenraveninsignia"];
+const collectable = ["damagedmask", "stainedmask", "ominousmask"];
 const collectableAmounts = [18, 30, 36, 18, 66, 93];
-const uniqueCollectable = "lightningprism";
+const uniqueCollectable = "hoarfrostcore";
 const uniqueCollectableAmounts = 46;
-const books = ["teachingsofgold", "guidetogold", "philosophiesofgold"];
+const books = ["teachingsofdiligence", "guidetodiligence", "philosophiesofdiligence"];
 const booksAmounts = [9, 65, 114];
 const boss = "dvalinssigh";
 const bossAmounts = 18;
@@ -24,26 +24,23 @@ const crownAmounts = 3;
 /****** CHARACTER BUILDS *******/
 const builds = [
     {
-        title: "Electro DPS", 
-        description: "Beidou is capable of being the front damage dealer \
-                    through utilizing autos, perfect counters, and constantly \
-                    having Stormcaller active with a support electro as a battery.",
-        mainweapon: "theunforged", 
-        replaceweapon: "rainslasher", 
-        artifactset1: ["gladiatorsfinale", "thunderingfury"], 
-        artifactset2: [],
-        substats: "ATK% / Electro DMG / CRIT DMG"
+        title: "Cryo Support Build", 
+        description: "Melt is one of the strongest Elemental Reactions in the game and Chongyun has a consistent method of applying the Cryo debuff with his Elemental Skill ability. This makes him a strong support character when paired with Pyro carries.",
+        mainweapon: "skywardpride", 
+        replaceweapon: "favoniusgreatsword", 
+        artifactset1: ["noblesseoblige", "blizzardstrayer"], 
+        artifactset2: ["noblesseoblige"],
+        substats: "ATK% / Cryo DMG / CRIT DMG"
     },
     {
-        title: "Parry Main", 
-        description: "FULL COUNTER. One must perfect the art of countering \
-                    in order to dish out the most damage possible.",
+        title: "Cryo DPS", 
+        description: "While Chongyun can be built like other standard Claymore users with a Gladiator set, his true power comes from his Elemental Burst skill. A lot of his constellations also empower this ability. As such, this build piles on, making his Ultimate as strong as possible.",
         mainweapon: "wolfsgravestone", 
-        replaceweapon: "rainslasher", 
-        artifactset1: ["retracingbolide"], 
-        artifactset2: ["emblemofseveredfate"],
-        substats: "ATK% / Electro DMG / CRIT DMG"
-    }
+        replaceweapon: "skywardpride", 
+        artifactset1: ["noblesseoblige"], 
+        artifactset2: [],
+        substats: "ATK% / Hydro DMG / CRIT RATE"
+    },
 ]
 
 ///////////////////////////////////////////////////////////////////////
@@ -273,7 +270,7 @@ function initializeBuilds(){
         weaponsOr.setAttribute("data-aos-delay", "250");
         weaponsOr.innerHTML = "Or";
         const weapon1 = createWeaponDiv(build["mainweapon"], 450, "large");
-        const weapon2 = createWeaponDiv(build["replaceweapon"], 450, "small");
+        const weapon2 = createWeaponDiv(build["replaceweapon"], 450, "large");
         weaponsContainer.appendChild(weaponsTitle);
         weaponsContainer.appendChild(weapon1);
         weaponsContainer.appendChild(weaponsOr);
@@ -287,15 +284,28 @@ function initializeBuilds(){
         artifactsTitle.textContent = "Artifacts";
         artifactsContainer.appendChild(artifactsTitle);
 
-        build["artifactset1"].forEach((artifact) =>{
-            artifactsContainer.appendChild(createArtifactDiv(artifact, 200, "large"));
-        });
-        if(build["artifactset2"].length != 0){
-            artifactsContainer.appendChild(weaponsOr);
+        if(build["artifactset1"].length == 1){
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][0], 200, "large", 4));
         }
-        build["artifactset2"].forEach((artifact) =>{
-            artifactsContainer.appendChild(createArtifactDiv(artifact, 200, "large"));
-        });
+        else if(build["artifactset1"].length == 2){
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][0], 200, "large", 2));
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][1], 200, "large", 2));
+        }
+
+        const artifactsOr = document.createElement("h3");
+        artifactsOr.setAttribute("class", "or-text");
+        artifactsOr.setAttribute("data-aos", "fade-down");
+        artifactsOr.setAttribute("data-aos-delay", "250");
+        artifactsOr.innerHTML = "Or";
+        if(build["artifactset2"].length == 1){
+            artifactsContainer.appendChild(artifactsOr);
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][0], 200, "large", 4));
+        }
+        else if(build["artifactset2"].length == 2){
+            artifactsContainer.appendChild(artifactsOr);
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][0], 200, "large", 2));
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][1], 200, "large", 2));
+        }
 
         weaponsArtifactsContainer.appendChild(weaponsContainer);
         weaponsArtifactsContainer.appendChild(artifactsContainer);
@@ -426,7 +436,9 @@ const createWeaponDiv = (weapon, delay, size) => {
     const weaponDescription = document.createElement("p");
     weaponDescription.setAttribute("class", "weapon-description");
     weaponDescription.setAttribute("id", "weapon-description");
-    weaponDescription.innerHTML = genshindb["weapons"][weapon]["effect"];
+    let weaponEffect = genshindb["weapons"][weapon]["effect"];
+    weaponEffect.length > 180 ? weaponEffect = weaponEffect.slice(0, 180) + "..." : weaponEffect = weaponEffect;
+    weaponDescription.innerHTML = weaponEffect;
     const weaponImageContainer = document.createElement("div");
     weaponImageContainer.setAttribute("class", "image-video-container");
     weaponImageContainer.setAttribute("id", "weapon-image");
@@ -453,7 +465,7 @@ const createWeaponDiv = (weapon, delay, size) => {
  * @param {""} size - size for image
  * @returns div containing specific artifact information
  */
-const createArtifactDiv = (artifact, delay, size) =>{ 
+const createArtifactDiv = (artifact, delay, size, effect) =>{ 
 
     const container = document.createElement("div");
     container.setAttribute("class", "artifact");
@@ -472,8 +484,15 @@ const createArtifactDiv = (artifact, delay, size) =>{
     const artifactDescription = document.createElement("p");
     artifactDescription.setAttribute("class", "artifact-description");
     artifactDescription.setAttribute("id", "artifact-description");
-    artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]} <br>
+    
+    if(effect == 2){
+        artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]}<br>`;
+    }
+    else if(effect == 4){
+        artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]} <br>
                                     (4) ${genshindb["artifacts"][artifact]["4pc"]}`;
+    }
+    
     const artifactImageContainer = document.createElement("div");
     artifactImageContainer.setAttribute("class", "image-video-container");
     artifactImageContainer.setAttribute("id", "artifact-image");

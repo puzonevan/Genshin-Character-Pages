@@ -2,29 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 :root{
-    --primary-color: #E71D36;
-    --primary-2-color: #DE3C4B;
-    --primary-3-color: #C02130;
+    --primary-color: #E07000;
+    --primary-2-color: #CC6600;
+    --primary-3-color: #A35200;
 
-    --secondary-color: #7D53DE;
-    --secondary-2-color: #7776BC;
+    --secondary-color: #20A4F3;
+    --secondary-2-color: #50B4E2;
+    --secondary-3-color: #3D77A4;
 
-    --secondary-3-color: #4B4A96;
 
-
-    --tertiary-color: #279AF1;
-    --tertiary-2-color: #4059AD;
-    --tertiary-3-color: #324586;
+    --tertiary-color: #C51B29;
+    --tertiary-2-color: #A31621;
+    --tertiary-3-color: #90141E;
 
     --title-color: #FFFFFF;
     --sub-title-color: #C2C2C2;
     --paragraph-color: #FFFFFF;
-    --light-title-color: #E71D36;
-    --dark-title-color: #4B4A96;
+    --light-title-color: #C51B29;
+    --dark-title-color: #A35200;
 
-    --main-background-color: #151514; 
+    --main-background-color: #0B151E; 
     --light-container-color:#F5F5F5;
-    --dark-container-color: #151514;
+    --dark-container-color: #0B151E;
     
 }
 
@@ -180,12 +179,11 @@ svg{
     height: 15%;
 }
 
-.item-name{
+.item-name p{
     color: var(--title-color);
 }
 .item-name strong{
     color: var(--secondary-color);
-    font-size: 1.1em;
 }
 .talents-ascension .item img{
     max-height: 70%;
@@ -193,7 +191,7 @@ svg{
     transition: .3s;
 }
 .talents-ascension .item p{
-    font-size: 1em;
+    font-size: .9em;
     color: var(--title-color);
     text-align: center;
 }
@@ -208,7 +206,7 @@ svg{
 
 .build{
     width: 100%;
-    height: 70%;
+    height: auto;
     background-color: var(--light-container-color);
     border-radius: .3em;
     padding: 1em 2em 2em 2em;
@@ -220,11 +218,7 @@ svg{
     width: 100%;
     top: 5em;
 }
-.build-section .bottom-border{
-    position: absolute;
-    width: 100%;
-    bottom: 19.6em;
-}
+
 .build h2,.build .build-description, .weapons-artifacts h3, .weapons-artifacts h4, .weapons-artifacts h5{
     font-family: "Georama", sans-serif;
     font-size: 1.5em;
