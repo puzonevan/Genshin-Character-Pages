@@ -2,28 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 :root{
-    --primary-color: #E07000;
-    --primary-2-color: #CC6600;
-    --primary-3-color: #A35200;
+    --primary-color: #FBFFB9;
+    --primary-2-color: #E8D99B;
+    --primary-3-color: #D9C059;
 
-    --secondary-color: #20A4F3;
-    --secondary-2-color: #50B4E2;
-    --secondary-3-color: #3D77A4;
+    --secondary-color: #FAE8C7;
+    --secondary-2-color: #F7D9A1;
+    --secondary-3-color: #F4CA7C;
 
 
-    --tertiary-color: #C51B29;
-    --tertiary-2-color: #A31621;
-    --tertiary-3-color: #90141E;
+    --tertiary-color: #281A01;
+    --tertiary-2-color: #4E3104;
+    --tertiary-3-color: #744806;
 
     --title-color: #FFFFFF;
     --sub-title-color: #C2C2C2;
     --paragraph-color: #FFFFFF;
-    --light-title-color: #C51B29;
-    --dark-title-color: #A35200;
+    --light-title-color: #F4CA7C;
+    --dark-title-color: #281A01;
 
-    --main-background-color: #0B151E; 
+    --main-background-color: #100E04; 
     --light-container-color:#F5F5F5;
-    --dark-container-color: #0B151E;
+    --dark-container-color: #100E04;
     
 }
 
