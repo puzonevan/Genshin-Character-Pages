@@ -273,7 +273,7 @@ function initializeBuilds(){
         weaponsOr.setAttribute("data-aos-delay", "250");
         weaponsOr.innerHTML = "Or";
         const weapon1 = createWeaponDiv(build["mainweapon"], 450, "large");
-        const weapon2 = createWeaponDiv(build["replaceweapon"], 450, "small");
+        const weapon2 = createWeaponDiv(build["replaceweapon"], 450, "large");
         weaponsContainer.appendChild(weaponsTitle);
         weaponsContainer.appendChild(weapon1);
         weaponsContainer.appendChild(weaponsOr);
@@ -287,15 +287,28 @@ function initializeBuilds(){
         artifactsTitle.textContent = "Artifacts";
         artifactsContainer.appendChild(artifactsTitle);
 
-        build["artifactset1"].forEach((artifact) =>{
-            artifactsContainer.appendChild(createArtifactDiv(artifact, 200, "large"));
-        });
-        if(build["artifactset2"].length != 0){
-            artifactsContainer.appendChild(weaponsOr);
+        if(build["artifactset1"].length == 1){
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][0], 200, "large", 4));
         }
-        build["artifactset2"].forEach((artifact) =>{
-            artifactsContainer.appendChild(createArtifactDiv(artifact, 200, "large"));
-        });
+        else if(build["artifactset1"].length == 2){
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][0], 200, "small", 2));
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][1], 200, "small", 2));
+        }
+
+        const artifactsOr = document.createElement("h3");
+        artifactsOr.setAttribute("class", "or-text");
+        artifactsOr.setAttribute("data-aos", "fade-down");
+        artifactsOr.setAttribute("data-aos-delay", "250");
+        artifactsOr.innerHTML = "Or";
+        if(build["artifactset2"].length == 1){
+            artifactsContainer.appendChild(artifactsOr);
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][0], 200, "large", 4));
+        }
+        else if(build["artifactset2"].length == 2){
+            artifactsContainer.appendChild(artifactsOr);
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][0], 200, "small", 2));
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][1], 200, "small", 2));
+        }
 
         weaponsArtifactsContainer.appendChild(weaponsContainer);
         weaponsArtifactsContainer.appendChild(artifactsContainer);
@@ -409,12 +422,15 @@ const hover = (image) =>{
  * @returns div containing specific weapon information
  */
 const createWeaponDiv = (weapon, delay, size) => {
+
+    // Weapon Container
     const container = document.createElement("div");
     container.setAttribute("class", "weapon");
     container.setAttribute("id", "weapon");
     container.setAttribute("data-aos", "fade-down");
     container.setAttribute("data-aos-delay", delay);
 
+    // Weapon Title, Substat, and description
     const weaponTitle = document.createElement("h4");
     weaponTitle.setAttribute("id", "weapon-title");
     weaponTitle.setAttribute("class", "weapon-title");
@@ -426,7 +442,16 @@ const createWeaponDiv = (weapon, delay, size) => {
     const weaponDescription = document.createElement("p");
     weaponDescription.setAttribute("class", "weapon-description");
     weaponDescription.setAttribute("id", "weapon-description");
-    weaponDescription.innerHTML = genshindb["weapons"][weapon]["effect"];
+
+    // Weapon description values and limit length
+    let weaponEffect = genshindb["weapons"][weapon]["effect"];
+    weaponEffect.length > 180 ? weaponEffect = weaponEffect.slice(0, 180) + "..." : weaponEffect = weaponEffect;
+    genshindb["weapons"][weapon]["r1"].forEach((value, index) =>{
+        weaponEffect = weaponEffect.replace(`{${index}}`, value);
+    });
+    weaponDescription.innerHTML = weaponEffect;
+
+    // Weapon Image 
     const weaponImageContainer = document.createElement("div");
     weaponImageContainer.setAttribute("class", "image-video-container");
     weaponImageContainer.setAttribute("id", "weapon-image");
@@ -436,8 +461,19 @@ const createWeaponDiv = (weapon, delay, size) => {
     weaponImage.setAttribute("alt", genshindb["weapons"][weapon]["name"])
     weaponImageContainer.appendChild(weaponImage);
 
+    // Weapon Title Events
+    weaponTitle.addEventListener('mouseover', () =>{
+        weaponTitle.style.color = "var(--secondary-color)";
+        weaponTitle.style.cursor = "pointer";
+    });
+    weaponTitle.addEventListener('mouseout', () =>{
+        weaponTitle.style.color = "var(--primary-color)";
+    });
+    weaponTitle.addEventListener('click', () =>{
+        window.open(genshinlink["weapons"][weapon]["fandom"], "_blank").focus();
+    });
 
-
+    // Append to main container
     container.appendChild(weaponTitle);
     container.appendChild(weaponSubstat);
     container.appendChild(weaponDescription);
@@ -453,14 +489,16 @@ const createWeaponDiv = (weapon, delay, size) => {
  * @param {""} size - size for image
  * @returns div containing specific artifact information
  */
-const createArtifactDiv = (artifact, delay, size) =>{ 
+const createArtifactDiv = (artifact, delay, size, effect) =>{ 
 
+    // Artifact Container
     const container = document.createElement("div");
     container.setAttribute("class", "artifact");
     container.setAttribute("id", "artifact");
     container.setAttribute("data-aos", "fade-down");
     container.setAttribute("data-aos-delay", delay);
 
+    // Artifact Title, Substat, and Description
     const artifactTitle = document.createElement("h4");
     artifactTitle.setAttribute("id", "artifact-title");
     artifactTitle.setAttribute("class", "artifact-title");
@@ -472,8 +510,19 @@ const createArtifactDiv = (artifact, delay, size) =>{
     const artifactDescription = document.createElement("p");
     artifactDescription.setAttribute("class", "artifact-description");
     artifactDescription.setAttribute("id", "artifact-description");
-    artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]} <br>
+    
+    // Description specifics
+    if(effect == 2){
+        artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]}<br>`;
+    }
+    else if(effect == 4){
+        artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]} <br>
                                     (4) ${genshindb["artifacts"][artifact]["4pc"]}`;
+        // Limit character count if too long
+        artifactDescription.innerHTML.length > 180 ? artifactDescription.innerHTML = artifactDescription.innerHTML.slice(0, 180) + "..." : artifactDescription.innerHTML = artifactDescription.innerHTML;
+    }
+
+    // Artifact Image 
     const artifactImageContainer = document.createElement("div");
     artifactImageContainer.setAttribute("class", "image-video-container");
     artifactImageContainer.setAttribute("id", "artifact-image");
@@ -483,8 +532,19 @@ const createArtifactDiv = (artifact, delay, size) =>{
     artifactImage.setAttribute("alt", genshindb["artifacts"][artifact]["name"])
     artifactImageContainer.appendChild(artifactImage);
 
+    // Artifact Title Events
+    artifactTitle.addEventListener('mouseover', () =>{
+        artifactTitle.style.color = "var(--secondary-color)";
+        artifactTitle.style.cursor = "pointer";
+    });
+    artifactTitle.addEventListener('mouseout', () =>{
+        artifactTitle.style.color = "var(--primary-color)";
+    });
+    artifactTitle.addEventListener('click', () =>{
+        window.open(genshinlink["weapons"][artifact]["fandom"], "_blank").focus();
+    });
 
-
+    // Append to main container
     container.appendChild(artifactTitle);
     container.appendChild(artifactSubstat);
     container.appendChild(artifactDescription);
