@@ -419,12 +419,15 @@ const hover = (image) =>{
  * @returns div containing specific weapon information
  */
 const createWeaponDiv = (weapon, delay, size) => {
+
+    // Weapon Container
     const container = document.createElement("div");
     container.setAttribute("class", "weapon");
     container.setAttribute("id", "weapon");
     container.setAttribute("data-aos", "fade-down");
     container.setAttribute("data-aos-delay", delay);
 
+    // Weapon Title, Substat, and description
     const weaponTitle = document.createElement("h4");
     weaponTitle.setAttribute("id", "weapon-title");
     weaponTitle.setAttribute("class", "weapon-title");
@@ -436,12 +439,16 @@ const createWeaponDiv = (weapon, delay, size) => {
     const weaponDescription = document.createElement("p");
     weaponDescription.setAttribute("class", "weapon-description");
     weaponDescription.setAttribute("id", "weapon-description");
+
+    // Weapon description values and limit length
     let weaponEffect = genshindb["weapons"][weapon]["effect"];
     weaponEffect.length > 180 ? weaponEffect = weaponEffect.slice(0, 180) + "..." : weaponEffect = weaponEffect;
     genshindb["weapons"][weapon]["r1"].forEach((value, index) =>{
         weaponEffect = weaponEffect.replace(`{${index}}`, value);
     });
     weaponDescription.innerHTML = weaponEffect;
+
+    // Weapon Image 
     const weaponImageContainer = document.createElement("div");
     weaponImageContainer.setAttribute("class", "image-video-container");
     weaponImageContainer.setAttribute("id", "weapon-image");
@@ -451,6 +458,7 @@ const createWeaponDiv = (weapon, delay, size) => {
     weaponImage.setAttribute("alt", genshindb["weapons"][weapon]["name"])
     weaponImageContainer.appendChild(weaponImage);
 
+    // Weapon Title Events
     weaponTitle.addEventListener('mouseover', () =>{
         weaponTitle.style.color = "var(--secondary-color)";
         weaponTitle.style.cursor = "pointer";
@@ -462,6 +470,7 @@ const createWeaponDiv = (weapon, delay, size) => {
         window.open(genshinlink["weapons"][weapon]["fandom"], "_blank").focus();
     });
 
+    // Append to main container
     container.appendChild(weaponTitle);
     container.appendChild(weaponSubstat);
     container.appendChild(weaponDescription);
