@@ -1,7 +1,7 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
 const name = "ningguang";
-const image = "";
+const image = "./Ningguang/images/ningguang.png";
 
 ///////////////////////////////////////////////////////////////////////
 

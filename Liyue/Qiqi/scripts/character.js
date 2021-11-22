@@ -1,7 +1,7 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
 const name = "qiqi";
-const image = "";
+const image = "./Qiqi/images/qiqi.png";
 
 ///////////////////////////////////////////////////////////////////////
 
