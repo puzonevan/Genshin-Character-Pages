@@ -438,6 +438,9 @@ const createWeaponDiv = (weapon, delay, size) => {
     weaponDescription.setAttribute("id", "weapon-description");
     let weaponEffect = genshindb["weapons"][weapon]["effect"];
     weaponEffect.length > 180 ? weaponEffect = weaponEffect.slice(0, 180) + "..." : weaponEffect = weaponEffect;
+    genshindb["weapons"][weapon]["r1"].forEach((value, index) =>{
+        weaponEffect = weaponEffect.replace(`{${index}}`, value);
+    });
     weaponDescription.innerHTML = weaponEffect;
     const weaponImageContainer = document.createElement("div");
     weaponImageContainer.setAttribute("class", "image-video-container");
@@ -448,6 +451,13 @@ const createWeaponDiv = (weapon, delay, size) => {
     weaponImage.setAttribute("alt", genshindb["weapons"][weapon]["name"])
     weaponImageContainer.appendChild(weaponImage);
 
+    weaponTitle.addEventListener('mouseover', () =>{
+        weaponTitle.style.color = "var(--secondary-color)";
+        weaponTitle.style.cursor = "pointer";
+    });
+    weaponTitle.addEventListener('mouseout', () =>{
+        weaponTitle.style.color = "var(--primary-color)";
+    });
     weaponTitle.addEventListener('click', () =>{
         window.open(genshinlink["weapons"][weapon]["fandom"], "_blank").focus();
     });
@@ -505,7 +515,16 @@ const createArtifactDiv = (artifact, delay, size, effect) =>{
     artifactImage.setAttribute("alt", genshindb["artifacts"][artifact]["name"])
     artifactImageContainer.appendChild(artifactImage);
 
-
+    artifactTitle.addEventListener('mouseover', () =>{
+        artifactTitle.style.color = "var(--secondary-color)";
+        artifactTitle.style.cursor = "pointer";
+    });
+    artifactTitle.addEventListener('mouseout', () =>{
+        artifactTitle.style.color = "var(--primary-color)";
+    });
+    artifactTitle.addEventListener('click', () =>{
+        window.open(genshinlink["weapons"][artifact]["fandom"], "_blank").focus();
+    });
 
     container.appendChild(artifactTitle);
     container.appendChild(artifactSubstat);
