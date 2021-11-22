@@ -1,20 +1,20 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
-const name = "chongyun";
+const name = "yanfei";
 const image = "";
 
 ///////////////////////////////////////////////////////////////////////
 
 /****** CHARACTER MATERIAL VARIABLES *******/
-const stones = ["agnidusagatesliver", "agnidusagatefragment", "agnidusagatechunk", "agnidusagategemstone", "corlapis"];
+const stones = ["agnidusagatesliver", "agnidusagatefragment", "agnidusagatechunk", "agnidusagategemstone", "noctilucousjade"];
 const stoneAmounts = [1, 9, 9, 6, 168];
-const collectable = ["damagedmask", "stainedmask", "ominousmask"];
+const collectable = ["treasurehoarderinsignia", "silverraveninsignia", "goldenraveninsignia"];
 const collectableAmounts = [18, 30, 36, 18, 66, 93];
-const uniqueCollectable = "hoarfrostcore";
+const uniqueCollectable = "juvenilejade";
 const uniqueCollectableAmounts = 46;
-const books = ["teachingsofdiligence", "guidetodiligence", "philosophiesofdiligence"];
+const books = ["teachingsofgold", "guidetogold", "philosophiesofgold"];
 const booksAmounts = [9, 65, 114];
-const boss = "dvalinssigh";
+const boss = "bloodjadebranch";
 const bossAmounts = 18;
 const crown = "crownofinsight";
 const crownAmounts = 3;
@@ -24,22 +24,22 @@ const crownAmounts = 3;
 /****** CHARACTER BUILDS *******/
 const builds = [
     {
-        title: "Cryo Support Build", 
-        description: "Melt is one of the strongest Elemental Reactions in the game and Chongyun has a consistent method of applying the Cryo debuff with his Elemental Skill ability. This makes him a strong support character when paired with Pyro carries.",
-        mainweapon: "skywardpride", 
-        replaceweapon: "favoniusgreatsword", 
-        artifactset1: ["noblesseoblige", "blizzardstrayer"], 
-        artifactset2: ["noblesseoblige"],
-        substats: "ATK% / Cryo DMG / CRIT DMG"
+        title: "Charged Attack", 
+        description: "This build focuses more on maximing the damage of Yanfei's charged attack",
+        mainweapon: "lostprayertothesacredwinds", 
+        replaceweapon: "eyeofperception", 
+        artifactset1: ["shimenawasreminiscence"], 
+        artifactset2: [],
+        substats: "ATK% / Pyro DMG / CRIT RATE"
     },
     {
-        title: "Cryo DPS", 
-        description: "While Chongyun can be built like other standard Claymore users with a Gladiator set, his true power comes from his Elemental Burst skill. A lot of his constellations also empower this ability. As such, this build piles on, making his Ultimate as strong as possible.",
-        mainweapon: "wolfsgravestone", 
-        replaceweapon: "skywardpride", 
-        artifactset1: ["noblesseoblige"], 
+        title: "Pyro DPS", 
+        description: "Yanfei is essentially a 4 star Klee who applies pyro very fast but relies heavily on Crit Rate",
+        mainweapon: "lostprayertothesacredwinds", 
+        replaceweapon: "thewidsith", 
+        artifactset1: ["crimsonwitchofflames"], 
         artifactset2: [],
-        substats: "ATK% / Hydro DMG / CRIT RATE"
+        substats: "ATK% / Pyro DMG / CRIT RATE"
     },
 ]
 

@@ -1,20 +1,20 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
-const name = "chongyun";
+const name = "zhongli";
 const image = "";
 
 ///////////////////////////////////////////////////////////////////////
 
 /****** CHARACTER MATERIAL VARIABLES *******/
-const stones = ["shivadajadesliver", "shivadajadefragment", "shivadajadechunk", "shivadajadegemstone", "corlapis"];
+const stones = ["prithivatopazsliver", "prithivatopazfragment", "prithivatopazchunk", "prithivatopazgemstone", "corlapis"];
 const stoneAmounts = [1, 9, 9, 6, 168];
-const collectable = ["damagedmask", "stainedmask", "ominousmask"];
+const collectable = ["slimecondensate", "slimesecretions", "slimeconcentrate"];
 const collectableAmounts = [18, 30, 36, 18, 66, 93];
-const uniqueCollectable = "hoarfrostcore";
+const uniqueCollectable = "basaltpillar";
 const uniqueCollectableAmounts = 46;
-const books = ["teachingsofdiligence", "guidetodiligence", "philosophiesofdiligence"];
+const books = ["teachingsofgold", "guidetogold", "philosophiesofgold"];
 const booksAmounts = [9, 65, 114];
-const boss = "dvalinssigh";
+const boss = "tuskofmonoceroscaeli";
 const bossAmounts = 18;
 const crown = "crownofinsight";
 const crownAmounts = 3;
@@ -24,22 +24,22 @@ const crownAmounts = 3;
 /****** CHARACTER BUILDS *******/
 const builds = [
     {
-        title: "Cryo Support Build", 
-        description: "Melt is one of the strongest Elemental Reactions in the game and Chongyun has a consistent method of applying the Cryo debuff with his Elemental Skill ability. This makes him a strong support character when paired with Pyro carries.",
-        mainweapon: "skywardpride", 
-        replaceweapon: "favoniusgreatsword", 
-        artifactset1: ["noblesseoblige", "blizzardstrayer"], 
-        artifactset2: ["noblesseoblige"],
-        substats: "ATK% / Cryo DMG / CRIT DMG"
+        title: "Geo DPS", 
+        description: "Zhongli can be a great defensive support through the use of geo shields, pillars, and petrification",
+        mainweapon: "staffofhoma", 
+        replaceweapon: "deathmatch", 
+        artifactset1: ["archaicpetra"], 
+        artifactset2: ["archaicpetra", "noblesseoblige"],
+        substats: "ATK% / Geo DMG / CRIT DMG"
     },
     {
-        title: "Cryo DPS", 
-        description: "While Chongyun can be built like other standard Claymore users with a Gladiator set, his true power comes from his Elemental Burst skill. A lot of his constellations also empower this ability. As such, this build piles on, making his Ultimate as strong as possible.",
-        mainweapon: "wolfsgravestone", 
-        replaceweapon: "skywardpride", 
-        artifactset1: ["noblesseoblige"], 
-        artifactset2: [],
-        substats: "ATK% / Hydro DMG / CRIT RATE"
+        title: "Geo Support Build", 
+        description: "With the addition of Tenacity of the Millelith, Zhongli's utility power has increased tremendously. By stacking HP, his shields will keep your team healthy throughout the hardest fights",
+        mainweapon: "staffofhoma", 
+        replaceweapon: "blacktassel", 
+        artifactset1: ["tenacityofthemillelith"], 
+        artifactset2: ["archaicpetra"],
+        substats: "HP% / HP% / HP%"
     },
 ]
 

@@ -1,20 +1,20 @@
 // Change variables below for different characters 
 // DO NOT CHANGE AMOUNTS FOR MATERIALS
-const name = "chongyun";
+const name = "xinyan";
 const image = "";
 
 ///////////////////////////////////////////////////////////////////////
 
 /****** CHARACTER MATERIAL VARIABLES *******/
-const stones = ["agnidusagatesliver", "agnidusagatefragment", "agnidusagatechunk", "agnidusagategemstone", "corlapis"];
+const stones = ["agnidusagatesliver", "agnidusagatefragment", "agnidusagatechunk", "agnidusagategemstone", "violetgrass"];
 const stoneAmounts = [1, 9, 9, 6, 168];
-const collectable = ["damagedmask", "stainedmask", "ominousmask"];
+const collectable = ["treasurehoarderinsignia", "silverraveninsignia", "goldenraveninsignia"];
 const collectableAmounts = [18, 30, 36, 18, 66, 93];
-const uniqueCollectable = "hoarfrostcore";
+const uniqueCollectable = "everflameseed";
 const uniqueCollectableAmounts = 46;
-const books = ["teachingsofdiligence", "guidetodiligence", "philosophiesofdiligence"];
+const books = ["teachingsofgold", "guidetogold", "philosophiesofgold"];
 const booksAmounts = [9, 65, 114];
-const boss = "dvalinssigh";
+const boss = "tuskofmonoceroscaeli";
 const bossAmounts = 18;
 const crown = "crownofinsight";
 const crownAmounts = 3;
@@ -24,22 +24,22 @@ const crownAmounts = 3;
 /****** CHARACTER BUILDS *******/
 const builds = [
     {
-        title: "Cryo Support Build", 
-        description: "Melt is one of the strongest Elemental Reactions in the game and Chongyun has a consistent method of applying the Cryo debuff with his Elemental Skill ability. This makes him a strong support character when paired with Pyro carries.",
+        title: "Physical Burst", 
+        description: "This build utilizes using Xinyan's Elemental burst for insane damage. At Constellation level 2, this damage skyrockets heavily",
         mainweapon: "skywardpride", 
-        replaceweapon: "favoniusgreatsword", 
-        artifactset1: ["noblesseoblige", "blizzardstrayer"], 
-        artifactset2: ["noblesseoblige"],
-        substats: "ATK% / Cryo DMG / CRIT DMG"
+        replaceweapon: "snowtombedstarsilver", 
+        artifactset1: ["noblesseoblige", "bloodstainedchivalry"], 
+        artifactset2: [],
+        substats: "ATK% / Phys DMG / CRIT DMG"
     },
     {
-        title: "Cryo DPS", 
-        description: "While Chongyun can be built like other standard Claymore users with a Gladiator set, his true power comes from his Elemental Burst skill. A lot of his constellations also empower this ability. As such, this build piles on, making his Ultimate as strong as possible.",
+        title: "Physical DPS ", 
+        description: "Unlike Diluc who focuses on Pyro DPS, Xinyan excels when built around physical damage similar to razor. Switch the circlet to CRIT DMG if you unlock Constellation level 2",
         mainweapon: "wolfsgravestone", 
-        replaceweapon: "skywardpride", 
-        artifactset1: ["noblesseoblige"], 
-        artifactset2: [],
-        substats: "ATK% / Hydro DMG / CRIT RATE"
+        replaceweapon: "prototypearchaic", 
+        artifactset1: ["gladiatorsfinale"], 
+        artifactset2: ["bloodstainedchivalry", "gladiatorsfinale"],
+        substats: "ATK% / Phys DMG / CRIT RATE"
     },
 ]
 
