@@ -488,12 +488,14 @@ const createWeaponDiv = (weapon, delay, size) => {
  */
 const createArtifactDiv = (artifact, delay, size, effect) =>{ 
 
+    // Artifact Container
     const container = document.createElement("div");
     container.setAttribute("class", "artifact");
     container.setAttribute("id", "artifact");
     container.setAttribute("data-aos", "fade-down");
     container.setAttribute("data-aos-delay", delay);
 
+    // Artifact Title, Substat, and Description
     const artifactTitle = document.createElement("h4");
     artifactTitle.setAttribute("id", "artifact-title");
     artifactTitle.setAttribute("class", "artifact-title");
@@ -506,15 +508,18 @@ const createArtifactDiv = (artifact, delay, size, effect) =>{
     artifactDescription.setAttribute("class", "artifact-description");
     artifactDescription.setAttribute("id", "artifact-description");
     
+    // Description specifics
     if(effect == 2){
         artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]}<br>`;
     }
     else if(effect == 4){
         artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]} <br>
                                     (4) ${genshindb["artifacts"][artifact]["4pc"]}`;
+        // Limit character count if too long
         artifactDescription.innerHTML.length > 180 ? artifactDescription.innerHTML = artifactDescription.innerHTML.slice(0, 180) + "..." : artifactDescription.innerHTML = artifactDescription.innerHTML;
     }
-    
+
+    // Artifact Image 
     const artifactImageContainer = document.createElement("div");
     artifactImageContainer.setAttribute("class", "image-video-container");
     artifactImageContainer.setAttribute("id", "artifact-image");
@@ -524,6 +529,7 @@ const createArtifactDiv = (artifact, delay, size, effect) =>{
     artifactImage.setAttribute("alt", genshindb["artifacts"][artifact]["name"])
     artifactImageContainer.appendChild(artifactImage);
 
+    // Artifact Title Events
     artifactTitle.addEventListener('mouseover', () =>{
         artifactTitle.style.color = "var(--secondary-color)";
         artifactTitle.style.cursor = "pointer";
@@ -535,6 +541,7 @@ const createArtifactDiv = (artifact, delay, size, effect) =>{
         window.open(genshinlink["weapons"][artifact]["fandom"], "_blank").focus();
     });
 
+    // Append to main container
     container.appendChild(artifactTitle);
     container.appendChild(artifactSubstat);
     container.appendChild(artifactDescription);
