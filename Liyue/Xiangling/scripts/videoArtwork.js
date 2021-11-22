@@ -5,12 +5,12 @@
  */
 
 const links = [
-    './Childe/images/childe1.png',
-    './Childe/images/childe2.jpg',
-    './Childe/images/childe3.jpg',
-    './Childe/images/childe4.jpg',
-    './Childe/images/childe5.jpg',
-    './Childe/images/childe6.jpg',
+    './Xiangling/images/xiangling1.jpg',
+    './Xiangling/images/xiangling2.jpg',
+    './Xiangling/images/xiangling3.jpg',
+    './Xiangling/images/xiangling4.jpg',
+    './Xiangling/images/xiangling5.jpg',
+    './Xiangling/images/xiangling6.jpg',
 ]
 
 // Get the container for the art from DOM 
