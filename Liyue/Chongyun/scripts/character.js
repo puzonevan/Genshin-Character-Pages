@@ -55,6 +55,7 @@ let genshinlink = {};
 /****** ASYNC INIT FUNCTIONS *******/
 
 window.addEventListener("DOMContentLoaded", init);
+
 async function init(){
 
     // Json Fetches
