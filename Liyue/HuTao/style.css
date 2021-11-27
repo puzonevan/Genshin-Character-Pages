@@ -166,7 +166,6 @@ svg{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: .5em;
 }
 .talents-ascension h2{
     font-size: 2em;
@@ -186,15 +185,38 @@ svg{
     color: var(--secondary-color);
 }
 .talents-ascension .item img{
-    max-height: 70%;
+    max-height: 60%;
     margin: 0 auto;
     transition: .3s;
 }
 .talents-ascension .item p{
-    font-size: .9em;
+    font-size: .8em;
     color: var(--title-color);
     text-align: center;
 }
+table, td, tr{
+    border: 1px solid var(--title-color);
+}
+table{
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+td{
+    color:  var(--title-color);
+    padding: .2em 1em;
+    font-family: 'STIX Two Text', serif;
+    font-size: 12px;
+}
+td:hover{
+    background: var(--primary-color);
+}
+.desktop-only{
+    display: block;
+}
+.mobile-only{
+    display: none;
+}
+
 
 /* Weapons and Artifacts Section */
 .build-section{
@@ -524,7 +546,13 @@ svg{
     .talents-ascension .item p{
         font-size: .6em;
     }
-    
+
+    .desktop-only{
+        display: none;
+    }
+    .mobile-only{
+        display: block;
+    }
 
     /* Weapons and Artifacts Section */
     .build-section{
