@@ -237,17 +237,20 @@ function initializeMaterials(){
 }
 
 /**
- * 
+ * change materials based on level and ascension feature
  */
 function tableDOM(){
+
+    // DOM Tables
     const ascensionTable = document.getElementById("ascension-table");
     const talentTable1 = document.getElementById("talent-table-1");
     const talentTable2 = document.getElementById("talent-table-2");
 
+    // DOM Ascension Materials
     const ascensionStone = document.getElementById("ascension-stone");
     const ascensionMonster = document.getElementById("ascension-monster");
     
-
+    // Ascension materials buttons
     [...ascensionTable.children[0].children[0].children].forEach((button, index) =>{
         button.addEventListener('click', () =>{
             removeChildren(ascensionStone);
@@ -261,8 +264,11 @@ function tableDOM(){
         });
     });
 
+    // DOM Talent Materials
     const talentBooks = document.getElementById("talent-books");
     const talentMonster = document.getElementById("talent-monster");
+
+    // Talent materials buttons desktop
     [...talentTable1.children[0].children[0].children].forEach((button, index) =>{
         button.addEventListener('click', () =>{
             removeChildren(talentBooks);
@@ -274,7 +280,46 @@ function tableDOM(){
                 talentBooks.appendChild(item);
             }
         })
-    })
+    });
+    // Talent materials buttons mobile row 1
+    [...talentTable2.children[0].children[0].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 2}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+    // Talent materials buttons mobile row 2
+    [...talentTable2.children[0].children[1].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 5}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+    // Talent materials buttons mobile row 3
+    [...talentTable2.children[0].children[2].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 8}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
 
     
 }
@@ -444,12 +489,22 @@ function initializeConstellations(){
 
 /****** HELPER FUNCTIONS *******/
 
+/**
+ * Remove all child nodes of a parent node
+ * @param {DOM} parent 
+ */
 function removeChildren(parent){
     while(parent.firstElementChild){
         parent.removeChild(parent.firstElementChild);
     }
 }
 
+/**
+ * create item container for talents and materials section 
+ * @param {""} name name of the item 
+ * @param {#} count how many of the item
+ * @returns 
+ */
 function createItem(name, count){
     const container = document.createElement("div");
     container.setAttribute("class", "item image-video-container");
