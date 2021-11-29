@@ -4,13 +4,11 @@
  */
 
 const quotes = [
-    'The world remains constant over the centuries. But human life is like the dew at dawn or a bubble rising through water. Transitory.', 
-    'All the world holds dear is but a backdrop of constant motion. I stand before it alone and unchanging.', 
-    'Inactivity serves no purpose whatsoever. Hmph.', 
-    'I command the thunder in all corners of the world to cease. Rest well tonight.', 
-    'Don\'t try and get me to cook. I can take care of anything else, but not that.',
-    'Foolish question. There are only two kinds of things — those that must be done and those that must not.',
-    'Her body may have perished, but she became the Sacred Sakura. This, too, is a form of Eternity.'
+    'The world looks glorious in the snow. Pure white, like the light of the moon. A perfect backdrop for bloodshed.',
+    'If you make a promise, you keep it. If you make a mistake, you apologize...',
+    'A warrior must always be ready to face any challenge with his blade.',
+    'The skeletal-white snowscape devours life without leaving any trace. It is the invisible enemy we fight against each day.',
+    'It\'s been years since I last saw my master. I should hope that next we meet, I\'ll at least be able to force her to use both hands to beat me...',
 ]
 
 // Get the dom 

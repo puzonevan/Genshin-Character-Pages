@@ -4,13 +4,11 @@
  */
 
 const quotes = [
-    'The world remains constant over the centuries. But human life is like the dew at dawn or a bubble rising through water. Transitory.', 
-    'All the world holds dear is but a backdrop of constant motion. I stand before it alone and unchanging.', 
-    'Inactivity serves no purpose whatsoever. Hmph.', 
-    'I command the thunder in all corners of the world to cease. Rest well tonight.', 
-    'Don\'t try and get me to cook. I can take care of anything else, but not that.',
-    'Foolish question. There are only two kinds of things — those that must be done and those that must not.',
-    'Her body may have perished, but she became the Sacred Sakura. This, too, is a form of Eternity.'
+    '"Heart be pure, evil be erased. Mind be purged, world be..." Um... Ugh, I always forget that last part.',
+    'There is no purer form of water than rain. It can aid us greatly in the purging of evil.',
+    'It is unwise to waste the precious morning hours. Time to train!',
+    'Waiting for evil to show up at the doorstep will get you nowhere — you have to go out and hunt it down. ',
+    'Visions are powerful, but one would be foolish to place blind faith in them.',
 ]
 
 // Get the dom 

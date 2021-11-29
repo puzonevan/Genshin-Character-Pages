@@ -4,13 +4,11 @@
  */
 
 const quotes = [
-    'The world remains constant over the centuries. But human life is like the dew at dawn or a bubble rising through water. Transitory.', 
-    'All the world holds dear is but a backdrop of constant motion. I stand before it alone and unchanging.', 
-    'Inactivity serves no purpose whatsoever. Hmph.', 
-    'I command the thunder in all corners of the world to cease. Rest well tonight.', 
-    'Don\'t try and get me to cook. I can take care of anything else, but not that.',
-    'Foolish question. There are only two kinds of things — those that must be done and those that must not.',
-    'Her body may have perished, but she became the Sacred Sakura. This, too, is a form of Eternity.'
+    'I\'m Beidou. You\'ve heard of my ship, The Crux, and its crew? If you too love adventure, then join me. I\'ve got your back.',
+    'Time moves quickly. Haha, go, may the wind be at your back.',
+    'We\'re setting sail! Men, to your posts! A new adventure is about to begin!',
+    'I chose you as my crewmate, as my comrade on the sea. It gives me great pride to be able to say that.',
+    'If you can change something, change it. If you can\'t, don\'t waste time thinking about it. That\'s how I go about things.',
 ]
 
 // Get the dom 
