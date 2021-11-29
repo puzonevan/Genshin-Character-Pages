@@ -4,13 +4,11 @@
  */
 
 const quotes = [
-    'The world remains constant over the centuries. But human life is like the dew at dawn or a bubble rising through water. Transitory.', 
-    'All the world holds dear is but a backdrop of constant motion. I stand before it alone and unchanging.', 
-    'Inactivity serves no purpose whatsoever. Hmph.', 
-    'I command the thunder in all corners of the world to cease. Rest well tonight.', 
-    'Don\'t try and get me to cook. I can take care of anything else, but not that.',
-    'Foolish question. There are only two kinds of things — those that must be done and those that must not.',
-    'Her body may have perished, but she became the Sacred Sakura. This, too, is a form of Eternity.'
+    'I\'ll remind you again: The law can be both a help and a hindrance.',
+    'Sometimes the law is compatible with human nature, but sometimes the two conflict. Balancing the two is a discipline in its own right...',
+    '"Do not seek to emulate the past, for there is no law that can suffice for all time".',
+    'Only by adhering to the law can the people solve life\'s myriad of problems',
+    'Studying the law allows one to have grounded conversations, whilst learning martial arts allows one to prevail against groundless violence.',   
 ]
 
 // Get the dom 

@@ -4,13 +4,11 @@
  */
 
 const quotes = [
-    'The world remains constant over the centuries. But human life is like the dew at dawn or a bubble rising through water. Transitory.', 
-    'All the world holds dear is but a backdrop of constant motion. I stand before it alone and unchanging.', 
-    'Inactivity serves no purpose whatsoever. Hmph.', 
-    'I command the thunder in all corners of the world to cease. Rest well tonight.', 
-    'Don\'t try and get me to cook. I can take care of anything else, but not that.',
-    'Foolish question. There are only two kinds of things — those that must be done and those that must not.',
-    'Her body may have perished, but she became the Sacred Sakura. This, too, is a form of Eternity.'
+    'Only when it snows like this would I prefer to be at home than in a book store. ',
+    'I always have to put on an act around other people, because they see me only as the second son of the Feiyun Commerce Guild.',
+    'Studiousness can hardly be considered a bad habit. There\'s not much more to it than that. Really.',
+    'Had I no moral compass, my efforts would have been misguided. ',
+    'Were it not for my capability, the cause that so inspires me would remain confined to the pages that extol its virtues.',
 ]
 
 // Get the dom 

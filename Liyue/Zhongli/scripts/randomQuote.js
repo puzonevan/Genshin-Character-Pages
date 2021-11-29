@@ -4,13 +4,11 @@
  */
 
 const quotes = [
-    'The world remains constant over the centuries. But human life is like the dew at dawn or a bubble rising through water. Transitory.', 
-    'All the world holds dear is but a backdrop of constant motion. I stand before it alone and unchanging.', 
-    'Inactivity serves no purpose whatsoever. Hmph.', 
-    'I command the thunder in all corners of the world to cease. Rest well tonight.', 
-    'Don\'t try and get me to cook. I can take care of anything else, but not that.',
-    'Foolish question. There are only two kinds of things — those that must be done and those that must not.',
-    'Her body may have perished, but she became the Sacred Sakura. This, too, is a form of Eternity.'
+    'Every journey has its final day. Don\'t rush.',
+    'I hope today too shall be prosperous.',
+    'Gold is Liyue\'s treasure. It is the blood that runs through her heart.',
+    'Nothing can be accomplished without rules or standards. No matter if it is mortals or adepti, everyone has their place. ',
+    'Visions... are also a type of contract. You should know that all power comes at a price. For every bit of power you gain, so too do you gain more responsibility.',
 ]
 
 // Get the dom 

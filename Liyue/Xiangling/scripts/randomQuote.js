@@ -4,13 +4,11 @@
  */
 
 const quotes = [
-    'The world remains constant over the centuries. But human life is like the dew at dawn or a bubble rising through water. Transitory.', 
-    'All the world holds dear is but a backdrop of constant motion. I stand before it alone and unchanging.', 
-    'Inactivity serves no purpose whatsoever. Hmph.', 
-    'I command the thunder in all corners of the world to cease. Rest well tonight.', 
-    'Don\'t try and get me to cook. I can take care of anything else, but not that.',
-    'Foolish question. There are only two kinds of things — those that must be done and those that must not.',
-    'Her body may have perished, but she became the Sacred Sakura. This, too, is a form of Eternity.'
+    'I can\'t decide whether Pyro slimes taste better with salt and pepper or garlic and herbs?',
+    'Any time, night or day, I am always willing to make dishes everyone loves.',
+    'I love onions! I\'ve tried cutting them dozens of ways, and they still make me cry... No matter, I still love them!',
+    'I\'ll eat absolutely anything! There are no bad ingredients, only bad cooking!',
+    'My favorite thing to eat is... whatever exotic ingredient I haven\'t tried yet! No, I\'m not dodging the question, that\'s my honest answer!',
 ]
 
 // Get the dom 
