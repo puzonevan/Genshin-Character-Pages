@@ -41,15 +41,14 @@ Lastly, why not include some ***fan art*** of the character.
 
 # Features
 - Randomized quotes on refresh 
+- Change material amounts based on level
 - Custom made svg images
 - Links to all materials, weapons, artifacts, etc.
-- Change material amounts based on level(TBA)
 
 # What have I learned? 
-- Fetch API 
-- Creating custom svg's 
+- Fetch API and custom svg's
 - Lighthouse performance, accessibility, and best practices
-- Color palettes 
+- Color palettes
 
 # Background
 This project started out with only one character: [Ganyu](https://puzonevan.github.io/Ganyu/). After **2-3 months** finishing this site, I attempted to create another character site for a different character: [Raiden Shogun](https://puzonevan.github.io/RaidenShogun/). This took around **half a month** compared to the previous site since most of the previous code was used. However, in order to create a site for every character, I needed a different approach.
