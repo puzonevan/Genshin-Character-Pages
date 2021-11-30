@@ -14,9 +14,14 @@ The link above sends you to a hub containing to the current characters with dedi
 
 # Design 
 ## Title
-The title section includes the ***name*** of the character as the main title, a ***sub title***, and sometimes a ***randomized quote*** by the character
+The title section includes the ***name*** of the character as the main title, and a ***sub title***
 
 ![Character Title](./assets/readmeassets/charactertitle.PNG)
+
+## Random Quote 
+Here you can find either an **inspiring**, ,**hilarious**, or **interesting** quote said by the character 
+ 
+![]()
 
 ## Materials
 This section includes the necessary ***materials*** and ***amounts*** in order to ***level up*** the character and their ablities to the max 
@@ -42,11 +47,11 @@ Lastly, why not include some ***fan art*** of the character.
 # Features
 - Randomized quotes on refresh 
 - Change material amounts based on level
-- Custom made svg images
 - Links to all materials, weapons, artifacts, etc.
+- Custom made svg images
 
 # What have I learned? 
-- Fetch API and custom svg's
+- Fetch API, custom svg's, and color palettes
 - Lighthouse performance, accessibility, and best practices
 - Color palettes
 

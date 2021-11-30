@@ -231,6 +231,97 @@ function initializeMaterials(){
         });
         hover(crownDOM.previousElementSibling);
     });
+
+    // TABLE EVENTS
+    tableDOM();
+}
+
+/**
+ * change materials based on level and ascension feature
+ */
+function tableDOM(){
+
+    // DOM Tables
+    const ascensionTable = document.getElementById("ascension-table");
+    const talentTable1 = document.getElementById("talent-table-1");
+    const talentTable2 = document.getElementById("talent-table-2");
+
+    // DOM Ascension Materials
+    const ascensionStone = document.getElementById("ascension-stone");
+    const ascensionMonster = document.getElementById("ascension-monster");
+    
+    // Ascension materials buttons
+    [...ascensionTable.children[0].children[0].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(ascensionStone);
+            removeChildren(ascensionMonster);
+            const materials = genshindb['characters'][`${name}`]['costs'][`ascend${index + 1}`];
+            ascensionMonster.remove();
+            for(let i = 0; i < materials.length; i++){
+                const item = createItem(materials[i].name, materials[i].count);
+                ascensionStone.appendChild(item);
+            }
+        });
+    });
+
+    // DOM Talent Materials
+    const talentBooks = document.getElementById("talent-books");
+    const talentMonster = document.getElementById("talent-monster");
+
+    // Talent materials buttons desktop
+    [...talentTable1.children[0].children[0].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 2}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+    // Talent materials buttons mobile row 1
+    [...talentTable2.children[0].children[0].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 2}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+    // Talent materials buttons mobile row 2
+    [...talentTable2.children[0].children[1].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 5}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+    // Talent materials buttons mobile row 3
+    [...talentTable2.children[0].children[2].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 8}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+
+    
 }
 
 /**
@@ -288,8 +379,8 @@ function initializeBuilds(){
             artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][0], 200, "large", 4));
         }
         else if(build["artifactset1"].length == 2){
-            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][0], 200, "large", 2));
-            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][1], 200, "large", 2));
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][0], 200, "small", 2));
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset1"][1], 200, "small", 2));
         }
 
         const artifactsOr = document.createElement("h3");
@@ -303,8 +394,8 @@ function initializeBuilds(){
         }
         else if(build["artifactset2"].length == 2){
             artifactsContainer.appendChild(artifactsOr);
-            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][0], 200, "large", 2));
-            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][1], 200, "large", 2));
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][0], 200, "small", 2));
+            artifactsContainer.appendChild(createArtifactDiv(build["artifactset2"][1], 200, "small", 2));
         }
 
         weaponsArtifactsContainer.appendChild(weaponsContainer);
@@ -399,6 +490,38 @@ function initializeConstellations(){
 /****** HELPER FUNCTIONS *******/
 
 /**
+ * Remove all child nodes of a parent node
+ * @param {DOM} parent 
+ */
+function removeChildren(parent){
+    while(parent.firstElementChild){
+        parent.removeChild(parent.firstElementChild);
+    }
+}
+
+/**
+ * create item container for talents and materials section 
+ * @param {""} name name of the item 
+ * @param {#} count how many of the item
+ * @returns 
+ */
+function createItem(name, count){
+    const container = document.createElement("div");
+    container.setAttribute("class", "item image-video-container");
+    const image = document.createElement("img");
+    image.setAttribute("src", genshinimage["materials"][`${name.toLowerCase().split(" ").join("")}`]["fandom"]);
+    image.setAttribute("alt", name);
+    const description = document.createElement("p");
+    description.setAttribute("class", "item-name");
+    description.innerHTML = `${name} <strong>x${count}</strong>`;
+
+    container.appendChild(image);
+    container.appendChild(description);
+    
+    return container;
+}
+
+/**
  * change scale when hovering an image
  * @param {DOM} image - image DOM object
  */
@@ -419,12 +542,15 @@ const hover = (image) =>{
  * @returns div containing specific weapon information
  */
 const createWeaponDiv = (weapon, delay, size) => {
+
+    // Weapon Container
     const container = document.createElement("div");
     container.setAttribute("class", "weapon");
     container.setAttribute("id", "weapon");
     container.setAttribute("data-aos", "fade-down");
     container.setAttribute("data-aos-delay", delay);
 
+    // Weapon Title, Substat, and description
     const weaponTitle = document.createElement("h4");
     weaponTitle.setAttribute("id", "weapon-title");
     weaponTitle.setAttribute("class", "weapon-title");
@@ -436,9 +562,16 @@ const createWeaponDiv = (weapon, delay, size) => {
     const weaponDescription = document.createElement("p");
     weaponDescription.setAttribute("class", "weapon-description");
     weaponDescription.setAttribute("id", "weapon-description");
+
+    // Weapon description values and limit length
     let weaponEffect = genshindb["weapons"][weapon]["effect"];
     weaponEffect.length > 180 ? weaponEffect = weaponEffect.slice(0, 180) + "..." : weaponEffect = weaponEffect;
+    genshindb["weapons"][weapon]["r1"].forEach((value, index) =>{
+        weaponEffect = weaponEffect.replace(`{${index}}`, value);
+    });
     weaponDescription.innerHTML = weaponEffect;
+
+    // Weapon Image 
     const weaponImageContainer = document.createElement("div");
     weaponImageContainer.setAttribute("class", "image-video-container");
     weaponImageContainer.setAttribute("id", "weapon-image");
@@ -448,8 +581,19 @@ const createWeaponDiv = (weapon, delay, size) => {
     weaponImage.setAttribute("alt", genshindb["weapons"][weapon]["name"])
     weaponImageContainer.appendChild(weaponImage);
 
+    // Weapon Title Events
+    weaponTitle.addEventListener('mouseover', () =>{
+        weaponTitle.style.color = "var(--secondary-color)";
+        weaponTitle.style.cursor = "pointer";
+    });
+    weaponTitle.addEventListener('mouseout', () =>{
+        weaponTitle.style.color = "var(--primary-color)";
+    });
+    weaponTitle.addEventListener('click', () =>{
+        window.open(genshinlink["weapons"][weapon]["fandom"], "_blank").focus();
+    });
 
-
+    // Append to main container
     container.appendChild(weaponTitle);
     container.appendChild(weaponSubstat);
     container.appendChild(weaponDescription);
@@ -467,12 +611,14 @@ const createWeaponDiv = (weapon, delay, size) => {
  */
 const createArtifactDiv = (artifact, delay, size, effect) =>{ 
 
+    // Artifact Container
     const container = document.createElement("div");
     container.setAttribute("class", "artifact");
     container.setAttribute("id", "artifact");
     container.setAttribute("data-aos", "fade-down");
     container.setAttribute("data-aos-delay", delay);
 
+    // Artifact Title, Substat, and Description
     const artifactTitle = document.createElement("h4");
     artifactTitle.setAttribute("id", "artifact-title");
     artifactTitle.setAttribute("class", "artifact-title");
@@ -485,14 +631,18 @@ const createArtifactDiv = (artifact, delay, size, effect) =>{
     artifactDescription.setAttribute("class", "artifact-description");
     artifactDescription.setAttribute("id", "artifact-description");
     
+    // Description specifics
     if(effect == 2){
         artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]}<br>`;
     }
     else if(effect == 4){
         artifactDescription.innerHTML = `(2) ${genshindb["artifacts"][artifact]["2pc"]} <br>
                                     (4) ${genshindb["artifacts"][artifact]["4pc"]}`;
+        // Limit character count if too long
+        artifactDescription.innerHTML.length > 180 ? artifactDescription.innerHTML = artifactDescription.innerHTML.slice(0, 180) + "..." : artifactDescription.innerHTML = artifactDescription.innerHTML;
     }
-    
+
+    // Artifact Image 
     const artifactImageContainer = document.createElement("div");
     artifactImageContainer.setAttribute("class", "image-video-container");
     artifactImageContainer.setAttribute("id", "artifact-image");
@@ -502,8 +652,19 @@ const createArtifactDiv = (artifact, delay, size, effect) =>{
     artifactImage.setAttribute("alt", genshindb["artifacts"][artifact]["name"])
     artifactImageContainer.appendChild(artifactImage);
 
+    // Artifact Title Events
+    artifactTitle.addEventListener('mouseover', () =>{
+        artifactTitle.style.color = "var(--secondary-color)";
+        artifactTitle.style.cursor = "pointer";
+    });
+    artifactTitle.addEventListener('mouseout', () =>{
+        artifactTitle.style.color = "var(--primary-color)";
+    });
+    artifactTitle.addEventListener('click', () =>{
+        window.open(genshinlink["weapons"][artifact]["fandom"], "_blank").focus();
+    });
 
-
+    // Append to main container
     container.appendChild(artifactTitle);
     container.appendChild(artifactSubstat);
     container.appendChild(artifactDescription);

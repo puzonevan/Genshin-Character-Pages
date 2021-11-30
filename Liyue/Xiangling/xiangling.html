@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src='./scripts/character.js' async></script>
     
-    <!-- <script src='./scripts/randomQuote.js' defer></script>  -->
+    <script src='./scripts/randomQuote.js' defer></script> 
     <script src='./scripts/videoArtwork.js' async></script>
     <script src='./scripts/menu.js' defer></script>
     <title>Xiangling</title>
@@ -63,6 +63,13 @@
         </div>
     </section>
 
+    <section class="title-section">
+        <h2 data-aos="zoom-out-down" id="random-quote"></h2>
+        <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
+        </svg>
+    </section>
+
     <section class="talents-ascension-section" id="talents-ascension">
         <svg viewBox="0 0 1650 1000" xmlns="http://www.w3.org/2000/svg">
             <path d="M 10 4 L 12 4 L 12 6 L 10 6 L 10 4 L 130 4 L 130 6 L 128 6 L 128 4 L 130 4 L 130 75 L 128 75 L 128 73 L 130 73 L 130 75 L 10 75 L 10 73 L 12 73 L 12 75 L 10 75 L 10 4" class="border" stroke="url(#lightToDarkBlackVertical)" stroke-width=".25" fill="transparent"></path>
@@ -74,7 +81,7 @@
         </div>
         <div class="talents-ascension">
             <h2 data-aos="zoom-in">Ascensions</h2>
-            <div class="shivada">
+            <div class="shivada" id="ascension-stone">
                 <div class="item image-video-container" data-aos="fade-right" data-aos-delay="850">
                     <img src="" alt="">
                     <p class="item-name stone"></p>
@@ -96,7 +103,7 @@
                     <p class="item-name stone" ></p>
                 </div>
             </div>
-            <div class="monster">
+            <div class="monster" id="ascension-monster">
                 <div class="item image-video-container" data-aos="fade-right" data-aos-delay="650">
                     <img src="" alt="">
                     <p class="item-name collectable"></p>
@@ -114,8 +121,18 @@
                     <p class="item-name unique-collectable"></p>
                 </div>
             </div>
+            <table id="ascension-table" data-aos="fade-right" data-aos-delay="50">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+            </table>
             <h2 data-aos="zoom-in">Talents</h2>
-            <div class="books">
+            <div class="books" id="talent-books">
                 <div class="item image-video-container" data-aos="fade-right" data-aos-delay="650">
                     <img src="" alt="">
                     <p class="item-name book"></p>
@@ -133,7 +150,7 @@
                     <p class="item-name boss"></p>
                 </div>
             </div>
-            <div class="monster">
+            <div class="monster" id="talent-monster">
                 <div class="item image-video-container" data-aos="fade-right" data-aos-delay="650">
                     <img src="" alt="">
                     <p class="item-name collectable"></p>
@@ -151,7 +168,38 @@
                     <p class="item-name crown"></p>
                 </div>
             </div>
+            <table class="desktop-only" id="talent-table-1" data-aos="fade-right" data-aos-delay="50">
+                <tr>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+            </table>
+            <table class="mobile-only" id="talent-table-2" data-aos="fade-right" data-aos-delay="50">
+                <tr>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+            </table>
         </div>
+        
     </section>
 
     <section class="title-section">

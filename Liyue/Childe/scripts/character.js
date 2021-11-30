@@ -231,6 +231,97 @@ function initializeMaterials(){
         });
         hover(crownDOM.previousElementSibling);
     });
+
+    // TABLE EVENTS
+    tableDOM();
+}
+
+/**
+ * change materials based on level and ascension feature
+ */
+function tableDOM(){
+
+    // DOM Tables
+    const ascensionTable = document.getElementById("ascension-table");
+    const talentTable1 = document.getElementById("talent-table-1");
+    const talentTable2 = document.getElementById("talent-table-2");
+
+    // DOM Ascension Materials
+    const ascensionStone = document.getElementById("ascension-stone");
+    const ascensionMonster = document.getElementById("ascension-monster");
+    
+    // Ascension materials buttons
+    [...ascensionTable.children[0].children[0].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(ascensionStone);
+            removeChildren(ascensionMonster);
+            const materials = genshindb['characters'][`${name}`]['costs'][`ascend${index + 1}`];
+            ascensionMonster.remove();
+            for(let i = 0; i < materials.length; i++){
+                const item = createItem(materials[i].name, materials[i].count);
+                ascensionStone.appendChild(item);
+            }
+        });
+    });
+
+    // DOM Talent Materials
+    const talentBooks = document.getElementById("talent-books");
+    const talentMonster = document.getElementById("talent-monster");
+
+    // Talent materials buttons desktop
+    [...talentTable1.children[0].children[0].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 2}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+    // Talent materials buttons mobile row 1
+    [...talentTable2.children[0].children[0].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 2}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+    // Talent materials buttons mobile row 2
+    [...talentTable2.children[0].children[1].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 5}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+    // Talent materials buttons mobile row 3
+    [...talentTable2.children[0].children[2].children].forEach((button, index) =>{
+        button.addEventListener('click', () =>{
+            removeChildren(talentBooks);
+            removeChildren(talentMonster);
+            talentMonster.remove();
+            const talents = genshindb['talents'][`${name}`]['costs'][`lvl${index + 8}`];
+            for(let i = 0; i < talents.length; i++){
+                const item = createItem(talents[i].name, talents[i].count * 3);
+                talentBooks.appendChild(item);
+            }
+        })
+    });
+
+    
 }
 
 /**
@@ -399,6 +490,38 @@ function initializeConstellations(){
 /****** HELPER FUNCTIONS *******/
 
 /**
+ * Remove all child nodes of a parent node
+ * @param {DOM} parent 
+ */
+function removeChildren(parent){
+    while(parent.firstElementChild){
+        parent.removeChild(parent.firstElementChild);
+    }
+}
+
+/**
+ * create item container for talents and materials section 
+ * @param {""} name name of the item 
+ * @param {#} count how many of the item
+ * @returns 
+ */
+function createItem(name, count){
+    const container = document.createElement("div");
+    container.setAttribute("class", "item image-video-container");
+    const image = document.createElement("img");
+    image.setAttribute("src", genshinimage["materials"][`${name.toLowerCase().split(" ").join("")}`]["fandom"]);
+    image.setAttribute("alt", name);
+    const description = document.createElement("p");
+    description.setAttribute("class", "item-name");
+    description.innerHTML = `${name} <strong>x${count}</strong>`;
+
+    container.appendChild(image);
+    container.appendChild(description);
+    
+    return container;
+}
+
+/**
  * change scale when hovering an image
  * @param {DOM} image - image DOM object
  */
@@ -562,3 +685,4 @@ document.getElementById("combat-exit").addEventListener('click', () => {
     document.getElementById("combat-overlay").style.opacity = "0";
     document.getElementById("abilities-constellation").style.opacity = "1";
 });
+    

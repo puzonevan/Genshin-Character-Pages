@@ -5,12 +5,12 @@
  */
 
 const links = [
-    './Qiqi/images/qiqi4.jpg',
-    './Qiqi/images/qiqi2.jpg',
-    './Qiqi/images/qiqi3.jpg',
-    './Qiqi/images/qiqi1.jpg',
-    './Qiqi/images/qiqi5.jpg',
-    './Qiqi/images/qiqi6.jpg',
+    './Qiqi/images/qiqi4.webp',
+    './Qiqi/images/qiqi2.webp',
+    './Qiqi/images/qiqi3.webp',
+    './Qiqi/images/qiqi1.webp',
+    './Qiqi/images/qiqi5.webp',
+    './Qiqi/images/qiqi6.webp',
 ]
 
 // Get the container for the art from DOM 

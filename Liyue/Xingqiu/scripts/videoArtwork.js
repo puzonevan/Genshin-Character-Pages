@@ -5,9 +5,9 @@
  */
 
 const links = [
-    './Xingqiu/images/xingqiu1.png',
-    './Xingqiu/images/xingqiu2.png',
-    './Xingqiu/images/xingqiu3.jpg',
+    './Xingqiu/images/xingqiu1.webp',
+    './Xingqiu/images/xingqiu2.webp',
+    './Xingqiu/images/xingqiu3.webp',
     
 ]
 

@@ -12,7 +12,7 @@ const quotes = [
 ]
 
 // Get the dom 
-const randomQuote = document.getElementById('randomQuote');
+const randomQuote = document.getElementById('random-quote');
 
 // Function to change quote randomly 
 const getRandomQuote = (e) =>{

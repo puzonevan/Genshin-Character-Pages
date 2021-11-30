@@ -5,9 +5,9 @@
  */
 
 const links = [
-    './Xiao/images/xiao1.png',
-    './Xiao/images/xiao2.jpg',
-    './Xiao/images/xiao3.jpg',
+    './Xiao/images/xiao1.webp',
+    './Xiao/images/xiao2.webp',
+    './Xiao/images/xiao3.webp',
 ]
 
 // Get the container for the art from DOM 
