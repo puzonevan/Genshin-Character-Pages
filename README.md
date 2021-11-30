@@ -21,12 +21,12 @@ The title section includes the ***name*** of the character as the main title, an
 ## Random Quote 
 Here you can find either an **inspiring**, ,**hilarious**, or **interesting** quote said by the character 
  
-![]()
+![Character Quote](./assets/readmeassets/characterquote.png)
 
 ## Materials
 This section includes the necessary ***materials*** and ***amounts*** in order to ***level up*** the character and their ablities to the max 
 
-![Character Materials](./assets/readmeassets/charactermaterials.PNG)
+![Character Materials](./assets/readmeassets/charactermaterialsv2.PNG)
 
 ## Builds
 There are two builds containing ***weapons*** and ***artifacts*** that the character should use in the game

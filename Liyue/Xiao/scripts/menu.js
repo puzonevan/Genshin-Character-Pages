@@ -1,7 +1,7 @@
 
 // Get Gif from Dom 
 const gif = document.getElementById("menu-gif");
-const gifImage = "./Childe/gifs/childegif.gif";
+const gifImage = "./Xiao/gifs/xiaogif.gif";
 
 // Get Anchors from Dom 
 const materialsAnchor = document.getElementById("materials-anchor");
