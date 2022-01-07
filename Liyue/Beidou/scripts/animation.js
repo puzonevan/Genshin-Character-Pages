@@ -1,11 +1,11 @@
 function zoomInView() {
     // var $window = $(window);
     // var bottom_of_window = $window.scrollTop() + $window.height();
-    let bottomWindow = window.scrollTop() + window.height();
+    let bottomWindow = window.screenTop + window.outerHeight
 
     
     let randomQuote = document.getElementById("randomQuote");
-    let bottomObject = randomQuote.position.top() + randomQuote.outerHeight();
+    let bottomObject = randomQuote.position.top + randomQuote.outerHeight;
 
     if(bottomWindow > bottomObject){
         randomQuote.setAttribute("class", `${randomQuote.className} zoomIn`);
