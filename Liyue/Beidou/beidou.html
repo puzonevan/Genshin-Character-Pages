@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='./style.css'>
+    <link rel="stylesheet" href="./animations.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src='./scripts/character.js' async></script>
-    
+    <script src='./scripts/animation.js' async></script>
     <script src='./scripts/randomQuote.js' defer></script> 
     <script src='./scripts/videoArtwork.js' async></script>
     <script src='./scripts/menu.js' defer></script>
@@ -46,8 +46,8 @@
     </svg>
 
     <section class="opening-section">
-        <h1 class="title w3-animate-top w3-animate-opacity" id="title"></h1>
-        <h2 class="sub-title w3-animate-top" id="sub-title"></h2>
+        <h1 class="title fadeInDown" id="title"></h1>
+        <h2 class="sub-title fadeInDown" id="sub-title"></h2>
         <!-- Random Quote -->
         <!-- <p class="random-quote" id="randomQuote" data-aos="zoom-out" data-aos-delay="300"></p> -->
         <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@
     </section>
 
     <section class="title-section">
-        <h2 data-aos="zoom-out-down" id="random-quote"></h2>
+        <h2 class="zoomIn" id="random-quote"></h2>
         <svg viewBox="0 0 151 15" xmlns="http://www.w3.org/2000/svg">
             <path d="M 45 2.5 L 47 2.5 L 47 4 L 43 4 L 43 1 L 49 1 L 49 4 L 51 4 L 51 1 L 57 1 L 57 4 L 53 4 L 53 2.5 L 55 2.5 " class="path" stroke="url(#lightToDarkGold)" stroke-width=".5" fill="transparent"></path>
         </svg>
