@@ -7,7 +7,7 @@
 const links = [
     './Yanfei/images/yanfei1.webp',
     './Yanfei/images/yanfei2.webp',
-    './Yanfei/images/yanfei3.webp',
+    './Yanfei/images/yanfei3.png',
     './Yanfei/images/yanfei4.webp',
     './Yanfei/images/yanfei5.webp',
 ]
